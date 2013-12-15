@@ -99,6 +99,10 @@ class DB{
 		return $this->action('DELETE', $table, $where);
 	}
 
+	public function results(){
+		
+	}
+
 	public function error(){
 		return $this->_error;
 	}
@@ -106,5 +110,4 @@ class DB{
 	public function count(){
 		return $this->_count;
 	}
-
 }
