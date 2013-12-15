@@ -53,14 +53,14 @@ class DB{
 				$this->_results	= $this->_query->fetchAll(PDO::FETCH_OBJ);
 				$this->_count	= $this->_query->rowCount();
 				if ($this->_count < 1){
-					echo 'query fail code 2. User or content not found';
+					//echo 'query fail code 2. User or content not found';
 					$this->_error = true;
 				}else{
-					echo 'query success. Count: ' . $this->_count;
+					//echo 'query success. Count: ' . $this->_count;
 				}
 			}else{
 				$this->_error = true;
-				echo 'query fail code 1. Not proper SQL';
+				//echo 'query fail code 1. Not proper SQL';
 			}
 
 		}
@@ -71,7 +71,7 @@ class DB{
 
 	}
 	
-	private function action($action, $table, $where = array()){
+	public function action($action, $table, $where = array()){
 		
 		if(count($where) === 3){
 		
@@ -101,7 +101,7 @@ class DB{
 	}
 	
 	public function delete($table, $where){
-		
+		return $this->action('DELETE', $table, $where);
 	}
 
 	public function error(){
