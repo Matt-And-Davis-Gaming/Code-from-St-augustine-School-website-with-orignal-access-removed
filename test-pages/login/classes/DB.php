@@ -1,7 +1,7 @@
 <?php
 class DB{
 
-	//set varibles
+	# set varibles
 	private static $_instance = null;
 
 	private $_pdo,
@@ -10,9 +10,10 @@ class DB{
 		$_results,
 		$_count = 0;
 
-	//connect to db
+	# connect to db when class is enstanciated (spelling) and storred in $this->_pdo
 	private function __construct()
 	{
+		#try loop to start the pdo that catches PDOEXexption
 		try
 		{
 			$this->_pdo = new PDO('mysql:host=' . Config::get('mysql/host') . ';dbname=' . Config::get('mysql/db'),
@@ -20,13 +21,15 @@ class DB{
 						Config::get('mysql/password')
 					);
 		//echo 'connected';
-		} catch(PDOException $e)
+		}
+		# catch the PDO exception 
+		catch(PDOException $e)
 		{
 			die($e->getMessage());
 		}
 	}
 
-	//init instance for the database and store the __construct here
+	# init instance for the database and store the __construct here
 	public static function getInstance()
 	{
 		if(!isset(self::$_instance))
@@ -37,14 +40,18 @@ class DB{
 		return self::$_instance;
 	}
 
-	//standerd query
+	# standerd query
 	public function query($sql, $params = array())
 	{
-
+		#reset error variable
 		$this->_error = false;
+
+		#prepare sql for pdo
 		if($this->_query = $this->_pdo->prepare($sql))
 		{
 			//echo 1;
+
+			# build sql additions
 			if(count($params))
 			{
 				$x = 1;
@@ -58,6 +65,7 @@ class DB{
 
 			}
 
+			# execute query and test for it
 			if($this->_query->execute())
 			{
 				$this->_results	= $this->_query->fetchAll(PDO::FETCH_OBJ);
@@ -76,6 +84,7 @@ class DB{
 
 	}
 	
+	# call the query and return a nice result set
 	public function action($action, $table, $where = array())
 	{
 		
@@ -105,36 +114,43 @@ class DB{
 		
 	}
 	
+	# get from db
 	public function get($table, $where)
 	{
 		return $this->action('SELECT *', $table, $where);
 	}
 	
+	# delete from db
 	public function delete($table, $where)
 	{
 		return $this->action('DELETE', $table, $where);
 	}
 
+	# get results from last query
 	public function results()
 	{
 		return $this->_results;
 	}
 
-	public function insert($value='')
+	# insert into db
+	public function insert($table, $fields = array())
 	{
-		# code...
+		
 	}
 
+	# get first record in db
 	public function first()
 	{
 		return $this->_results[0];
 	}
 
+	# get errors
 	public function error()
 	{
 		return $this->_error;
 	}
 
+	# count entries
 	public function count()
 	{
 		return $this->_count;
