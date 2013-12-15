@@ -8,7 +8,7 @@ require_once 'core/init.php';
 
 $user = DB::getInstance()->query("SELECT username FROM users WHERE username='matt'");
 
-//var_dump($user->error());
+var_dump($user->error());
 ?><br><?php
 if($user->error()){
 	echo 'No User Found';
