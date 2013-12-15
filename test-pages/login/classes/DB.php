@@ -100,7 +100,7 @@ class DB{
 	}
 
 	public function results(){
-		
+		return $this->_results;
 	}
 
 	public function error(){

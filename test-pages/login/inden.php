@@ -13,7 +13,9 @@ $user = DB::getInstance()->get('users', array('username', '=', 'matt'));
 if(!$user->count()){
 	echo 'No User Found';
 }else{
-	echo 'ok';
+	foreach ($user->results() as $user) {
+		echo $user->username . "<br>";
+	}
 }
 //echo $lev = E_ALL & !E_NOTICE & !E_DEPRECATED;
 //http://www.youtube.com/watch?feature=player_detailpage&v=PaBWDOBFxDc#t=567
