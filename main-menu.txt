@@ -1,0 +1,20 @@
+<nav class="collapse navbar-collapse bs-navbar-collapse" style="
+text-align:center;
+float: left;
+" role="navigation">
+
+<ul class="nav navbar-nav nav-right">
+        <li class="think">
+          <a href="/">Home</a>
+        </li>
+        <li class="booger">
+          <a href="/parents">Parents</a>
+        </li>
+        <li class="doggie">
+          <a href="./components">Components</a>
+        </li>
+        <li class="poopie">
+          <a href="./javascript">JavaScript</a>
+        </li>
+	<fake></fake>
+      </ul>

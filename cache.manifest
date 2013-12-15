@@ -1,0 +1,19 @@
+CACHE MANIFEST
+# Version: 010505419
+# Build ID: t_2013_10_31_11_41_19
+# Built: 2013-10-31 11:41:19
+
+CACHE:
+/index.html
+http://ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js
+http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
+http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js
+http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css
+http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css
+http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js
+https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js
+https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js
+http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.map
+
+NETWORK:
+*
