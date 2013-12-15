@@ -1,6 +1,6 @@
 <?php
 	require('../init.php');
-	head("Kids");
+	head("Kids Area");
 ?>
 	     <div class="jumbotron" style="padding-top:100px;">
       <div class="container">
