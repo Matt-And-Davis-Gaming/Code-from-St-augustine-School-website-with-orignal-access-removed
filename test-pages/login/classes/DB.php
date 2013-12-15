@@ -41,7 +41,7 @@ class DB{
 			if(count($params)){
 				$x = 1;
 				foreach($params as $param){
-					echo $x;
+					//echo $x;
 					$this->_query->bindValue($x, $param);
 					$x++;
 
@@ -52,14 +52,14 @@ class DB{
 			if($this->_query->execute()){
 				$this->_results	= $this->_query->fetchAll(PDO::FETCH_OBJ);
 				$this->_count	= $this->_query->rowCount();
-				echo 'query success';
+				echo 'query success. Count: ' . $this->_count;
 			}else{
 				$this->_error = true;
 				echo 'query fail';
 			}
 
 		}
-		echo '2';
+		//echo '2';
 		return $this;
 
 		//http://www.youtube.com/watch?feature=player_detailpage&v=PaBWDOBFxDc#t=571
