@@ -71,7 +71,17 @@ class DB{
 
 	}
 	
+	public function action($action, $table, $where = array()){
+		
+	}
 	
+	public function get($table, $where){
+		
+	}
+	
+	public function delete($table, $where){
+		
+	}
 
 	public function error(){
 		return $this->_error;
