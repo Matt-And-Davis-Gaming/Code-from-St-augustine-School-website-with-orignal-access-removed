@@ -70,6 +70,8 @@ class DB{
 		//http://www.youtube.com/watch?feature=player_detailpage&v=PaBWDOBFxDc#t=571
 
 	}
+	
+	
 
 	public function error(){
 		return $this->_error;
