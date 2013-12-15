@@ -71,7 +71,7 @@ class DB{
 
 	}
 	
-	public function action($action, $table, $where = array()){
+	private function action($action, $table, $where = array()){
 		
 		if(count($where) === 3){
 		
@@ -83,7 +83,7 @@ class DB{
 			
 			if(in_array($operator, $operators)){
 				
-				$sql = "{$action} * FROM {$table} WHERE {$field} {$operator} ?";
+				$sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
 				if(!$this->query($sql, array($value))->error()){
 					return $this;
 				}
@@ -97,7 +97,7 @@ class DB{
 	}
 	
 	public function get($table, $where){
-		
+		return $this->action('SELECT *', $table, $where)
 	}
 	
 	public function delete($table, $where){
