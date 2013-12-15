@@ -6,7 +6,8 @@ require_once 'core/init.php';
 $user = DB::getInstance()->query("SELECT username FROM users WHERE username='asd'");
 
 var_dump($user->error());
-/*if($user->error()){
+/*
+if($user->error()){
 	echo 'No User Found';
 }else{
 	echo 'ok';
