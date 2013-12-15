@@ -60,7 +60,7 @@ class DB{
 				}
 			}else{
 				$this->_error = true;
-				echo 'query fail code 1';
+				echo 'query fail code 1. Not proper SQL';
 			}
 
 		}
