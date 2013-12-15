@@ -11,21 +11,26 @@ class DB{
 		$_count = 0;
 
 	//connect to db
-	private function __construct(){
-		try{
+	private function __construct()
+	{
+		try
+		{
 			$this->_pdo = new PDO('mysql:host=' . Config::get('mysql/host') . ';dbname=' . Config::get('mysql/db'),
 						Config::get('mysql/username'),
 						Config::get('mysql/password')
 					);
 		//echo 'connected';
-		} catch(PDOException $e) {
+		} catch(PDOException $e)
+		{
 			die($e->getMessage());
 		}
 	}
 
 	//init instance for the database and store the __construct here
-	public static function getInstance(){
-		if(!isset(self::$_instance)){
+	public static function getInstance()
+	{
+		if(!isset(self::$_instance))
+		{
 			self::$_instance = new DB();
 		}
 
@@ -33,14 +38,18 @@ class DB{
 	}
 
 	//standerd query
-	public function query($sql, $params = array()){
+	public function query($sql, $params = array())
+	{
 
 		$this->_error = false;
-		if($this->_query = $this->_pdo->prepare($sql)){
+		if($this->_query = $this->_pdo->prepare($sql))
+		{
 			//echo 1;
-			if(count($params)){
+			if(count($params))
+			{
 				$x = 1;
-				foreach($params as $param){
+				foreach($params as $param)
+				{
 					//echo $x;
 					$this->_query->bindValue($x, $param);
 					$x++;
@@ -49,7 +58,8 @@ class DB{
 
 			}
 
-			if($this->_query->execute()){
+			if($this->_query->execute())
+			{
 				$this->_results	= $this->_query->fetchAll(PDO::FETCH_OBJ);
 				$this->_count	= $this->_query->rowCount();
 					//echo 'query success. Count: ' . $this->_count;
@@ -66,9 +76,11 @@ class DB{
 
 	}
 	
-	public function action($action, $table, $where = array()){
+	public function action($action, $table, $where = array())
+	{
 		
-		if(count($where) === 3){
+		if(count($where) === 3)
+		{
 		
 			$operators = array('=', '>', '<', '>=', '<=');
 			
@@ -76,10 +88,12 @@ class DB{
 			$operator	= $where[1];
 			$value		= $where[2];
 			
-			if(in_array($operator, $operators)){
+			if(in_array($operator, $operators))
+			{
 				
 				$sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
-				if(!$this->query($sql, array($value))->error()){
+				if(!$this->query($sql, array($value))->error())
+				{
 					return $this;
 				}
 				
@@ -91,16 +105,24 @@ class DB{
 		
 	}
 	
-	public function get($table, $where){
+	public function get($table, $where)
+	{
 		return $this->action('SELECT *', $table, $where);
 	}
 	
-	public function delete($table, $where){
+	public function delete($table, $where)
+	{
 		return $this->action('DELETE', $table, $where);
 	}
 
-	public function results(){
+	public function results()
+	{
 		return $this->_results;
+	}
+
+	public function insert($value='')
+	{
+		# code...
 	}
 
 	public function first()
@@ -108,11 +130,13 @@ class DB{
 		return $this->_results[0];
 	}
 
-	public function error(){
+	public function error()
+	{
 		return $this->_error;
 	}
 
-	public function count(){
+	public function count()
+	{
 		return $this->_count;
 	}
 }
