@@ -6,7 +6,7 @@ require_once 'core/init.php';
 //die(Config::get('mysql/password'));
 
 
-$user = DB::getInstance()->get('users', array('username', '=', 'matdt'));
+$user = DB::getInstance()->get('users', array('username', '=', 'matt'));
 
 //var_dump($user->error());
 ?><br><?php
