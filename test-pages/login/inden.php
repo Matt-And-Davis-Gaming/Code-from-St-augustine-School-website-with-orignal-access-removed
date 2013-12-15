@@ -3,6 +3,9 @@
 ini_set('display_errors', '1');
 error_reporting(-1);
 require_once 'core/init.php';
+die(Config::get('mysql/password'));
+
+
 $user = DB::getInstance()->query("SELECT username FROM users WHERE username='asd'");
 
 var_dump($user->error());
