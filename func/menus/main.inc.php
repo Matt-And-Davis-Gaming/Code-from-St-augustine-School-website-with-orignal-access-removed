@@ -15,9 +15,17 @@ float: left;
 			case "/index.php":
 			case "/index2.php":
 			$ar[2] = '
-			<li class="active"><a href="/">' . $name . '</a></li>
+				<li class="active"><a href="/">' . $name . '</a></li>
         		<li><a href="/parents">Parents</a></li>
-			<li><a target="_blank" href="//staugie.net">Church Website</a></li>
+				<li><a target="_blank" href="//staugie.net">Church Website</a></li>
+        		<li><a href="/kids">Kids Area</a></li>';
+		break;
+		case "/kids":
+			case "/kids/index.php":
+			$ar[2] = '
+				<li class="active"><a href="/">' . $name . '</a></li>
+        		<li><a href="/parents">Parents</a></li>
+				<li><a target="_blank" href="//staugie.net">Church Website</a></li>
         		<li><a href="/kids">Kids Area</a></li>';
 		break;
 	}
