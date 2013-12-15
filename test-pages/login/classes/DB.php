@@ -52,12 +52,7 @@ class DB{
 			if($this->_query->execute()){
 				$this->_results	= $this->_query->fetchAll(PDO::FETCH_OBJ);
 				$this->_count	= $this->_query->rowCount();
-				if ($this->_count < 1){
-					//echo 'query fail code 2. User or content not found';
-					$this->_error = true;
-				}else{
 					//echo 'query success. Count: ' . $this->_count;
-				}
 			}else{
 				$this->_error = true;
 				//echo 'query fail code 1. Not proper SQL';
@@ -106,6 +101,10 @@ class DB{
 
 	public function error(){
 		return $this->_error;
+	}
+
+	public function count(){
+		return $this->_count;
 	}
 
 }

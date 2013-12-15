@@ -10,7 +10,7 @@ $user = DB::getInstance()->get('users', array('username', '=', 'matt'));
 
 //var_dump($user->error());
 ?><br><?php
-if($user->error()){
+if(!$user->count()){
 	echo 'No User Found';
 }else{
 	echo 'ok';
