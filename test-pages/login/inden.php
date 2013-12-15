@@ -6,7 +6,7 @@ require_once 'core/init.php';
 //die(Config::get('mysql/password'));
 
 
-$user = DB::getInstance()->query("SELECT username FROM users WHERE username = ?" array('matt'));
+$user = DB::getInstance()->query("SELECT username FROM users WHERE username = ?", array('matt'));
 
 var_dump($user->error());
 ?><br><?php
