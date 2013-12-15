@@ -20,7 +20,7 @@ float: left;
 				<li><a target="_blank" href="//staugie.net">Church Website</a></li>
         		<li><a href="/kids">Kids Area</a></li>';
 		break;
-		case "/kids":
+		case "/kids/":
 			case "/kids/index.php":
 			$ar[2] = '
 				<li class="active"><a href="/">' . $name . '</a></li>
