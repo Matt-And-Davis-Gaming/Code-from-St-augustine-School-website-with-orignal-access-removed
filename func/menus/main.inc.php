@@ -23,10 +23,10 @@ float: left;
 		case "/kids/":
 			case "/kids/index.php":
 			$ar[2] = '
-				<li class="active"><a href="/">' . $name . '</a></li>
+				<li><a href="/">Home</a></li>
         		<li><a href="/parents">Parents</a></li>
 				<li><a target="_blank" href="//staugie.net">Church Website</a></li>
-        		<li><a href="/kids">Kids Area</a></li>';
+        		<li class="active"><a href="/kids">Kids Area</a></li>';
 		break;
 	}
 	return $ar[1] . $ar[2] . '</ul></nav>';
