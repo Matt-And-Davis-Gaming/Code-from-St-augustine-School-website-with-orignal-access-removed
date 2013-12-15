@@ -54,8 +54,10 @@ class DB{
 				$this->_count	= $this->_query->rowCount();
 				if ($this->_count < 1){
 					echo 'query fail code 2. User or content not found';
+					$this->_error = true;
+				}else{
+					echo 'query success. Count: ' . $this->_count;
 				}
-				echo 'query success. Count: ' . $this->_count;
 			}else{
 				$this->_error = true;
 				echo 'query fail code 1';
