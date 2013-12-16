@@ -140,7 +140,7 @@ class DB{
 			$values = null;
 			$x = 1;
 
-			$sql = "INSERT INTO users (`" . implode('`,`', $keys) . "`)";
+			$sql = "INSERT INTO users (`" . implode('`,`', $keys) . "`) VALUES ({$values})";
 
 			echo $sql;
 		}
