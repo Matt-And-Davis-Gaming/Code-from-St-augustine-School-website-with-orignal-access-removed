@@ -149,7 +149,7 @@ class DB{
 			$x++;
 		}
 		$sql = "INSERT INTO users (`" . implode('`,`', $keys) . "`) VALUES ({$values})";
-		if (!$this->query($sql, $fields))
+		if (!$this->query($sql, $fields)->error())
 		{
 			return true;# code...
 		}
@@ -174,7 +174,13 @@ class DB{
 		}
 
 		$sql = "UPDATE {$table} SET {$set} WHERE id = {$id}";
-		die($sql);
+
+		if (!$this->query($sql, $fields)->error())
+		{
+			return true;# code...
+		}
+
+		return false;
 	}
 
 	# get first record in db
