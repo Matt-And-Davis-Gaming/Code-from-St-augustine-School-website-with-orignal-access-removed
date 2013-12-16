@@ -135,11 +135,23 @@ class DB{
 	# insert into db
 	public function insert($table, $fields = array())
 	{
-		if(count($fields)){
+		if(count($fields))
+		{
 			$keys 	= array_keys($fields);
-			$values = null;
+			$values = '';
 			$x = 1;
 
+			foreach ($fields as $field) 
+			{
+				$values .= "?";
+				if ($x<count($fields)) 
+				{
+					$values .= ', ';
+				}
+				$x++;
+			}
+
+			die($values);
 			$sql = "INSERT INTO users (`" . implode('`,`', $keys) . "`) VALUES ({$values})";
 
 			echo $sql;
