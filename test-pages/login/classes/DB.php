@@ -160,6 +160,20 @@ class DB{
 	public function update($table, $id, $fields)
 	{
 		$set = '';
+		$x=1;
+
+		foreach ($fields as $name => $value) {
+			$set .= "{$name} = ?";
+
+			if ($x<count($fields)) 
+			{
+				$values .= ', ';
+			}
+		}
+
+		die($set);
+
+		$sql = "UPDATE {$table} SET {$set} WHERE id = {$id}";
 	}
 
 	# get first record in db
