@@ -165,10 +165,11 @@ class DB{
 		foreach ($fields as $name => $value) {
 			$set .= "{$name} = ?";
 
-			if ($x<count($fields)) 
+			if ($x < count($name)) 
 			{
 				$values .= ', ';
 			}
+			$x++;
 		}
 
 		die($set);
