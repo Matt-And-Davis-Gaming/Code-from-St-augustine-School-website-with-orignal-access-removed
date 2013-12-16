@@ -151,7 +151,6 @@ class DB{
 				$x++;
 			}
 
-			die($values);
 			$sql = "INSERT INTO users (`" . implode('`,`', $keys) . "`) VALUES ({$values})";
 
 			echo $sql;
