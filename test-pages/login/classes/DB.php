@@ -153,8 +153,13 @@ class DB{
 
 			$sql = "INSERT INTO users (`" . implode('`,`', $keys) . "`) VALUES ({$values})";
 
-			echo $sql;
+			if (!$this->query($sql, $fields))
+			{
+				return true;# code...
+			}
 		}
+
+		return false;
 	}
 
 	# get first record in db
