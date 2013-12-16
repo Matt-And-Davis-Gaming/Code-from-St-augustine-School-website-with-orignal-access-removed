@@ -7,5 +7,6 @@ require_once 'core/init.php';
 $user = DB::getInstance()->update('users', 3, array(
 	'username'	=> 'Dale',
 	'password'	=> 'new_hashed_passphrase',
-	'salt'		=> 'salt'
+	'salt'		=> 'salt',
+	'name'		=> 'Dale Garrett'
 ));
