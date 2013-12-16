@@ -173,9 +173,8 @@ class DB{
 			$x++;
 		}
 
-		die($set);
-
 		$sql = "UPDATE {$table} SET {$set} WHERE id = {$id}";
+		die($sql);
 	}
 
 	# get first record in db
