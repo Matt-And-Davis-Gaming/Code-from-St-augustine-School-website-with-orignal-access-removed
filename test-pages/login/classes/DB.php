@@ -135,7 +135,15 @@ class DB{
 	# insert into db
 	public function insert($table, $fields = array())
 	{
-		
+		if(count($fields)){
+			$keys 	= array_keys($fields);
+			$values = null;
+			$x = 1;
+
+			$sql = "INSERT INTO users (`" . implode('`,`', $keys) . "`))";
+
+			echo $sql;
+		}
 	}
 
 	# get first record in db
