@@ -135,31 +135,31 @@ class DB{
 	# insert into db
 	public function insert($table, $fields = array())
 	{
-		if(count($fields))
+
+		$keys 	= array_keys($fields);
+		$values = '';
+		$x = 1;
+		foreach ($fields as $field) 
 		{
-			$keys 	= array_keys($fields);
-			$values = '';
-			$x = 1;
-
-			foreach ($fields as $field) 
+			$values .= "?";
+			if ($x<count($fields)) 
 			{
-				$values .= "?";
-				if ($x<count($fields)) 
-				{
-					$values .= ', ';
-				}
-				$x++;
+				$values .= ', ';
 			}
-
-			$sql = "INSERT INTO users (`" . implode('`,`', $keys) . "`) VALUES ({$values})";
-
-			if (!$this->query($sql, $fields))
-			{
-				return true;# code...
-			}
+			$x++;
+		}
+		$sql = "INSERT INTO users (`" . implode('`,`', $keys) . "`) VALUES ({$values})";
+		if (!$this->query($sql, $fields))
+		{
+			return true;# code...
 		}
 
 		return false;
+	}
+
+	public function update($table, $id, $fields)
+	{
+		$set = '';
 	}
 
 	# get first record in db
