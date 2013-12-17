@@ -8,7 +8,7 @@
 		<input type="password" name="password" id="password" />
 	</div>
 	<div class="field">
-		<label for="password_again">Repeat your password please/label>
+		<label for="password_again">Repeat your password please</label>
 		<input type="password" name="password_again" id="password_again" />
 	</div>
 	<div class="field">
