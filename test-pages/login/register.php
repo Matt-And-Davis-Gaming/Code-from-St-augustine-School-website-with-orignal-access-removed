@@ -1,4 +1,12 @@
-<form aaction="" method="post">
+<?php
+	require '/var/www/test-pages/login/core/init.php';
+
+	if(Input::exists()){
+		echo "Submitted<br><pre>", print_r($_POST), "</pre>";
+	}
+?>
+
+<form action="" method="post">
 	<table>
 		<thead>
 
