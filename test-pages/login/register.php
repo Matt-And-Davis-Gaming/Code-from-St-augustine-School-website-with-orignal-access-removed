@@ -4,6 +4,7 @@
 	if(Input::exists()){
 		echo "Submitted";
 	}
+
 ?>
 
 <form action="" method="post">

@@ -14,4 +14,11 @@ class Input{
 				break;
 		}
 	}
+
+	public static function get($value)
+	{
+		# code...
+	}
+
+
 }
