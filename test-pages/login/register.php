@@ -26,11 +26,11 @@
 							)
 		));
 
-		if ($validation->passed()) {
+		/*if ($validation->passed()) {
 			# registered user
 		}else{
 			# output errors
-		}
+		}*/
 	}
 
 ?>
