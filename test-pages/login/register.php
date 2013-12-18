@@ -2,7 +2,7 @@
 	require '/var/www/test-pages/login/core/init.php';
 
 	if(Input::exists()){
-		echo "Submitted";
+		echo "Submitted. Username = " . Input::get("username");
 	}
 
 ?>
