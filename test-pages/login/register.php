@@ -9,7 +9,7 @@
 								'requirered' 	=> true,
 								'min' 			=> 2,
 								'max'			=> 20,
-								'unique'		=> Config::get('mysql/db');
+								'unique'		=> Config::get('mysql/db')
 							),
 			'password' 		=> array(
 								'requirered' 	=> true,
