@@ -25,6 +25,12 @@
 								'max'			=> 50
 							)
 		));
+
+		if ($validation->passed()) {
+			# registered user
+		}else{
+			# output errors
+		}
 	}
 
 ?>
