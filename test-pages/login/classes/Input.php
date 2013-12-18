@@ -15,9 +15,15 @@ class Input{
 		}
 	}
 
-	public static function get($value)
+	public static function get($item)
 	{
-		# code...
+		if (isset($_POST[$item])) {
+			return $_POST[$item];
+		}elseif (isset($_GET[$item])) {
+			return $_GET[$item];
+		}
+
+		return '';
 	}
 
 
