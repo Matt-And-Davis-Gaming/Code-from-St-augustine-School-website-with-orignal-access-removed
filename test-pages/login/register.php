@@ -2,7 +2,29 @@
 	require '/var/www/test-pages/login/core/init.php';
 
 	if(Input::exists()){
-		echo "Submitted. Username = " . Input::get("username");
+		#echo "Submitted. Username = " . Input::get("username");
+		$validate = new Validate();
+		$validation = $validate->check($_POST, array(
+			'username' 		=> array(
+								'requirered' 	=> true,
+								'min' 			=> 2,
+								'max'			=> 20,
+								'unique'		=> Config::get('mysql/db');
+							),
+			'password' 		=> array(
+								'requirered' 	=> true,
+								'min' 			=> 6
+							),
+			'password_again'=> array(
+								'requirered' 	=> true,
+								'matches'		=> 'password'
+							),
+			'name' 			=> array(
+								'requirered' 	=> true,
+								'min' 			=> 2,
+								'max'			=> 50
+							)
+		));
 	}
 
 ?>
