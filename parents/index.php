@@ -1,4 +1,4 @@
 <?php
-        require('init.php');
-        head("Home");
+        require('../init.php');
+        head("Parents");
 ?>
