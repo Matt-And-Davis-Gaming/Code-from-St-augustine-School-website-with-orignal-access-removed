@@ -16,8 +16,29 @@ class Validate{
 				#echo "{$item} {$rule} must be {$rule_value}!<br>";
 
 				$value = $source[$item];
-				echo $value;
+				if ($rule === 'required' && empty($value)) {
+					$this->addError("{$item} is required");
+				}
 			}
 		}
+
+		if (empty($this->errors())) {
+			$this->_passes = true;
+		}
+	}
+
+	private function addError($value)
+	{
+		$this->_errors[] = $value;
+	}
+
+	public function errors()
+	{
+		return $this->_errors;
+	}
+
+	public function passes()
+	{
+		# code...
 	}
 }

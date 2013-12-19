@@ -26,11 +26,11 @@
 							)
 		));
 
-		/*if ($validation->passed()) {
-			# registered user
+		if ($validation->passed()) {
+			echo 'Success';
 		}else{
-			# output errors
-		}*/
+			echo "<pre>", print_r()
+		}
 	}
 
 ?>
