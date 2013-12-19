@@ -28,6 +28,14 @@ float: left;
 				<li><a target="_blank" href="//staugie.net">Church Website</a></li>
         		<li class="active"><a href="/kids">Kids Area</a></li>';
 		break;
+		case "/parents":
+			case "/parents/index.php":
+			$ar[2] = '
+				<li><a href="/">Home</a></li>
+        		<li class="active"><a href="/parents">Parents</a></li>
+				<li><a target="_blank" href="//staugie.net">Church Website</a></li>
+        		<li><a href="/kids">Kids Area</a></li>';
+		break;
 	}
 	return $ar[1] . $ar[2] . '</ul></nav>';
 }
