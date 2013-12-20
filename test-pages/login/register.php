@@ -1,7 +1,7 @@
 <?php
 	require '/var/www/test-pages/login/core/init.php';
 
-	if(Input::exists()){
+/*	if(Input::exists()){
 		#echo "Submitted. Username = " . Input::get("username");
 		$validate = new Validate();
 		$validation = $validate->check($_POST, array(
