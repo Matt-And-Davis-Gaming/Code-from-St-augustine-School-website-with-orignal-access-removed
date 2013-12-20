@@ -6,21 +6,21 @@
 		$validate = new Validate();
 		$validation = $validate->check($_POST, array(
 			'username' 		=> array(
-								'requirered' 	=> true,
+								'required' 	=> true,
 								'min' 			=> 2,
 								'max'			=> 20,
 								'unique'		=> Config::get('mysql/db')
 							),
 			'password' 		=> array(
-								'requirered' 	=> true,
+								'required' 	=> true,
 								'min' 			=> 6
 							),
 			'password_again'=> array(
-								'requirered' 	=> true,
+								'required' 	=> true,
 								'matches'		=> 'password'
 							),
 			'name' 			=> array(
-								'requirered' 	=> true,
+								'required' 	=> true,
 								'min' 			=> 2,
 								'max'			=> 50
 							)
