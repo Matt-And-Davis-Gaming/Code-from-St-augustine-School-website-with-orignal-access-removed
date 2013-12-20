@@ -37,8 +37,8 @@ class Validate{
 		return $this->_errors;
 	}
 
-	public function passes()
+	public function passed()
 	{
-		# code...
+		return $this->_passed;
 	}
 }
