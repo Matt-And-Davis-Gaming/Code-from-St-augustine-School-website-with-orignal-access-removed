@@ -7,10 +7,10 @@
 		$validation = $validate->check($_POST, array(
 			'username' 		=> array(
 								'required' 	=> true,
-								'min' 			=> 2,
-								'max'			=> 20,
-								'unique'		=> Config::get('mysql/db'),
-								'name'			=> 'Username';
+								'min' 		=> 2,
+								'max'		=> 20,
+								'unique'	=> Config::get('mysql/db'),
+								'name'		=> 'Username'
 							),
 			'password' 		=> array(
 								'required' 	=> true,
@@ -24,9 +24,9 @@
 							),
 			'name' 			=> array(
 								'required' 	=> true,
-								'min' 			=> 2,
-								'max'			=> 50,
-								'name'			=> 'Real Name'
+								'min' 		=> 2,
+								'max'		=> 50,
+								'name'		=> 'Real Name'
 							)
 		));
 
