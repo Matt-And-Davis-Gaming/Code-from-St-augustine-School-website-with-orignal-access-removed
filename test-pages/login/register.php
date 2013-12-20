@@ -29,7 +29,7 @@
 		if ($validation->passed()) {
 			echo 'Success';
 		}else{
-			echo "<pre>", print_r()
+			echo "<pre>", print_r($validation->errors()), "</pre>";
 		}
 	}
 
