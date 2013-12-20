@@ -9,20 +9,24 @@
 								'required' 	=> true,
 								'min' 			=> 2,
 								'max'			=> 20,
-								'unique'		=> Config::get('mysql/db')
+								'unique'		=> Config::get('mysql/db'),
+								'name'			=> 'Username';
 							),
 			'password' 		=> array(
 								'required' 	=> true,
-								'min' 			=> 6
+								'min' 		=> 6,
+								'name'		=> 'Password'
 							),
 			'password_again'=> array(
 								'required' 	=> true,
-								'matches'		=> 'password'
+								'matches'	=> 'password',
+								'name'		=> 'Repeat Password'
 							),
 			'name' 			=> array(
 								'required' 	=> true,
 								'min' 			=> 2,
-								'max'			=> 50
+								'max'			=> 50,
+								'name'			=> 'Real Name'
 							)
 		));
 
