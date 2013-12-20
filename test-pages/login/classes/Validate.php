@@ -13,7 +13,7 @@ class Validate{
 	{
 		foreach ($items as $item => $rules) {
 			foreach ($rules as $rule => $rule_value) {
-				#echo "{$item} {$rule} must be {$rule_value}!<br>";
+				# echo "{$item} {$rule} must be {$rule_value}!<br>";
 
 				$value = $source[$item];
 				if ($rule === 'required' && empty($value)) {
@@ -25,11 +25,12 @@ class Validate{
 		if (empty($this->_errors)) {
 			$this->_passed = true;
 		}
+		return $this;
 	}
 
-	private function addError($value)
+	private function addError($error)
 	{
-		$this->_errors[] = $value;
+		$this->_errors[] = $error;
 	}
 
 	public function errors()
