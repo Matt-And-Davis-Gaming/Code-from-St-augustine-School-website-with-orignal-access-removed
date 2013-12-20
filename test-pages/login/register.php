@@ -1,5 +1,5 @@
 <?php
-	require '/var/www/test-pages/login/core/init.php';
+	//require '/var/www/test-pages/login/core/init.php';
 
 /*	if(Input::exists()){
 		#echo "Submitted. Username = " . Input::get("username");
