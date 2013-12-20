@@ -29,14 +29,14 @@
 								'name'		=> 'Real Name'
 							)
 		));
-
+/*
 		if ($validation->passed()) {
 			echo 'Success';
 		}else{
 			echo "<pre>", print_r($validation->errors()), "</pre>";
 		}
 	}
-
+*/
 ?>
 
 <form action="" method="post">

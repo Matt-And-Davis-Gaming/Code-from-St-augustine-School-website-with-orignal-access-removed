@@ -6,12 +6,12 @@ class Validate{
 
 	public function __construct()
 	{
-		$this->_db = DB::getInstance();
+		//$this->_db = DB::getInstance();
 	}
 
 	public function check($source, $items = array())
 	{
-		die("<pre>", print_r($items), "</pre>");
+		//die("<pre>", print_r($items), "</pre>");
 		/*foreach ($items as $item => $rules) {
 			foreach ($rules as $rule => $rule_value) {
 				# echo "{$item} {$rule} must be {$rule_value}!<br>";
@@ -21,14 +21,14 @@ class Validate{
 					$this->addError("{$item} is required");
 				}
 			}
-		}*/
+		}
 
 		if (empty($this->_errors)) {
 			$this->_passed = true;
 		}
-		return $this;
+		return $this;*/
 	}
-
+/*
 	private function addError($error)
 	{
 		$this->_errors[] = $error;
@@ -42,5 +42,5 @@ class Validate{
 	public function passed()
 	{
 		return $this->_passed;
-	}
+	}*/
 }
