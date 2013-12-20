@@ -23,7 +23,7 @@ class Validate{
 		}
 
 		if (empty($this->_errors)) {
-			$this->_passes = true;
+			$this->_passed = true;
 		}
 	}
 
