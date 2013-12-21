@@ -11,16 +11,16 @@ class Validate{
 
 	public function check($source, $items = array())
 	{
-		echo "<pre>";
-		 print_r($items);
-		 die("</pre>");
+		# echo "<pre>";
+		# print_r($items);
+		# die("</pre>");
 		foreach ($items as $item => $rules) {
 			foreach ($rules as $rule => $rule_value) {
 				# echo "{$item} {$rule} must be {$rule_value}!<br>";
 
 				$value = $source[$item];
 				if ($rule === 'required' && empty($value)) {
-					$this->addError("{$item} is required");
+					$this->addError($items[$item]['name'] . " is required");
 				}
 			}
 		}
