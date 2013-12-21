@@ -1,7 +1,10 @@
 <?php
+
+ini_set('display_errors', '1');
+error_reporting(-1);
 	require '/var/www/test-pages/login/core/init.php';
 
-/*	if(Input::exists()){
+	if(Input::exists()){
 		#echo "Submitted. Username = " . Input::get("username");
 		$validate = new Validate();
 		$validation = $validate->check($_POST, array(
@@ -29,14 +32,14 @@
 								'name'		=> 'Real Name'
 							)
 		));
-/*
-		if ($validation->passed()) {
+
+		/*if ($validation->passed()) {
 			echo 'Success';
 		}else{
 			echo "<pre>", print_r($validation->errors()), "</pre>";
-		}
+		}*/
 	}
-*/
+
 ?>
 
 <form action="" method="post">
