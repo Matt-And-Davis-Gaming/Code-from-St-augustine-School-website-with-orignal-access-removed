@@ -74,7 +74,7 @@ error_reporting(-1);
 			?>
 			<h2>Errors:</h2><ol>
 			<?php
-			foreach ($validation as $error) {
+			foreach ($validation->errors() as $error) {
 				echo "<li>" . escape($error) . "</li>";
 			}
 			?>
