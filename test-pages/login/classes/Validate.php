@@ -11,7 +11,7 @@ class Validate{
 
 	public function check($source, $items = array())
 	{
-		die("<pre>", print_r($items), "</pre>");
+		die("<pre>" . print_r($items) . "</pre>");
 		foreach ($items as $item => $rules) {
 			foreach ($rules as $rule => $rule_value) {
 				# echo "{$item} {$rule} must be {$rule_value}!<br>";
