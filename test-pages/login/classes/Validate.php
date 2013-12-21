@@ -19,6 +19,9 @@ class Validate{
 				# echo "{$item} {$rule} must be {$rule_value}!<br>";
 
 				$value = trim($source[$item]);
+				if ($rule === 'required' && empty($value)) {
+					$this->addError($items[$item]['name'] . " is required");
+				}
 				if (!empty($value)) {
 					switch ($rule) {
 						case 'min':
@@ -37,11 +40,6 @@ class Validate{
 						
 						case 'unique':
 							# code...
-							break;
-						case 'required':
-							if ($rule === 'required' && empty($value)) {
-								$this->addError($items[$item]['name'] . " is required");
-							}
 							break;
 						
 						default:
