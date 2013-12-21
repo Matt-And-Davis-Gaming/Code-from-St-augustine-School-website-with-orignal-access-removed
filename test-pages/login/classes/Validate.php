@@ -30,7 +30,9 @@ class Validate{
 							break;
 						
 						case 'max':
-							# code...
+							if (strlen($value) > $rule_value) {
+								$this->addError($items[$item]['name'] . " must be a maximum of {$rule_value} characters");
+							}
 							break;
 						
 						case 'matches':
