@@ -70,7 +70,7 @@ error_reporting(-1);
 		</tbody>
 	</table>
 	<?php
-		if ($run) {
+		if (isset($run)) {
 			?>
 			<h2>Errors:</h2><ol>
 			<?php
