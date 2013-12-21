@@ -5,7 +5,7 @@ error_reporting(-1);
 	require '/var/www/test-pages/login/core/init.php';
 
 	if(Input::exists()){
-		echo "Submitted. Username = " . Input::get("username");
+		# echo "Submitted. Username = " . Input::get("username");
 		$validate = new Validate();
 		$validation = $validate->check($_POST, array(
 			'username' 		=> array(
