@@ -36,7 +36,8 @@ error_reporting(-1);
 		if ($validation->passed()) {
 			echo 'Success';
 		}else{
-			echo "<pre>", print_r($validation->errors()), "</pre>";
+			# echo "<pre>", print_r($validation->errors()), "</pre>";
+			$run = true;
 		}
 	}
 
@@ -68,4 +69,17 @@ error_reporting(-1);
 			<tr><td colspan="2" style="text-align:center;float:center;"><input type="submit" value="Register" /></td></tr>
 		</tbody>
 	</table>
+	<?php
+		if ($run) {
+			?>
+			<h2>Errors:</h2><ol>
+			<?php
+			foreach ($validation as $error) {
+				echo "<li>" . escape($error) . "</li>";
+			}
+			?>
+			</ol>
+			<?php
+		}
+	?>
 </form>
