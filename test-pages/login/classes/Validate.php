@@ -19,6 +19,7 @@ class Validate{
 				# echo "{$item} {$rule} must be {$rule_value}!<br>";
 
 				$value = trim($source[$item]);
+				$item = escape($item);
 				if ($rule === 'required' && empty($value)) {
 					$this->addError($items[$item]['name'] . " is required");
 				} elseif (!empty($value)) {
@@ -42,7 +43,10 @@ class Validate{
 							break;
 						
 						case 'unique':
-							# code...
+							$check = DB::getInstance()->get('$rule_value', array($item, '=', $value));
+							if ($check->count()) {
+								$this->addError($items[$item]['name'] . " already exists");
+							}
 							break;
 						
 						default:
