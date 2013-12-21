@@ -6,7 +6,7 @@ error_reporting(-1);
 
 	if(Input::exists()){
 		echo "Submitted. Username = " . Input::get("username");
-		$validate = new Validate();
+		$validate = new Validates();
 		$validation = $validate->check($_POST, array(
 			'username' 		=> array(
 								'required' 	=> true,
