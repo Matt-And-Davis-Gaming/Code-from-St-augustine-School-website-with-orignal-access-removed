@@ -36,7 +36,9 @@ class Validate{
 							break;
 						
 						case 'matches':
-							# code...
+							if ($value != $source[$rule_value]) {
+								$this->addError($items[$item]['name'] . " must match" . $items[$item]['matches']);
+							}
 							break;
 						
 						case 'unique':
