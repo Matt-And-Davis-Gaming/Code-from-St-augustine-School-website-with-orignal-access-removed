@@ -21,8 +21,7 @@ class Validate{
 				$value = trim($source[$item]);
 				if ($rule === 'required' && empty($value)) {
 					$this->addError($items[$item]['name'] . " is required");
-				}
-				if (!empty($value)) {
+				} elseif (!empty($value)) {
 					switch ($rule) {
 						case 'min':
 							if (strlen($value) < $rule_value) {
