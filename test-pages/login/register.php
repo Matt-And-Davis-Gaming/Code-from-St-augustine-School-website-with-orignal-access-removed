@@ -6,7 +6,7 @@ error_reporting(-1);
 
 	if(Input::exists()){
 		echo "Submitted. Username = " . Input::get("username");
-		$validate = new Validates();
+		$validate = new Validate();
 		$validation = $validate->check($_POST, array(
 			'username' 		=> array(
 								'required' 	=> true,
@@ -33,11 +33,11 @@ error_reporting(-1);
 							)
 		));
 
-		/*if ($validation->passed()) {
+		if ($validation->passed()) {
 			echo 'Success';
 		}else{
 			echo "<pre>", print_r($validation->errors()), "</pre>";
-		}*/
+		}
 	}
 
 ?>
