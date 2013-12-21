@@ -50,7 +50,7 @@ error_reporting(-1);
 		<tbody>
 			<tr><div class="field">
 				<td><label for="username">Please choose a username</label></td>
-				<td><input type="text" name="username" id="username" value="<?php echo Input::get('username'); ?>" autocomplete="off" /></td>
+				<td><input type="text" name="username" id="username" value="<?php echo escape(Input::get('username')); ?>" autocomplete="off" /></td>
 			</div></tr>
 			<tr><div class="field">
 				<td><label for="password">Please choose a password</label></td>
@@ -62,7 +62,7 @@ error_reporting(-1);
 			</div></tr>
 			<tr><div class="field">
 				<td><label for="name">Please enter your real name</label></td>
-				<td><input type="text" name="name" id="name" value="<?php echo Input::get('name'); ?>" autocomplete="off" /></td>
+				<td><input type="text" name="name" id="name" value="<?php echo escape(Input::get('name')); ?>" autocomplete="off" /></td>
 			</div></tr>
 
 			<tr><td colspan="2" style="text-align:center;float:center;"><input type="submit" value="Register" /></td></tr>
