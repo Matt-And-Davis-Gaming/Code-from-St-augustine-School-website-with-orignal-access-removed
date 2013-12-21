@@ -43,10 +43,11 @@ class Validate{
 							break;
 						
 						case 'unique':
-							$check = DB::getInstance()->get('$rule_value', array($item, '=', $value));
-							if ($check->count()) {
-								$this->addError($items[$item]['name'] . " already exists");
-							}
+							echo "<pre>", print_r(array($item, '=', $value)), "</pre>";
+							//$check = $this->_db->get('$rule_value', array($item, '=', $value));
+							//if ($check->count()) {
+							//	$this->addError($items[$item]['name'] . " already exists");
+							//}
 							break;
 						
 						default:
