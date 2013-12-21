@@ -57,11 +57,11 @@ error_reporting(-1);
 				<td><input type="password" name="password" id="password" /></td>
 			</div></tr>
 			<tr><div class="field">
-				<td><label for="password_again">Repeat your password please</label></td>
+				<td><label for="password_again">Please repeat your password</label></td>
 				<td><input type="password" name="password_again" id="password_again" /></td>
 			</div></tr>
 			<tr><div class="field">
-				<td><label for="name">Please enter your name</label></td>
+				<td><label for="name">Please enter your real name</label></td>
 				<td><input type="text" name="name" id="name" value="" autocomplete="off" /></td>
 			</div></tr>
 
