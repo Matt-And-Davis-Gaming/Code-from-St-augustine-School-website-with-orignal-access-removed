@@ -18,9 +18,33 @@ class Validate{
 			foreach ($rules as $rule => $rule_value) {
 				# echo "{$item} {$rule} must be {$rule_value}!<br>";
 
-				$value = $source[$item];
+				$value = trim($source[$item]);
 				if ($rule === 'required' && empty($value)) {
 					$this->addError($items[$item]['name'] . " is required");
+				} elseif (!empty($value)) {
+					switch ($rule) {
+						case 'min':
+							if (strlen($value) < $rule_value) {
+								$this->addError($items[$item]['name'] . " must be a minimum of {$rule_value} characters");
+							}
+							break;
+						
+						case 'max':
+							# code...
+							break;
+						
+						case 'matches':
+							# code...
+							break;
+						
+						case 'unique':
+							# code...
+							break;
+						
+						default:
+							# code...
+							break;
+					}
 				}
 			}
 		}
