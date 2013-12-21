@@ -103,13 +103,14 @@ class DB{
 				$sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
 				if(!$this->query($sql, array($value))->error())
 				{
+					echo "worked";
 					return $this;
 				}
 				
 			}
 			
 		}
-
+		echo "QUery failed";
 		return false;
 		
 	}
