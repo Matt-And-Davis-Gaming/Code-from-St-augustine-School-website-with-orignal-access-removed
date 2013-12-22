@@ -56,6 +56,8 @@ if(Input::exists()){
 					'group' 	=> 1
 				));
 
+				Session::flash('home', "You, {Input::get('name')}, have been successfully registered and can now log in. Have fun!");
+				header('Location: flash.php');
 			}catch(Exception $e){
 				die($e->getMessage());
 			}
