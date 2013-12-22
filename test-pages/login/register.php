@@ -57,7 +57,7 @@ if(Input::exists()){
 				));
 
 				Session::flash('home', "You, " . Input::get('name') . ", have been successfully registered and can now log in. Have fun!");
-				header('Location: flash.php');
+				Redirect::to("flash.php");
 			}catch(Exception $e){
 				die($e->getMessage());
 			}
