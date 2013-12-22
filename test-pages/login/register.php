@@ -42,7 +42,7 @@ if(Input::exists()){
 
 		if ($validation->passed()) {
 			# echo 'Success';
-			Session::flash('succuss', 'You registered successfully');
+			Session::flash('success', 'You registered successfully');
 			header('Location: flash.php');
 		}else{
 			# echo "<pre>", print_r($validation->errors()), "</pre>";
