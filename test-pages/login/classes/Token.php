@@ -2,6 +2,6 @@
 class Token{
 	public static function generate()
 	{
-		return Session::put(Config::get("session/CSRF_protect"), uniqid());
+		return Session::put(Config::get("session/CSRF_protect"), sha1(uniqid()));
 	}
 }
