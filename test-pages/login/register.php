@@ -4,7 +4,8 @@ ini_set('display_errors', '1');
 error_reporting(-1);
 	require '/var/www/test-pages/login/core/init.php';
 
-	if(Input::exists()){
+if(Input::exists()){
+	if (Token::check(Input::get('token'))) {
 		# echo "Submitted. Username = " . Input::get("username");
 		$validate = new Validate();
 		$validation = $validate->check($_POST, array(
@@ -40,7 +41,7 @@ error_reporting(-1);
 			$run = true;
 		}
 	}
-
+}
 ?>
 
 <form action="" method="post">
