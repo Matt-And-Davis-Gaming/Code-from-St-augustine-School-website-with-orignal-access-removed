@@ -42,8 +42,25 @@ if(Input::exists()){
 
 		if ($validation->passed()) {
 			# echo 'Success';
+			$user = new User();
+			try{
+
+				$user->create(array(
+					'username' 	=> 'value',
+					'password' 	=> 'value',
+					'salt' 		=> 'value',
+					'name' 		=> 'value',
+					'joined' 	=> 'value',
+					'group' 	=> 'value',
+				));
+
+			}catch(Exception $e){
+				die($e->getMessage());
+			}
+			/*
 			Session::flash('success', 'You registered successfully');
 			header('Location: flash.php');
+			*/
 		}else{
 			# echo "<pre>", print_r($validation->errors()), "</pre>";
 			$run = true;
