@@ -43,6 +43,9 @@ if(Input::exists()){
 		if ($validation->passed()) {
 			# echo 'Success';
 			$user = new User();
+
+			echo $salt = Hash::salt(32);
+			die();
 			try{
 
 				$user->create(array(
