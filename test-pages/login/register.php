@@ -66,7 +66,7 @@ error_reporting(-1);
 				<td><input type="text" name="name" id="name" value="<?php echo escape(Input::get('name')); ?>" autocomplete="off" /></td>
 			</div></tr>
 
-			<input type="hidded" name="token" value="<?php echo Token::generate(); ?>" />
+			<input type="hidden" name="token" value="<?php echo Token::generate(); ?>" />
 
 			<tr><td colspan="2" style="text-align:center;float:center;"><input type="submit" value="Register" /></td></tr>
 		</tbody>
