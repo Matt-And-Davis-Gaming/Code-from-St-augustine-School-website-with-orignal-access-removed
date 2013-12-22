@@ -1,2 +1,2 @@
 ErrorDocument 404 /error/httpd/error.php
-ErrorDocument 403 "Not Allowed"
+ErrorDocument 403 "Sorry! The page has denied access. Error Code: 403 See our guidelines at <a href="/help/policies#403"> Error 403 not allowed F.A.Q.</a>"
