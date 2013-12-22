@@ -24,10 +24,12 @@ class Session{
 	public static function flash($name, $contents = '')
 	{
 		if (self::exists($name)) {
+			echo '{$name} exists';
 			$session = self::get($name);
 			self::delete($name);
 			return $session;
 		}else{
+			echo "{$name} does not exist";
 			self::put($name, $contents);
 		}
 		return '';
