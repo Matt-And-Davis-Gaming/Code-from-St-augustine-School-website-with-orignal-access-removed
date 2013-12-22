@@ -6,7 +6,7 @@ error_reporting(-1);
 
 if(Input::exists()){
 	if (!Token::check(Input::get('token'))) {
-		echo "CSRF request detected";
+		echo "<a href=\"http://en.wikipedia.org/wiki/Cross-site_request_forgery\">CSRF request detected. Click to read more.</a>";
 	}else{
 		# echo "Submitted. Username = " . Input::get("username");
 		$validate = new Validate();
