@@ -1,0 +1,1 @@
+ErrorDocument 404 /errors/httpd/error.php
