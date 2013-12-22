@@ -1,1 +1,2 @@
 ErrorDocument 404 /error/httpd/error.php
+ErrorDocument 403 "Not Allowed"
