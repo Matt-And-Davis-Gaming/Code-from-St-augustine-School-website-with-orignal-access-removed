@@ -5,6 +5,7 @@
 	if (Input::exists()) {
 		if(Token::check(Input::get('token'))){
 
+			# validate the stuff
 			$validate = new Validate();
 			$validation = $validate->check($_POST, array(
 				'username'  => array('required' => true, 'name' => 'Username'),
@@ -12,9 +13,11 @@
 			));
 
 			if($validation->passed()){
-				echo 'Log in';
+				# Log in
+
+				
 			}else{
-				echo "fail";
+				# fail
 				$go = true;
 			}
 		}else{
@@ -45,6 +48,7 @@
 			<tr><td colspan="2" style="text-align:center;"><input type="submit" value="Log In" /></td></tr>
 		</tbody>
 		<?php
+			# echo errors
 			if (isset($go)) {
 				if ($go === true) {
 					?>
