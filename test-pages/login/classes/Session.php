@@ -21,7 +21,7 @@ class Session{
 		}
 	}
 
-	public static function flash($name, $contents = '', $redirect = 'index.php')
+	public static function flash($name, $redirect = 'index.php', $contents = '')
 	{
 		if (self::exists($name)) {
 			#echo '{$name} exists';
