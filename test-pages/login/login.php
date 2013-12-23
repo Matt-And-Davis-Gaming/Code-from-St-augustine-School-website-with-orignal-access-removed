@@ -24,6 +24,8 @@
 				# check if login is successful
 				if ($login) {
 					echo "success";
+				}else{
+					  echo "sorry, we could not log you in";
 				}
 			}else{
 				# fail
