@@ -49,7 +49,7 @@ class User{
 
 				return true;
 			}else{
-				die("Deadly run time error");
+				//die("Deadly run time error");
 			}
 		}
 	}
