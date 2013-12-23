@@ -10,7 +10,7 @@ class DB{
 		$_results,
 		$_count = 0;
 
-	# connect to db when class is enstanciated (spelling) and storred in $this->_pdo
+	# connect to db when class is enstanciated (spelling) and stored in $this->_pdo
 	private function __construct()
 	{
 		#try loop to start the pdo that catches PDOEXexption

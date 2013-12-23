@@ -15,5 +15,13 @@ require_once 'core/init.php';
 # echo "User id is: ";
 $user = new User();
 if($user->isLoggedIn()){
-	echo "Logged In";
+	?>
+		<p>Hello <a href="#"><?php echo escape($user->data()->name); ?></a></p>
+
+		<ol>
+			<li><a href="logout.php">Log out</a></li>
+		</ol>
+	<?php
+}else{
+	
 }
