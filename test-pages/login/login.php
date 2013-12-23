@@ -22,6 +22,6 @@
 
 
 			<input type="hidden" name="token" value="<?php echo Token::generate(); ?>" />
-			<tr><td colspan="2"><input type="submit" value="Log In" /></td></tr>
+			<tr><td colspan="2" style="text-align:center;"><input type="submit" value="Log In" /></td></tr>
 		</tbody>
 </form>
