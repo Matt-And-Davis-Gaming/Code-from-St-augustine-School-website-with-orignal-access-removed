@@ -11,4 +11,6 @@ require_once 'core/init.php';
 	'name'		=> 'Dale Garrett'
 ));*/
 
-echo "<pre>", print_r($_SESSION), "</pre>";
+//echo "<pre>", print_r($_SESSION), "</pre>";
+echo "User id is: ";
+$user = new User();
