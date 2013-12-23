@@ -17,6 +17,8 @@
 				$go = true;
 			}
 		}
+	}else{
+		echo "Please enter the info below";
 	}
 ?>
 
