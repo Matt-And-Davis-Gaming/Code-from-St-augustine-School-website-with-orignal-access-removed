@@ -20,7 +20,7 @@ class User{
 	{
 		if($user){
 			$field = (is_numeric($user)) ? 'id' : 'username' ;
-			$data = $this->_db->get(Config::get('utable'), array($field, '=', $user)));
+			$data = $this->_db->get(Config::get('utable'), array($field, '=', $user));
 
 			if ($data->count()) {
 				$this->_data = $data->first();
