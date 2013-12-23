@@ -12,8 +12,9 @@
 			));
 
 			if($validation->passed()){
-				# log user in
+				echo 'Log in';
 			}else{
+				echo "fail";
 				$go = true;
 			}
 		}else{
