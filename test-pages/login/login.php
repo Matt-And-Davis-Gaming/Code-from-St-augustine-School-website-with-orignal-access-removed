@@ -44,17 +44,19 @@
 			<tr><td colspan="2" style="text-align:center;"><input type="submit" value="Log In" /></td></tr>
 		</tbody>
 		<?php
-			if ($go === true) {
-				?>
-					<h1>Errors:</h1>
-					<ol>
-				<?php
-					foreach ($validation->errors() as $error) {
-						echo "<li>{$error}</li>";
-					}
-				?>
-					</ol>
-				<?php
+			if (isset($go)) {
+				if ($go === true) {
+					?>
+						<h1>Errors:</h1>
+						<ol>
+					<?php
+						foreach ($validation->errors() as $error) {
+							echo "<li>{$error}</li>";
+						}
+					?>
+						</ol>
+					<?php
+				}
 			}
 		?>
 </form>
