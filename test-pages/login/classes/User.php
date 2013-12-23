@@ -13,8 +13,16 @@ class User{
 		if (!$user) {
 			if(Session::exists($this->_sessionName)){
 				$user = Session::get($this->_sessionName);
-				echo $user;
+				# user ID is now stored in $user
+
+				if($this->find($user)){
+					$this->_isLoggedIn = true;
+				}else{
+					# prosses logout
+				}
 			}
+		}else {
+			$this->find($user);
 		}
 
 	}
@@ -57,7 +65,7 @@ class User{
 		return false;
 	}
 
-	private function data(){
+	public function data(){
 		return $this->_data;
 	}
 }
