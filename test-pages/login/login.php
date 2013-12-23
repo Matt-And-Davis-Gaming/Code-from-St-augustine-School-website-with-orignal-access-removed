@@ -7,8 +7,8 @@
 
 			$validate = new Validate();
 			$validation = $validate->check($_POST, array(
-				'username'  => array('required' => true),
-				'password'  => array('required' => true)
+				'username'  => array('required' => true, 'name' => 'Username'),
+				'password'  => array('required' => true, 'name' => 'Password')
 			));
 
 			if($validation->passed()){
