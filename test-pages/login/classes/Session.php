@@ -21,12 +21,11 @@ class Session{
 		}
 	}
 
-	public static function flash($name, $redirect = null, $contents = '')
+	public static function flash($name, $contents = '')
 	{
 		if (self::exists($name)) {
 			#echo '{$name} exists';
 			$session = self::get($name);
-			self::put('redirect', $redirect);
 			self::delete($name);
 			return $session;
 		}else{

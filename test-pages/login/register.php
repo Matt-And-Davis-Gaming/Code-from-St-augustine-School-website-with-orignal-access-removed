@@ -57,7 +57,7 @@ if(Input::exists()){
 					'group' 	=> 1
 				));
 
-				Session::flash('home', "login.php", "You, " . Input::get('name') . ", have been successfully registered and can now log in. Have fun!");
+				Session::flash('home', "You, " . Input::get('name') . ", have been successfully registered and can now log in. Have fun!");
 				Redirect::to("flash.php");
 			}catch(Exception $e){
 				die($e->getMessage());
