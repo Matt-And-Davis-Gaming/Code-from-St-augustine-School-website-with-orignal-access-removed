@@ -15,7 +15,16 @@
 			if($validation->passed()){
 				# Log in
 
-				
+				# make user object
+				$user = new User();
+
+				# call login method
+				$login = $user->login(Input::get('username'), Input::get('password'));
+
+				# check if login is successful
+				if ($login) {
+					echo "success";
+				}
 			}else{
 				# fail
 				$go = true;
