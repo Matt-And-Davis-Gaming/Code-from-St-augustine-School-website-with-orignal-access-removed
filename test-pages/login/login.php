@@ -6,16 +6,22 @@
 ?>
 
 <form method="post" action="" >
-	<div class="field">
-		<label for="username">Username </label>
-		<input type="text" name="username" id="username" autocompleate="off" />
-	</div>
-	<div class="filed">
-		<label for="password">Password </label>
-		<input type="text" name="password" id="password" autocompleate="off" />
-	</div>
+	<table>
+		<thead>
+
+		</thead>
+		<tbody>
+			<div class="field">
+				<tr><td><label for="username">Username </label></td>
+				<td><input type="text" name="username" id="username" autocompleate="off" /></td></tr>
+			</div>
+			<div class="filed">
+				<tr><td><label for="password">Password </label></td>
+				<td><input type="text" name="password" id="password" autocompleate="off" /></td></tr>
+			</div>
 
 
-	<input type="hidden" name="token" value="<?php echo Token::generate(); ?>" />
-	<input type="submit" value="Log In" />
+			<input type="hidden" name="token" value="<?php echo Token::generate(); ?>" />
+			<tr><td colspan="2"><input type="submit" value="Log In" /></td></tr>
+		</tbody>
 </form>
