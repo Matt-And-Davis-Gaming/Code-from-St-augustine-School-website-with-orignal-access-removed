@@ -1,11 +1,14 @@
 <?php
 class User{
 	private $_db,
-			$_data;
+			$_data
+			$_sessionName;
 
 	public function __construct($user = null)
 	{
 		$this->_db = DB::getInstance();
+
+		$this->_sessionName = Config::get("session/session_name");
 	}
 
 	public function create($fields = array())
@@ -39,7 +42,8 @@ class User{
 		$user = $this->find($username);
 		if ($user) {
 			if ($this->data()->password === Hash::make($password, $this->data()->salt)) {
-				echo 'ok';
+				Session::put($this->_sessionName, $this->data()->id);
+				return true;
 			}
 		}
 		return false;
