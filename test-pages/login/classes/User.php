@@ -1,6 +1,7 @@
 <?php
 class User{
-	private $_db;
+	private $_db,
+			$_data;
 
 	public function __construct($user = null)
 	{
@@ -19,14 +20,20 @@ class User{
 	{
 		if($user){
 			$field = (is_numeric($user)) ? 'id' : 'username' ;
-			$data = $this->_db->get(Config::get('utable'));
+			$data = $this->_db->get(Config::get('utable', array($field, '=', $user)));
+
+			if ($data->count()) {
+				$this->_data = $data->first();
+
+				return true;
+			}
 		}
 	}
 
 	public function login($username = null, $password = null)
 	{
 		$user = $this->find($username);
-
+		echo "<pre>", print_r($this->_data), "</pre>";
 		return false;
 	}
 }
