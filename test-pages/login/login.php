@@ -44,7 +44,7 @@
 			<tr><td colspan="2" style="text-align:center;"><input type="submit" value="Log In" /></td></tr>
 		</tbody>
 		<?php
-			if ($go) {
+			if ($go === true) {
 				?>
 					<h1>Errors:</h1>
 					<ol>
