@@ -23,7 +23,9 @@
 
 				# check if login is successful
 				if ($login) {
-					echo "success";
+					
+				Session::flash('home', "You, " . Input::get('username') . ", have been successfully logged in. Have fun!");
+				Redirect::to("flash.php");
 				}else{
 					  echo "sorry, we could not log you in";
 				}
