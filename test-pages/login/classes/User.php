@@ -9,6 +9,8 @@ class User{
 		$this->_db = DB::getInstance();
 
 		$this->_sessionName = Config::get("session/session_name");
+
+		
 	}
 
 	public function create($fields = array())
