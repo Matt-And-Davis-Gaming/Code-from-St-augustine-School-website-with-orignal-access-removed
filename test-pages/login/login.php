@@ -16,6 +16,8 @@
 			}else{
 				$go = true;
 			}
+		}else{
+			echo "<a href=\"http://en.wikipedia.org/wiki/Cross-site_request_forgery\">CSRF request detected. Click to read more.</a>";
 		}
 	}else{
 		echo "Please enter the info below";
@@ -42,7 +44,7 @@
 			<tr><td colspan="2" style="text-align:center;"><input type="submit" value="Log In" /></td></tr>
 		</tbody>
 		<?php
-			if (isset($go)) {
+			if ($go) {
 				?>
 					<h1>Errors:</h1>
 					<ol>
