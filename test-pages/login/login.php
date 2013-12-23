@@ -6,7 +6,7 @@
 		if(Token::check(Input::get('token'))){
 
 			$validate = new Validate();
-			$validation = $validate->check(array(
+			$validation = $validate->check($_POST, array(
 				'username'  => array('required' => true),
 				'password'  => array('required' => true)
 			));
