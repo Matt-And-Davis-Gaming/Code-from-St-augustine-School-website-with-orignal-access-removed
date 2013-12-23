@@ -19,7 +19,8 @@ class User{
 	public function find($user = null)
 	{
 		if($user){
-			$field = (is_numeric($user)) ? 'id' : 'username' ;
+			$field = (is_numeric($user) && !ctype_alnum($user)) ? 'id' : 'username' ;
+			die($field);
 			$data = $this->_db->get(Config::get('utable'), array($field, '=', $user));
 
 			if ($data->count()) {
