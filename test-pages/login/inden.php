@@ -14,4 +14,6 @@ require_once 'core/init.php';
 # echo "<pre>", print_r($_SESSION), "</pre>";
 # echo "User id is: ";
 $user = new User();
-echo $user->data()->username;
+if($user->isLoggedIn()){
+	echo "Logged In";
+}
