@@ -26,6 +26,8 @@ class User{
 				$this->_data = $data->first();
 
 				return true;
+			}else{
+				die("Deadly run time error");
 			}
 		}
 	}
