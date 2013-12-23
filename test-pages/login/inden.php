@@ -10,3 +10,5 @@ require_once 'core/init.php';
 	'salt'		=> 'salt',
 	'name'		=> 'Dale Garrett'
 ));*/
+
+echo "<pre>", print_r($_SESSION), "</pre>";
