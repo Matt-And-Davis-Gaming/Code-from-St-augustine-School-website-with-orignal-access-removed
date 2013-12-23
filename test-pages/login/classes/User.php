@@ -1,7 +1,7 @@
 <?php
 class User{
 	private $_db,
-			$_data
+			$_data,
 			$_sessionName;
 
 	public function __construct($user = null)
