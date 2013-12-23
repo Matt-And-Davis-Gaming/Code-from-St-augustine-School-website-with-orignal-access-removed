@@ -49,7 +49,11 @@ class Validate{
 								$this->addError($items[$item]['name'] . " already exists");
 							}
 							break;
-						
+						case 'alnum':
+							if(!ctype_alnum($value) or is_numeric($value)){
+								$this->addError($items[$item]['name'] . " needs to be English Standerd Keybord Characters of the set: {a-z, A-Z, 1-9} and not compleatly numeric.");
+							}
+							break;
 						default:
 							# code...
 							break;

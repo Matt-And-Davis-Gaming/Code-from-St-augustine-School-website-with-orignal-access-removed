@@ -20,6 +20,7 @@ if(Input::exists()){
 								'min' 		=> 2,
 								'max'		=> 20,
 								'unique'	=> Config::get('mysql/db'),
+								'alnum'		=> true,
 								'name'		=> 'Username'
 							),
 			'password' 		=> array(
