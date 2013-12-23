@@ -1,5 +1,8 @@
 <?php
 	require '/var/www/test-pages/login/core/init.php';
+	if (Input::exists()) {
+		echo "Hello";
+	}
 ?>
 
 <form method="post" action="" >
