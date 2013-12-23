@@ -37,7 +37,15 @@ class User{
 	public function login($username = null, $password = null)
 	{
 		$user = $this->find($username);
-		echo "<pre>", print_r($this->_data), "</pre>";
+		if ($user) {
+			if ($this->data()->password === Hash::make($password, $this->data()->salt)) {
+				echo 'ok';
+			}
+		}
 		return false;
+	}
+
+	private function data(){
+		return $this->_data;
 	}
 }
