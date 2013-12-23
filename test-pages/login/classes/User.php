@@ -20,7 +20,8 @@ class User{
 	{
 		if($user){
 			$field = (is_numeric($user) && !ctype_alnum($user)) ? 'id' : 'username' ;
-			die($field);
+			echo "<pre>", print_r(array($field, '=', $user)), "</pre>";
+			die();
 			$data = $this->_db->get(Config::get('utable'), array($field, '=', $user));
 
 			if ($data->count()) {
