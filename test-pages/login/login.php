@@ -1,3 +1,7 @@
+<?php
+	require '/var/www/test-pages/login/core/init.php';
+?>
+
 <form method="post" action="" >
 	<div class="field">
 		<label for="username">Username </label>
