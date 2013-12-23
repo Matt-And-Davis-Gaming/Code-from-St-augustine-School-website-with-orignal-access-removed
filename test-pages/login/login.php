@@ -1,5 +1,7 @@
 <?php
 	require '/var/www/test-pages/login/core/init.php';
+	ini_set('display_errors', '1');
+	error_reporting(-1);
 	if (Input::exists()) {
 		if(Token::check(Input::get('token'))){
 
