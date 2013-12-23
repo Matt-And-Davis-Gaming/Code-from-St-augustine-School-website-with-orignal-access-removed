@@ -1,3 +1,4 @@
+<h1>
 <?php
 require '/var/www/test-pages/login/core/init.php';
 if(Session::exists('home')){
@@ -9,3 +10,5 @@ if(Session::exists('in')){
 	echo Session::flash('in');
 	header('Refresh: 3; inden.php');
 }
+?>
+</h1>
