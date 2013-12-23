@@ -19,6 +19,7 @@ class User{
 	{
 		if($user){
 			$field = (is_numeric($user)) ? 'id' : 'username' ;
+			$data = $this->_db->get(Config::get('utable'));
 		}
 	}
 

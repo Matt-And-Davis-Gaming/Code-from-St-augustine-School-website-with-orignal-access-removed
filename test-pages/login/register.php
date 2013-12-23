@@ -19,7 +19,7 @@ if(Input::exists()){
 								'required' 	=> true,
 								'min' 		=> 2,
 								'max'		=> 20,
-								'unique'	=> Config::get('mysql/db'),
+								'unique'	=> Config::get('mysql/utable'),
 								'alnum'		=> true,
 								'name'		=> 'Username'
 							),
