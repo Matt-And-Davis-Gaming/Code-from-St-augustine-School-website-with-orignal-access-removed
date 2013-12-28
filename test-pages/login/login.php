@@ -59,6 +59,12 @@
 
 			<input type="hidden" name="token" value="<?php echo Token::generate(); ?>" />
 			<tr><td colspan="2" style="text-align:center;"><input type="submit" value="Log In" /></td></tr>
+			<div class="field">
+				<label for="remember">
+				<tr><td><input type="checkbox" name="remember" id="remember" /></td>
+				<td>Remember Me</td></tr>
+				</label>
+			</div>
 		</tbody>
 		<?php
 			# echo errors
