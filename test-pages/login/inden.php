@@ -16,10 +16,11 @@ require_once 'core/init.php';
 $user = new User();
 if($user->isLoggedIn()){
 	?>
-		<p>Hello <a href="#"><?php echo escape($user->data()->name); ?></a></p>
+		<p>Hello <a href="#"><?php echo escape($user->data()->name); ?></a>!</p>
 
 		<ol>
 			<li><a href="logout.php">Log out</a></li>
+			<li></li>
 		</ol>
 	<?php
 }else{
