@@ -2,7 +2,7 @@
 class Cookie{
 	public static function exists($cook)
 	{
-		return = (isset($_COOKIE[$cook])) ? true : false ;
+		return (isset($_COOKIE[$cook])) ? true : false ;
 	}
 	public static function get($name)
 	{
