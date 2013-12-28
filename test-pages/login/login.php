@@ -18,6 +18,9 @@
 				# make user object
 				$user = new User();
 
+				# set the var for the rember me
+
+				$remember = (Input::get('remember') === 'on') ? true : false ;
 				# call login method
 				$login = $user->login(Input::get('username'), Input::get('password'));
 
