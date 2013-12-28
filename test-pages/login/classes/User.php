@@ -69,7 +69,7 @@ class User{
 
 					# insert data into the stuff
 					if(!$hashCheck->count()){
-						$this->_db->insert(array(
+						$this->_db->insert(Config::get('mysql/table/session'), array(
 							'user_id'		=> $this->data()->id,
 							'hash'			=> $hash
 						));
