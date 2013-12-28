@@ -11,7 +11,7 @@ class User{
 		$this->_db = DB::getInstance();
 
 		$this->_sessionName = Config::get("session/session_name");
-		$this->_cookieName = Config::get("remember/cookie");
+		$this->_cookieName = Config::get("remember/cookie_name");
 
 		if (!$user) {
 			if(Session::exists($this->_sessionName)){
