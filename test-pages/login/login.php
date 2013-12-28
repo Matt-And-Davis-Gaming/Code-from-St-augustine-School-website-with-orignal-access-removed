@@ -57,14 +57,14 @@
 			</div>
 
 			<div class="field">
-				<label for="remember">
-					<tr>
-						<td colspan="2">
+				<tr>
+					<td colspan="2">
+						<label for="remember">
 							<input type="checkbox" name="remember" id="remember" />
 							Remember Me
-						</td>
-					</tr>
-				</label>
+						</label>
+					</td>
+				</tr>
 			</div>
 
 			<input type="hidden" name="token" value="<?php echo Token::generate(); ?>" />
