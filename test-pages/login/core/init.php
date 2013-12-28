@@ -7,6 +7,11 @@ $GLOBALS['config'] = array(
 				'username'	=> 'root',
 				'password'	=>  PASS,
 				'db'		=> 'users',
+				'table'		=>  array(
+					'users'		=> 'users',
+					'session'	=> 'users_session',
+					'groups'	=> 'groups'
+				),
 				'utable'	=> 'users'
 			),
 	'remember'	=> array(
