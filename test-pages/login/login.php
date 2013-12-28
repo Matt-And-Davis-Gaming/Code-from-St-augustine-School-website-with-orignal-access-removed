@@ -78,3 +78,5 @@
 			}
 		?>
 </form>
+
+<p>Don't have an account yet? <a href="register.php">Register Here!</a></p>
