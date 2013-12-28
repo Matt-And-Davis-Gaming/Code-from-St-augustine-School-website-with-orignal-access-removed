@@ -58,8 +58,8 @@
 
 			<div class="field">
 				<label for="remember">
-					<input type="checkbox" name="remember" id="remember" />
-					Remember Me
+					<tr><td colspan=2><input type="checkbox" name="remember" id="remember" />
+					Remember Me</td></tr>
 				</label>
 			</div>
 
