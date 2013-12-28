@@ -24,5 +24,5 @@ if($user->isLoggedIn()){
 		</ol>
 	<?php
 }else{
-	
+	Redirect::to('login.php');
 }
