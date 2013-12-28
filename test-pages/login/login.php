@@ -22,7 +22,7 @@
 
 				$remember = (Input::get('remember') === 'on') ? true : false ;
 				# call login method
-				$login = $user->login(Input::get('username'), Input::get('password'));
+				$login = $user->login(Input::get('username'), Input::get('password'), $remember);
 
 				# check if login is successful
 				if ($login) {
