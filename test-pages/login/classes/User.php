@@ -64,7 +64,7 @@ class User{
 				Session::put($this->_sessionName, $this->data()->id);
 
 				if($remember){
-					die(Config::get('mysql/table/session'));
+					//die(Config::get('mysql/table/session'));
 					$hash = Hash::unique();
 					$hashCheck = $this->_db->get(Config::get('mysql/table/session'), array('user_id', '=', $this->data()->id));
 
