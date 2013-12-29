@@ -62,6 +62,7 @@ class User{
 		if(!$username && !$password && $this->exists()){
 			die('You already logged in, however your session has expired. Logging you in now.');
 		}else{
+			die('login method has been called with all peramiters');
 			$user = $this->find($username);
 			if ($user) {
 				if ($this->data()->password === Hash::make($password, $this->data()->salt)) {
