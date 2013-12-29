@@ -16,7 +16,7 @@ $GLOBALS['config'] = array(
 			),
 	'remember'	=> array(
 				'cookie_name'	=> 'hash',
-				'cookie_expiry'	=>  60*60*24*31*5
+				'cookie_expiry'	=>  604800
 			),
 	'session'	=> array(
 				'session_name'	=> 'user',
