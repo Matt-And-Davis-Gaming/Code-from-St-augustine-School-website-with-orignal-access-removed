@@ -8,6 +8,7 @@ class Log{
 				'date'			=> date('Y-m-d H:i:s')
 			));
 		else:
+			echo "<pre>", print_r(get_defined_vars()), "</pre>";
 			die("not all log vars are set");
 		endif;
 	}
