@@ -40,6 +40,7 @@ if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Confi
 	if ($hashCheck->count()) {
 		# hash matches, log user in
 		$user = new User($hashCheck->first()->user_id);
+		$user->login();
 	}
 
 }
