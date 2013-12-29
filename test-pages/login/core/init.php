@@ -32,5 +32,13 @@ require_once '/var/www/test-pages/login/functions/sanitize.php';
 
 
 if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('session/session_name'))){
-	echo "User asked to be remembered";
+	# User asked to be remembered
+
+	$hash = Cookie::get(Config::get('remember/cookie_name'));
+	$hashCheck = DB::getInstance()->get(Config::get('mysql/table/session'), array('hash', '=', $hash));
+
+	if ($hashCheck->count()) {
+		echo 'Hash matches, log user in.';
+	}
+
 }
