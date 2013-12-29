@@ -60,7 +60,7 @@ class User{
 	{
 		
 		if(!$username && !$password && $this->exists()){
-			# log in
+			die('You already logged in, however your session has expired. Logging you in now.');
 		}else{
 			$user = $this->find($username);
 			if ($user) {
@@ -91,6 +91,11 @@ class User{
 			}
 		}
 		return false;
+	}
+
+	public function exists()
+	{
+		 return (!empty($this->data())) ? true : false ;
 	}
 
 	public function logout()
