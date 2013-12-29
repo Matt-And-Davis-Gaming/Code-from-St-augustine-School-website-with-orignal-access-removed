@@ -45,7 +45,7 @@ class User{
 			$field = (is_numeric($user)) ? 'id' : 'username' ;
 			# echo "<pre>", print_r(array($field, '=', $user)), "</pre>";
 			# die();
-			$data = $this->_db->get(Config::get('mysql/utable'), array($field, '=', $user));
+			$data = $this->_db->get(Config::get('mysql/table/users'), array($field, '=', $user));
 
 			if ($data->count()) {
 				$this->_data = $data->first();
