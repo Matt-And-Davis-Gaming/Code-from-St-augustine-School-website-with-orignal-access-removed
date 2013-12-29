@@ -95,7 +95,7 @@ class User{
 
 	public function exists()
 	{
-		 return (!empty($this->data())) ? true : false ;
+		 return (!empty($this->_data)) ? true : false ;
 	}
 
 	public function logout()
