@@ -29,3 +29,8 @@ spl_autoload_register(function($class){
 });
 
 require_once '/var/www/test-pages/login/functions/sanitize.php';
+
+
+if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('session/session_name'))){
+	echo "User asked to be remembered";
+}
