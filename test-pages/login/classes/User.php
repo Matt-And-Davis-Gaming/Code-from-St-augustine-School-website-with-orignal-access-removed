@@ -38,7 +38,7 @@ class User{
 			throw new Exception("There was an error. Please read our <a href=\"/help/policies#Registration%20Problems\">F.A.Q. on Registration Problems</a>");
 			
 		}
-		$this->_log->log('registered', $this->data()->name);
+		$this->_log->log('registered', $this->data()->name, 'registration');
 	}
 
 	public function find($user = null)
@@ -66,7 +66,7 @@ class User{
 			echo 'You already logged in, however your session has expired. Logging you in now.';
 
 			Session::put($this->_sessionName, $this->data()->id);
-			$this->_log->log('logged in automaticly', $this->data()->name);
+			$this->_log->log('logged in automaticly', $this->data()->name, 'login');
 
 			Redirect::to('inden.php');
 
@@ -88,7 +88,7 @@ class User{
 								'user_id'		=> $this->data()->id,
 								'hash'			=> $hash
 							));
-							$this->_log->log('logged in', $this->data()->name);
+							$this->_log->log('logged in', $this->data()->name, 'login');
 						}else{
 							$hash = $hashCheck->first()->hash;
 						}
@@ -112,7 +112,7 @@ class User{
 	public function logout()
 	{
 		$this->_db->delete(Config::get('mysql/table/session'), array('user_id', '=', $this->data()->id));
-		$this->_log->log('logged out', $this->data()->name);
+		$this->_log->log('logged out', $this->data()->name, 'logout');
 
 		Session::delete($this->_sessionName);
 		Cookie::delete($this->_cookieName);
