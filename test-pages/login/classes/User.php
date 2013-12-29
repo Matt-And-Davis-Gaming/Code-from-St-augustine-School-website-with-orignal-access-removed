@@ -49,7 +49,7 @@ class User{
 			# die();
 			$data = $this->_db->get(Config::get('mysql/table/users'), array($field, '=', $user));
 
-			if ($data->count()) {
+			if ($data->count()) { 
 				$this->_data = $data->first();
 
 				return true;
