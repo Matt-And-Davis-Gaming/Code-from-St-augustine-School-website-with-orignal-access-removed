@@ -10,7 +10,10 @@ $GLOBALS['config'] = array(
 				'table'		=>  array(
 					'users'		=> 'users',
 					'session'	=> 'users_session',
-					'groups'	=> 'groups'
+					'groups'	=> 'groups',
+					'logs'		=> array(
+						'login'		=> 'rec'
+					)
 				),
 				'utable'	=> 'users'
 			),
