@@ -106,7 +106,10 @@ class User{
 
 	public function logout()
 	{
+		$this->_db->delete(Config::get('mysql/table/session'), array('user_id', '=', $this->data()->id));
+
 		Session::delete($this->_sessionName);
+		Cookie::delete($this->_cookieName);
 	}
 
 	public function data(){
