@@ -62,7 +62,7 @@ class User{
 		if(!$username && !$password && $this->exists()){
 			echo 'You already logged in, however your session has expired. Logging you in now.';
 
-			Session::put($this->_sessionName, $id);
+			Session::put($this->_sessionName, $this->data()->id);
 
 			Redirect::to('inden.php');
 
