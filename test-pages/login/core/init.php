@@ -12,7 +12,7 @@ $GLOBALS['config'] = array(
 					'session'	=> 'users_session',
 					'groups'	=> 'groups',
 					'logs'		=> array(
-						'login'		=> 'rec'
+						'log'		=> 'rec'
 					)
 				),
 				'utable'	=> 'users'

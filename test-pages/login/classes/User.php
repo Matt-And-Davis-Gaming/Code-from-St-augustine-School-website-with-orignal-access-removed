@@ -107,6 +107,10 @@ class User{
 	public function logout()
 	{
 		$this->_db->delete(Config::get('mysql/table/session'), array('user_id', '=', $this->data()->id));
+		$this->_db->insert(Config::get('mysql/table/logs/log'), array(
+			'type'			=> 'logout',
+			'text'			=> "{$this->data()->name} has logged out at " . date('')
+		));
 
 		Session::delete($this->_sessionName);
 		Cookie::delete($this->_cookieName);
