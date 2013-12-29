@@ -150,7 +150,7 @@ class DB{
 			$x++;
 		}
 		$sql = "INSERT INTO {$table} (`" . implode('`,`', $keys) . "`) VALUES ({$values})";
-		die($sql);
+		# die($sql);
 		if (!$this->query($sql, $fields)->error())
 		{
 			return true;# code...
