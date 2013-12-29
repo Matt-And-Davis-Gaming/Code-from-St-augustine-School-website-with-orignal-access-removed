@@ -36,7 +36,7 @@ class User{
 			throw new Exception("There was an error. Please read our <a href=\"/help/policies#Registration%20Problems\">F.A.Q. on Registration Problems</a>");
 			
 		}
-		Log::('registered', $this->data()->name);
+		Log::log('registered', $this->data()->name);
 	}
 
 	public function find($user = null)
@@ -73,7 +73,7 @@ class User{
 			if ($user) {
 				if ($this->data()->password === Hash::make($password, $this->data()->salt)) {
 					Session::put($this->_sessionName, $this->data()->id);
-					Log::('logged in automaticly', $this->data()->name);
+					Log::log('logged in automaticly', $this->data()->name);
 					if($remember){
 						# die(Config::get('mysql/table/session'));
 						$hash = Hash::unique();
@@ -85,7 +85,7 @@ class User{
 								'user_id'		=> $this->data()->id,
 								'hash'			=> $hash
 							));
-							Log::('logged in', $this->data()->name);
+							Log::log('logged in', $this->data()->name);
 						}else{
 							$hash = $hashCheck->first()->hash;
 						}
@@ -109,7 +109,7 @@ class User{
 	public function logout()
 	{
 		$this->_db->delete(Config::get('mysql/table/session'), array('user_id', '=', $this->data()->id));
-		Log::('logged out', $this->data()->name);
+		Log::log('logged out', $this->data()->name);
 
 		Session::delete($this->_sessionName);
 		Cookie::delete($this->_cookieName);
