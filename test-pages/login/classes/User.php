@@ -10,7 +10,7 @@ class User{
 	{
 		$this->_db = DB::getInstance();
 
-		$this->_sessionName = Config::get("session/session_name");
+		$this->_sessionName = Config::get("session/cookie_name");
 		$this->_cookieName = Config::get("remember/cookie_name");
 
 		if (!$user) {
@@ -63,6 +63,8 @@ class User{
 			echo 'You already logged in, however your session has expired. Logging you in now.';
 
 			Session::put($this->_sessionName, $id);
+
+			Redirect::to('inden.php');
 
 		}else{
 			#die('login method has been called with all peramiters');
