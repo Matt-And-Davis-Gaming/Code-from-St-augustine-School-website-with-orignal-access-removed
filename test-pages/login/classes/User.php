@@ -4,7 +4,8 @@ class User{
 			$_data,
 			$_sessionName,
 			$_cookieName,
-			$_isLoggedIn;
+			$_isLoggedIn,
+			$_log;
 
 	public function __construct($user = null)
 	{
@@ -12,6 +13,7 @@ class User{
 
 		$this->_sessionName = Config::get("session/session_name");
 		$this->_cookieName = Config::get("remember/cookie_name");
+		$this->_log = new Log();
 
 		if (!$user) {
 			if(Session::exists($this->_sessionName)){
@@ -36,7 +38,7 @@ class User{
 			throw new Exception("There was an error. Please read our <a href=\"/help/policies#Registration%20Problems\">F.A.Q. on Registration Problems</a>");
 			
 		}
-		Log::log('registered', $this->data()->name);
+		$this->_log->log('registered', $this->data()->name);
 	}
 
 	public function find($user = null)
@@ -64,6 +66,7 @@ class User{
 			echo 'You already logged in, however your session has expired. Logging you in now.';
 
 			Session::put($this->_sessionName, $this->data()->id);
+			$this->_log->log('logged in automaticly', $this->data()->name);
 
 			Redirect::to('inden.php');
 
@@ -73,7 +76,7 @@ class User{
 			if ($user) {
 				if ($this->data()->password === Hash::make($password, $this->data()->salt)) {
 					Session::put($this->_sessionName, $this->data()->id);
-					Log::log('logged in automaticly', $this->data()->name);
+					
 					if($remember){
 						# die(Config::get('mysql/table/session'));
 						$hash = Hash::unique();
@@ -85,7 +88,7 @@ class User{
 								'user_id'		=> $this->data()->id,
 								'hash'			=> $hash
 							));
-							Log::log('logged in', $this->data()->name);
+							$this->_log->log('logged in', $this->data()->name);
 						}else{
 							$hash = $hashCheck->first()->hash;
 						}
@@ -109,7 +112,7 @@ class User{
 	public function logout()
 	{
 		$this->_db->delete(Config::get('mysql/table/session'), array('user_id', '=', $this->data()->id));
-		Log::log('logged out', $this->data()->name);
+		$this->_log->log('logged out', $this->data()->name);
 
 		Session::delete($this->_sessionName);
 		Cookie::delete($this->_cookieName);
