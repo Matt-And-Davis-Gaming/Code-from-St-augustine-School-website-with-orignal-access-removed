@@ -56,7 +56,8 @@ if(Input::exists()){
 					'joined' 	=> date("Y-m-d H:i:s"),
 					'group' 	=> 1
 				));
-
+				$log = new Log();
+				$log->log('registered', Input::get('name'), 'registration');
 				Session::flash('home', "You, " . Input::get('name') . ", have been successfully registered and can now log in. Have fun!");
 				Redirect::to("flash.php");
 			}catch(Exception $e){

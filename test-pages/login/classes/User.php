@@ -38,7 +38,6 @@ class User{
 			throw new Exception("There was an error. Please read our <a href=\"/help/policies#Registration%20Problems\">F.A.Q. on Registration Problems</a>");
 			
 		}
-		$this->_log->log('registered', $this->data()->name, 'registration');
 	}
 
 	public function find($user = null)
