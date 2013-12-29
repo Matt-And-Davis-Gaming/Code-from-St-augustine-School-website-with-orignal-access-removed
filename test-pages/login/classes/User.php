@@ -58,31 +58,36 @@ class User{
 
 	public function login($username = null, $password = null, $remember = false)
 	{
-		$user = $this->find($username);
-		if ($user) {
-			if ($this->data()->password === Hash::make($password, $this->data()->salt)) {
-				Session::put($this->_sessionName, $this->data()->id);
+		
+		if(!$username && !$password && $this->exists()){
+			# log in
+		}else{
+			$user = $this->find($username);
+			if ($user) {
+				if ($this->data()->password === Hash::make($password, $this->data()->salt)) {
+					Session::put($this->_sessionName, $this->data()->id);
 
-				if($remember){
-					# die(Config::get('mysql/table/session'));
-					$hash = Hash::unique();
-					$hashCheck = $this->_db->get(Config::get('mysql/table/session'), array('user_id', '=', $this->data()->id));
+					if($remember){
+						# die(Config::get('mysql/table/session'));
+						$hash = Hash::unique();
+						$hashCheck = $this->_db->get(Config::get('mysql/table/session'), array('user_id', '=', $this->data()->id));
 
-					# insert data into the stuff
-					if(!$hashCheck->count()){
-						$this->_db->insert(Config::get('mysql/table/session'), array(
-							'user_id'		=> $this->data()->id,
-							'hash'			=> $hash
-						));
-					}else{
-						$hash = $hashCheck->first()->hash;
+						# insert data into the stuff
+						if(!$hashCheck->count()){
+							$this->_db->insert(Config::get('mysql/table/session'), array(
+								'user_id'		=> $this->data()->id,
+								'hash'			=> $hash
+							));
+						}else{
+							$hash = $hashCheck->first()->hash;
+						}
+
+						Cookie::put($this->_cookieName, $hash, Config::get('remember/cookie_expiry'));
+
 					}
 
-					Cookie::put($this->_cookieName, $hash, Config::get('remember/cookie_expiry'));
-
+					return true;
 				}
-
-				return true;
 			}
 		}
 		return false;
