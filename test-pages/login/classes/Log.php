@@ -7,6 +7,8 @@ class Log{
 				'text'			=> "{$name} has {$action} at " . date('Y-m-d H:i:s'),
 				'date'			=> date('Y-m-d H:i:s')
 			));
+		else:
+			die("not all log vars are set");
 		endif;
 	}
 }
