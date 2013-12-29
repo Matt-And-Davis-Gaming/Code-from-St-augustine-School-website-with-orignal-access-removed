@@ -13,7 +13,7 @@ class User{
 
 		$this->_sessionName = Config::get("session/session_name");
 		$this->_cookieName = Config::get("remember/cookie_name");
-		$this->_log = new Log();
+		# $this->_log = new Log();
 
 		if (!$user) {
 			if(Session::exists($this->_sessionName)){
@@ -65,7 +65,12 @@ class User{
 			echo 'You already logged in, however your session has expired. Logging you in now.';
 
 			Session::put($this->_sessionName, $this->data()->id);
-			$this->_log->log('logged in automaticly', $this->data()->name, 'login');
+			#$this->_log->log('logged in automaticly', $this->data()->name, 'login');
+			DB::getInstance()->insert(Config::get('mysql/table/logs/log'), array(
+						'type'			=> 'alogin',
+						'text'			=> "{$this->data()->name} has automaticly logged in at " . date('Y-m-d H:i:s'),
+						'date'			=> date('Y-m-d H:i:s')
+			));
 
 			Redirect::to('inden.php');
 
@@ -87,7 +92,7 @@ class User{
 								'user_id'		=> $this->data()->id,
 								'hash'			=> $hash
 							));
-							$this->_log->log('logged in', $this->data()->name, 'login');
+							#$this->_log->log('logged in', $this->data()->name, 'login');
 						}else{
 							$hash = $hashCheck->first()->hash;
 						}
@@ -96,6 +101,11 @@ class User{
 
 					}
 
+					DB::getInstance()->insert(Config::get('mysql/table/logs/log'), array(
+						'type'			=> 'login',
+						'text'			=> "{$this->data()->name} has logged in at " . date('Y-m-d H:i:s'),
+						'date'			=> date('Y-m-d H:i:s')
+					));
 					return true;
 				}
 			}
@@ -111,7 +121,12 @@ class User{
 	public function logout()
 	{
 		$this->_db->delete(Config::get('mysql/table/session'), array('user_id', '=', $this->data()->id));
-		$this->_log->log('logged out', $this->data()->name, 'logout');
+		# $this->_log->log('logged out', $this->data()->name, 'logout');
+		DB::getInstance()->insert(Config::get('mysql/table/logs/log'), array(
+				'type'			=> 'logout',
+				'text'			=> "{$this->data()->name} has logged out at " . date('Y-m-d H:i:s'),
+				'date'			=> date('Y-m-d H:i:s')
+			));
 
 		Session::delete($this->_sessionName);
 		Cookie::delete($this->_cookieName);
