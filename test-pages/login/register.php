@@ -60,7 +60,7 @@ if(Input::exists()){
 				# $log->log('registered', Input::get('name'), 'registration');
 					DB::getInstance()->insert(Config::get('mysql/table/logs/log'), array(
 						'type'			=> 'register',
-						'text'			=> "{Input::get('name')} has registered at " . date('Y-m-d H:i:s'),
+						'text'			=> Input::get('name') . " has registered at " . date('Y-m-d H:i:s'),
 						'date'			=> date('Y-m-d H:i:s')
 					));
 				Session::flash('home', "You, " . Input::get('name') . ", have been successfully registered and can now log in. Have fun!");
