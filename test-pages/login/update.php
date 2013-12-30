@@ -15,7 +15,8 @@ if(Input::exists()){
 			'name' => array(
 				'required' 	=> true,
 				'min'		=> 2,
-				'max'		=> 50
+				'max'		=> 50,
+				'name' 		=> 'Name'
 			)
 		));
 
