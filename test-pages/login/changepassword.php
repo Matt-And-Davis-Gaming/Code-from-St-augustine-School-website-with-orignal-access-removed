@@ -7,6 +7,12 @@ if(!$user->isLoggedIn()){
 	Redirect::to('inden.php');
 }
 
+if(Input::exists()){
+	if(Token::check(Input::get('token'))){
+
+	}
+}
+
 ?>
 
 <style type="text/css">
