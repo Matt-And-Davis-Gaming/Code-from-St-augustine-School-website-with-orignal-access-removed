@@ -21,6 +21,7 @@ if($user->isLoggedIn()){
 		<ol>
 			<li><a href="logout.php">Log out</a></li>
 			<li><a href="update.php">Update user information</a></li>
+			<li><a href="changepassword.php">Change your password</a></li>
 		</ol>
 	<?php
 }else{
