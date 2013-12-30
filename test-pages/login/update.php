@@ -27,7 +27,7 @@ if(!$user->isLoggedIn()){
 				</label></td>
 				<td><input type="text" name="name" id="name" autocompleate="off" value="<?php echo escape($user->data()->name); ?>" /></td></tr>
 			</div>
-			<input type="hidden" name="token" value="<?php echo Token::generete(); ?>" />
+			<input type="hidden" name="token" value="<?php echo Token::generate(); ?>" />
 			<div class="field">
 				<tr><td colspan="2"><input type="submit" value="Update" /></td></tr>
 			</div>
