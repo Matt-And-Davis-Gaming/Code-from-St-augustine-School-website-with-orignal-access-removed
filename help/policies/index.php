@@ -25,7 +25,7 @@
 
 	    	</div>
 	    	<div class="col-md-2">
-	    		Thanks for reading the legal code! <a href="#top">Return to top?</a>
+	    		<h3>Thanks! When you are done, click <a href="/">here.</a></h3>
 	    	</div>
 	    </div>
 	    <?php
