@@ -9,7 +9,10 @@ if(!$user->isLoggedIn()){
 
 if(Input::exists()){
 	if(Token::check(Input::get('token'))){
-
+		
+	}else{
+		echo "<a href=\"http://en.wikipedia.org/wiki/Cross-site_request_forgery\">CSRF request detected. Click to read more.</a>
+			<br>If you still have any questions, visit our help guidelines at <a href=\"/help/policies#csrf\"> CSRF F.A.Q.</a>";
 	}
 }
 
