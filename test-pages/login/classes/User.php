@@ -47,7 +47,7 @@ class User{
 		if (!$id and $this->isLoggedIn()) {
 			$id = $this->data()->id;
 		}
-
+		die($id);
 		if (!$this->_db->insert('users', $fields)) {
 			throw new Exception("There was an error. Please read our <a href=\"/help/policies#up\">F.A.Q. on Updating Problems</a><br>");
 			DB::getInstance()->insert(Config::get('mysql/table/logs/log'), array(
