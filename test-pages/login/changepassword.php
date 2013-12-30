@@ -31,7 +31,13 @@ if(Input::exists()){
 		));
 
 		if($validation->passed()){
-			
+
+			if (Hash::make(Input::get('password_current'), $user->data()->hash) != $user->data()->password) {
+				echo "Your current password is wrong";
+			}else{
+				echo 'ok';
+			}
+
 		}else{
 			$go = true;
 		}
