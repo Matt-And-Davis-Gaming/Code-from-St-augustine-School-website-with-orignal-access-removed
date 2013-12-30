@@ -34,8 +34,19 @@ class User{
 
 	public function update($fields = array(), $id=null)
 	{
+
+		if (!$id and $this->isLoggedIn()) {
+			$id = $this->data()->id;
+		}
+		# die($id);
+
 		if(!$this->_db->update(Config::get('mysql/table/users'), $id, $fields)){
-			throw new Exception("Error Processing Request", 1);
+			throw new Exception("There was an error. Please read our <a href=\"/help/policies#up\">F.A.Q. on Updating Problems</a><br>");
+			DB::getInstance()->insert(Config::get('mysql/table/logs/log'), array(
+						'type'			=> 'update error',
+						'text'			=> "{$this->data()->name} has had an error in updating his/her name in at " . date('Y-m-d H:i:s'),
+						'date'			=> date('Y-m-d H:i:s')
+			));
 
 			
 		}	
@@ -43,18 +54,9 @@ class User{
 
 	public function create($fields = array())
 	{
-
-		if (!$id and $this->isLoggedIn()) {
-			$id = $this->data()->id;
-		}
-		die($id);
 		if (!$this->_db->insert('users', $fields)) {
-			throw new Exception("There was an error. Please read our <a href=\"/help/policies#up\">F.A.Q. on Updating Problems</a><br>");
-			DB::getInstance()->insert(Config::get('mysql/table/logs/log'), array(
-						'type'			=> 'update error',
-						'text'			=> "{$this->data()->name} has had an error in updating his/her name in at " . date('Y-m-d H:i:s'),
-						'date'			=> date('Y-m-d H:i:s')
-			));
+			throw new Exception("There was an error. Please read our <a href=\"/help/policies#regp\">F.A.Q. on Registration Problems</a><br>");
+			
 		}
 	}
 
