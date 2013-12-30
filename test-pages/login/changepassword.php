@@ -32,8 +32,6 @@
 			</div>
 
 			<input type="hidden" name="token" value="<?php echo Token::generate(); ?>" />
-			<div class="field">
 				<tr><td colspan="2"><input type="submit" value="Change" /></td></tr>
-			</div>
 		</tbody>
 </form>
