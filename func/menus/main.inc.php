@@ -39,8 +39,7 @@ float: left;
         		<li><a href="/kids">Kids Area</a></li>
         		<li><a href="/more">More</a></li>';
 		break;
-		case "/account-control/":
-			case "/account-control/index.php":
+		default:
 			$ar[2] = '
 				<li><a href="/">Home</a></li>
         		<li><a href="/parents">Parents</a></li>
