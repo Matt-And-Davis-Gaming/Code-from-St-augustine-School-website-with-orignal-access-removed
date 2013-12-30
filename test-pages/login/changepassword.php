@@ -31,7 +31,7 @@ if(Input::exists()){
 		));
 
 		if($validation->passed()){
-
+			
 		}else{
 			$go = true;
 		}

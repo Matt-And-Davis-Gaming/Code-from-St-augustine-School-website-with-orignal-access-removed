@@ -46,7 +46,7 @@ class Validate{
 							# echo "<pre>", count(array($item, '=', $value)), "</pre>";
 							$check = $this->_db->get($rule_value, array($item, '=', $value));
 							if ($check->count()) {
-								$this->addError($items[$item]['name'] . " already exists");
+								$this->addError($items[$item]['name'] . " already exists. Please try another " . $items[$item]['name'] . ".");
 							}
 							break;
 						case 'alnum':
