@@ -72,13 +72,13 @@ if(Input::exists()){
 			</div>
 
 			<tr><td><label for="password_new">
-					Name
+					New Password
 				</label></td>
 				<td><input type="password" name="password_new" id="password_new" /></td></tr>
 			</div>
 
 			<tr><td><label for="password_new_again">
-					Name
+					Repeat New Password
 				</label></td>
 				<td><input type="password" name="password_new_again" id="password_new_again" /></td></tr>
 			</div>
