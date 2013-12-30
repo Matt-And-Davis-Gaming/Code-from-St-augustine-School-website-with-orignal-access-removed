@@ -24,7 +24,7 @@ if(Input::exists()){
 				$user->update(array(
 					'name'	=> Input::get('name')
 				));
-				Session::flash('home', 'Your data has been updated');
+				Session::flash('in', 'Your data has been updated');
 				Redirect::to('flash.php');
 			}catch(Exception $e){
 				die($e->getMessage());
