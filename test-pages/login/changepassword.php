@@ -1,4 +1,7 @@
+<?php
+require '/var/www/test-pages/login/core/init.php';
 
+?>
 
 <style type="text/css">
 	.centre{
