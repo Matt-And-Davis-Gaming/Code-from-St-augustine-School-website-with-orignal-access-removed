@@ -4,7 +4,7 @@
 	?>
 	<div class="jumbotron" style="padding-top:100px;">
       <div class="container">
-        <h1>Polocies</h1>
+        <h1>Policies</h1>
         <p>This page contains the human readable summary of the full <a href="#fulll">Legal Code</a></p>
         <p><a class="btn btn-primary btn-lg" role="button" href="#">Learn more &raquo;</a></p>
       </div>
