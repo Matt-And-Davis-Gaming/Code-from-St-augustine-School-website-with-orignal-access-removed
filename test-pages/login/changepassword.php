@@ -1,6 +1,12 @@
 <?php
 require '/var/www/test-pages/login/core/init.php';
 
+$user = new User();
+
+if(!$user->isLoggedIn()){
+	Redirect::to('inden.php');
+}
+
 ?>
 
 <style type="text/css">
