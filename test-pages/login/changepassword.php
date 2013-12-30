@@ -32,7 +32,9 @@ if(Input::exists()){
 
 		if($validation->passed()){
 
-			if (Hash::make(Input::get('password_current'), $user->data()->hash) != $user->data()->password) {
+
+			# USE SALT YOU IDIOT, NOT HASH!!!!!!!!!
+			if (Hash::make(Input::get('password_current'), $user->data()->salt) != $user->data()->password) {
 				echo "Your current password is wrong";
 			}else{
 				echo 'ok';
