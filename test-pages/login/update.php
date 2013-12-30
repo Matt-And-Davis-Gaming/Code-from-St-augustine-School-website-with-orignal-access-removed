@@ -27,5 +27,8 @@ if(!$user->isLoggedIn()){
 				</label></td>
 				<td><input type="text" name="name" id="name" autocompleate="off" value="<?php echo escape($user->data()->name); ?>" /></td></tr>
 			</div>
+			<div class="field">
+				<tr><td colspan="2"><input type="submit" value="Update" /></td></tr>
+			</div>
 		</tbody>
 </form>
