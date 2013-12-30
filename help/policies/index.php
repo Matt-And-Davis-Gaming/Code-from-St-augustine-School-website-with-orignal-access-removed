@@ -4,7 +4,7 @@
 	?>
 	<div class="jumbotron" style="padding-top:100px;">
       <div class="container">
-        <h1>Polocies</h1>
+        <h1><a name="top">Polocies</a></h1>
         <p>This page contains the human readable summary of the full <a href="#fulll">Legal Code</a></p>
         <p><a class="btn btn-primary btn-lg" role="button" href="#">Learn more &raquo;</a></p>
       </div>
@@ -25,9 +25,15 @@
 
 	    	</div>
 	    	<div class="col-md-2">
-	    		Thanks for reading the legal code! <a href="#">Return to top?</a>
+	    		Thanks for reading the legal code! <a href="#top">Return to top?</a>
 	    	</div>
 	    </div>
+	    <?php
+	    	for ($i=0; $i < 50; $i++) { 
+	    		echo "<br>";
+	    	}
+	    ?>
+	    Hi
 	</div>
 <body>
 </html>
