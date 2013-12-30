@@ -13,7 +13,7 @@
 		<style type="text/css">
 			div.row div.col-md-2{
 				position:fixed;
-				top:30px;
+				top:50px;
 				right:5px;
 			}
 		</style>
@@ -22,18 +22,12 @@
 	        <![endif]-->
 	    <div class="row">
 	    	<div class="col-md-10">
-
+	    		Content
 	    	</div>
 	    	<div class="col-md-2">
 	    		<h3>Thanks! When you are done, click <a href="/">here.</a></h3>
 	    	</div>
 	    </div>
-	    <?php
-	    	for ($i=0; $i < 50; $i++) { 
-	    		echo "<br>";
-	    	}
-	    ?>
-	    Hi
 	</div>
 <body>
 </html>
