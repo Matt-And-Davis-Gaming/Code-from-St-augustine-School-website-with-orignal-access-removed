@@ -9,8 +9,21 @@ if(!$user->isLoggedIn()){
 
 if(Input::exists()){
 	if(Token::check(Input::get('token'))) {
-		echo 
-		'ok';
+		$validate = new Validate();
+
+		$validation = $validate->check($_POST, array(
+			'name' => array(
+				'required' 	=> true,
+				'min'		=> 2,
+				'max'		=> 50
+			)
+		));
+
+		if($validation->passed()){
+
+		}else{
+			$go = true;
+		}
 	}else{
 		echo "<a href=\"http://en.wikipedia.org/wiki/Cross-site_request_forgery\">CSRF request detected. Click to read more.</a>
 			<br>If you still have any questions, visit our help guidelines at <a href=\"/help/policies#csrf\"> CSRF F.A.Q.</a>";
@@ -43,3 +56,20 @@ if(Input::exists()){
 			</div>
 		</tbody>
 </form>
+		<?php
+			# echo errors
+			if (isset($go)) {
+				if ($go === true) {
+					?>
+						<h1>Errors:</h1>
+						<ol>
+					<?php
+						foreach ($validation->errors() as $error) {
+							echo "<li>{$error}</li>";
+						}
+					?>
+						</ol>
+					<?php
+				}
+			}
+		?>
