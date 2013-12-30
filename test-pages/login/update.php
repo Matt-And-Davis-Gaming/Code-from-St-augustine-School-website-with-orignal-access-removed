@@ -20,7 +20,15 @@ if(Input::exists()){
 		));
 
 		if($validation->passed()){
-
+			try{
+				$user->update(array(
+					'name'	=> Input::get('name');
+				));
+				Session::flash('home', 'Your data has been updated');
+				Redirect::to('flash.php');
+			}catch(Exception $e){
+				die($e->getMessage());
+			}
 		}else{
 			$go = true;
 		}
