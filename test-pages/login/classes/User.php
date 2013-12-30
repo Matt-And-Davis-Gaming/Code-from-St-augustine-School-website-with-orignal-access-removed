@@ -35,7 +35,8 @@ class User{
 	public function create($fields = array())
 	{
 		if (!$this->_db->insert('users', $fields)) {
-			throw new Exception("There was an error. Please read our <a href=\"/help/policies#Registration%20Problems\">F.A.Q. on Registration Problems</a>");
+			throw new Exception("There was an error. Please read our <a href=\"/help/policies#regp\">F.A.Q. on Registration Problems</a><br>
+			If you still have any questions, visit our help guidelines at <a href=\"/help/policies#csrf\"> CSRF F.A.Q.</a>");
 			
 		}
 	}
