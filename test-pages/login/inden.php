@@ -20,7 +20,7 @@ if($user->isLoggedIn()){
 
 		<ol>
 			<li><a href="logout.php">Log out</a></li>
-			<li></li>
+			<li><a href="update.php">Update uour infromation</a></li>
 		</ol>
 	<?php
 }else{
