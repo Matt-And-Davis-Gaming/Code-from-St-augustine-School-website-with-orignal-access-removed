@@ -44,7 +44,7 @@ class User{
 	public function create($fields = array())
 	{
 
-		if (!id and $this->isLoggedIn()) {
+		if (!$id and $this->isLoggedIn()) {
 			$id = $this->data()->id;
 		}
 
