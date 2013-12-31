@@ -24,6 +24,13 @@ if($user->isLoggedIn()){
 			<li><a href="changepassword.php">Change your password</a></li>
 		</ol>
 	<?php
+
+	if ($user->hasPermission('admin')) {
+		echo "<p>You are an administrator</p>";
+	}
+	
+	
+
 }else{
 	Redirect::to('login.php');
 }

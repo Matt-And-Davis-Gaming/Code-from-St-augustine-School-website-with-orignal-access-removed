@@ -133,6 +133,20 @@ class User{
 		return false;
 	}
 
+	public function hasPermission($key)
+	{
+		$group = $this->_db->get(Config::get('mysql/table/groups'), array('id', '=', $this->data()->group));
+
+		if ($group->count()) {
+			$premissions = json_decode($group->first()->permissions);
+
+			if($permissions[$key] == true){
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public function exists()
 	{
 		 return (!empty($this->_data)) ? true : false ;
