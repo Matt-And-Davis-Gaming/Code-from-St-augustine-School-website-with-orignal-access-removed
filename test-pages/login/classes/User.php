@@ -138,7 +138,7 @@ class User{
 		$group = $this->_db->get(Config::get('mysql/table/groups'), array('id', '=', $this->data()->group));
 
 		if ($group->count()) {
-			$premissions = json_decode($group->first()->permissions);
+			$permissions = json_decode($group->first()->permissions);
 
 			if($permissions[$key] == true){
 				return true;
