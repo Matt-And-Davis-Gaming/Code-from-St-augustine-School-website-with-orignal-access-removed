@@ -8,7 +8,7 @@
 	}else{
 		$user = new User($username);
 		if(!$user->exists()){
-			Redirect::(404);
+			Redirect::to(404);
 		}else{
 			echo "Exists";
 		}
