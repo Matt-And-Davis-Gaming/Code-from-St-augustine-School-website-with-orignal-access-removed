@@ -140,8 +140,10 @@ class User{
 		if ($group->count()) {
 			$permissions = json_decode($group->first()->permissions, true);
 
-			if($permissions[$key] == true){
-				return true;
+			if(isset($permissions[$key])){
+				if($permissions[$key] == true){
+					return true;
+				}
 			}
 		}
 		return false;
