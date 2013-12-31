@@ -44,6 +44,7 @@ if(Input::exists()){
 				));
 
 				Session::flash('in', 'You, ' . $user->data()->name . ", have been assigned a new password!");
+				Redirect::to('flash.php');
 			}
 
 		}else{
