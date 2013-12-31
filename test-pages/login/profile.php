@@ -10,7 +10,16 @@
 		if(!$user->exists()){
 			Redirect::to(404);
 		}else{
-			echo "Exists";
+			# user exists
+
+			$data = $user->data();
+
+			?>
+				<h3><?php echo escape($data->username); ?></h3>
+
+				<?php echo escape($data->username); ?>'s full name is <?php echo escape($data->name); ?>
+
+			<?php	
 		}
 	}
 ?>
