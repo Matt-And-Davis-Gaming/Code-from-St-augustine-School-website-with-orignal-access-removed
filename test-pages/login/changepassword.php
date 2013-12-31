@@ -37,7 +37,13 @@ if(Input::exists()){
 			if (Hash::make(Input::get('password_current'), $user->data()->salt) != $user->data()->password) {
 				echo "Your current password is wrong";
 			}else{
-				echo 'ok';
+				$salt = Hash::salt(32);
+				$user->update(array(
+					'password'	=> Hash::make(Input::get('password_new'), $salt),
+					'salt'		=> $salt
+				));
+
+				Session::flash('in', 'You, ' . $user->data()->name . ", have been assigned a new password!");
 			}
 
 		}else{
