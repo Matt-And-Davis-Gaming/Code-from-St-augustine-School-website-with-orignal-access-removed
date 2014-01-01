@@ -4,7 +4,7 @@
 	if($u->isLoggedIn()){
 		echo "<div style=\"font-size:1.2em;float: right;text-shadow: 0 -1px 0 rgba(0,0,0,0.25);color:#999;padding-top:15px;padding-bottom:10px;\">
 		Hello <a href=\"/user/" . $u->data()->username . "\">" . $u->data()->name . "</a>! <a href='/account-control/logout'>Log out?</a></div>";
-	}else{
+	}elseif(getenv ("REQUEST_URI") != '/account-control/login/'){
 		?>
 
 		<form style="float: right;" class="navbar-form nav-center" method="post" action="/prossing.php">
@@ -20,4 +20,6 @@
 			<button type="submit" class="btn btn-success">Sign in</button>
 		</form>
 		<?php
-}
+	}else{
+
+	}
