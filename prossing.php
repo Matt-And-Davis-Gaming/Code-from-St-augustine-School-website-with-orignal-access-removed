@@ -5,7 +5,6 @@ switch($_POST['action']){
 		#echo "This action has not yet been created and is intended for future refrence. Please try again later";
 		#header("Refresh:2;/");
 		require '/var/www/init.php';
-		<?php
 			#require '/var/www/func/login/core/init.php';
 			ini_set('display_errors', '1');
 			error_reporting(-1);
