@@ -4,4 +4,4 @@ require '/var/www/func/login/core/init.php';
 $user = new User();
 $user->logout();
 
-Redirect::to('inden.php');
+Redirect::to('/account-control');
