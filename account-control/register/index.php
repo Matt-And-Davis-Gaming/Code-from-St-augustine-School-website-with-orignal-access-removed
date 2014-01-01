@@ -104,7 +104,6 @@
 						text-align: center;
 					}
 					tr{
-						padding-bottom: 10px;
 						border: #5497ab 1px dashed;
 					}
 				</style>
@@ -118,19 +117,19 @@
 							<tr><div class="field">
 								<td><label for="username">Please choose a username</label></td>
 								<td><input type="text" name="username" id="username" value="<?php echo escape(Input::get('username')); ?>" autocomplete="off" /></td>
-							</div></tr>
+							</div></tr><tr></tr>
 							<tr><div class="field">
 								<td><label for="password">Please choose a password</label></td>
 								<td><input type="password" name="password" id="password" /></td>
-							</div></tr>
+							</div></tr><tr></tr>
 							<tr><div class="field">
 								<td><label for="password_again">Please repeat your password</label></td>
 								<td><input type="password" name="password_again" id="password_again" /></td>
-							</div></tr>
+							</div></tr><tr></tr>
 							<tr><div class="field">
 								<td><label for="name">Please enter your real name</label></td>
 								<td><input type="text" name="name" id="name" value="<?php echo escape(Input::get('name')); ?>" autocomplete="off" /></td>
-							</div></tr>
+							</div></tr><tr></tr>
 
 							<input type="hidden" name="token" value="<?php echo Token::generate(); ?>" />
 
