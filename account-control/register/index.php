@@ -5,8 +5,7 @@
 
 	     <div class="jumbotron" style="padding-top:100px;">
       <div class="container">
-        <h1>Hello <a href="profile.php?user=<?php echo escape($user->data()->username); ?>"><?php echo escape($user->data()->name); ?></a>!</h1>
-        <p>From this page, you can choose to make changes to your account, change your password, and read information.</p>
+        <h1>Hello! You can register for an account here! Please fill out the form below.</h1>
       </div>
     </div>
 	<div class="container">
