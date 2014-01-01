@@ -2,7 +2,7 @@
 	$u = new User();
 
 	if($u->isLoggedIn()){
-		echo "Hello " . $u->data()->name;
+		echo "<div style=\"float: right;\">Hello " . $u->data()->name . "</div>";
 	}else{
 		?>
 
