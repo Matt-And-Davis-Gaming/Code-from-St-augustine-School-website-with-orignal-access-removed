@@ -14,25 +14,6 @@
           # echo "<pre>", print_r($_SESSION), "</pre>";
           # echo "User id is: ";
           $user = new User();
-          if($user->isLoggedIn()){
-            ?>
-
-              <ol>
-                <li><a href="logout.php">Log out</a></li>
-                <li><a href="update.php">Update user information</a></li>
-                <li><a href="changepassword.php">Change your password</a></li>
-              </ol>
-            <?php
-
-            if ($user->hasPermission('admin')) {
-              echo "<p>You are an administrator</p>";
-            }
-            
-            
-
-          }else{
-            Redirect::to('login');
-          }
         ?>
 
 <?php
