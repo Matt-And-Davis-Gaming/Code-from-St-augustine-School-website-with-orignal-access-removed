@@ -57,7 +57,7 @@
 					<br>If you still have any questions, visit our help guidelines at <a href=\"/help/policies#csrf\"> CSRF F.A.Q.</a>";
 				}
 			}elseif(Session::exists(Config::get('session/session_name'))){
-				Redirect::to('../');
+				Redirect::to('/account-control');
 			}else{
 				echo "Please enter the info below";
 			}
