@@ -109,6 +109,9 @@
 					label{
 						margin-bottom: 0px;
 					}
+					input:focus{
+						color: #990000;
+					}
 				</style>
 
 				<form action="" method="post">
