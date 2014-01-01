@@ -104,6 +104,7 @@
 						text-align: center;
 					}
 					tr{
+						margin-bottom: none;
 						border: #5497ab 1px dashed;
 					}
 				</style>
