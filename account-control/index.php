@@ -1,18 +1,3 @@
-<?php
-	require('../init.php');
-	head("Account Control");
-?>
-	     <div class="jumbotron" style="padding-top:100px;">
-      <div class="container">
-        <h1>Kids Area!</h1>
-        <p>Thanks for visiting the kids page on the St. Augustine School Website</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
-	<div class="container">
-		<!--[if lt IE 7]>
-			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://chrome.google.com/">upgrade your browser</a> to get the bes$
-	        <![endif]-->
         <?php
           //echo PHP_VERSION;
           ini_set('display_errors', '1');
@@ -31,7 +16,6 @@
           $user = new User();
           if($user->isLoggedIn()){
             ?>
-              <p>Hello <a href="profile.php?user=<?php echo escape($user->data()->username); ?>"><?php echo escape($user->data()->name); ?></a>!</p>
 
               <ol>
                 <li><a href="logout.php">Log out</a></li>
@@ -50,6 +34,45 @@
             Redirect::to('login');
           }
         ?>
+
+<?php
+	require('../init.php');
+	head("Account Control");
+?>
+	     <div class="jumbotron" style="padding-top:100px;">
+      <div class="container">
+        <h1>Hello <a href="profile.php?user=<?php echo escape($user->data()->username); ?>"><?php echo escape($user->data()->name); ?></a>!</h1>
+        <p>Thanks for visiting the kids page on the St. Augustine School Website</p>
+        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+	<div class="container">
+		<!--[if lt IE 7]>
+			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://chrome.google.com/">upgrade your browser</a> to get the bes$
+	        <![endif]-->
+            <?php
+                    if($user->isLoggedIn()){
+            ?>
+
+              <ol>
+                <li><a href="logout.php">Log out</a></li>
+                <li><a href="update.php">Update user information</a></li>
+                <li><a href="changepassword.php">Change your password</a></li>
+              </ol>
+            <?php
+
+            if ($user->hasPermission('admin')) {
+              echo "<p>You are an administrator</p>";
+            }
+            
+            
+
+          }else{
+            Redirect::to('login');
+          }
+          ?>
+
+
 	</div>
 <body>
 </html>
