@@ -104,7 +104,7 @@
 						text-align: center;
 					}
 					tr{
-						margin-bottom: 10px;
+						padding-bottom: 10px;
 						border: #5497ab 1px dashed;
 					}
 				</style>
