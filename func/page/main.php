@@ -24,9 +24,9 @@ function head($title = "untitled"){
 
 	$side[1] = str_replace("<title>jkladf", $titl, $side[1]);
 
-	echo implode($side, '
+	eval(" ?>", implode($side, '
 
-');
+'), "<?php ");
 }
 
 //head();
