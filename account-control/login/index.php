@@ -111,7 +111,7 @@
 				?>
 		</form>
 
-		<p>Don't have an account yet? <a href="register">Register Here!</a></p>
+		<p>Don't have an account yet? <a href="../register">Register Here!</a></p>
 	        
 	</div>
 <body>
