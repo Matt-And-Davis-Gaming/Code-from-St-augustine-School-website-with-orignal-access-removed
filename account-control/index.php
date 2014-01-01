@@ -23,8 +23,7 @@
 	     <div class="jumbotron" style="padding-top:100px;">
       <div class="container">
         <h1>Hello <a href="profile.php?user=<?php echo escape($user->data()->username); ?>"><?php echo escape($user->data()->name); ?></a>!</h1>
-        <p>Thanks for visiting the kids page on the St. Augustine School Website</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+        <p>From this page, you can choose to make changes to your account, change your password, and read information.</p>
       </div>
     </div>
 	<div class="container">
