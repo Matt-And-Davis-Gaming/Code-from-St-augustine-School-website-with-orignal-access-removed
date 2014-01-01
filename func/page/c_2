@@ -1,7 +1,8 @@
 <?php
   require_once('/var/www/init.php');
-?> 
+
       require '/var/www/func/page/in.php';
+      ?>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
