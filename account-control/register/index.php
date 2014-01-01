@@ -107,7 +107,7 @@
 						border: #5497ab 1px dashed;
 					}
 					label{
-						margin-bottom: none;
+						margin-bottom: 0px;
 					}
 				</style>
 
