@@ -5,7 +5,8 @@
 
 	     <div class="jumbotron" style="padding-top:100px;">
       <div class="container">
-        <h1>Hello! You can register for an account here! Please fill out the form below.</h1>
+      	<h1>Register for an Account</h1>
+        <p>Hello! You can register for an account here! Please fill out the form below.</p>
       </div>
     </div>
 	<div class="container">
