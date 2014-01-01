@@ -4,8 +4,8 @@
 ?>
 	     <div class="jumbotron" style="padding-top:100px;">
       <div class="container">
-        <h1>Kids Area!</h1>
-        <p>Thanks for visiting the kids page on the St. Augustine School Website</p>
+        <h1>Log in</h1>
+        <p>Please log in to your account in order to do things like blogging, commenting, and a lot more.</p>
         <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
       </div>
     </div>
