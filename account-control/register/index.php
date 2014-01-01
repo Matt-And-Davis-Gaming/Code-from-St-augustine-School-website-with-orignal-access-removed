@@ -21,7 +21,7 @@
 
 				ini_set('display_errors', '1');
 				error_reporting(-1);
-					require '/var/www/func/login/core/init.php';
+					#require '/var/www/func/login/core/init.php';
 
 				if(Input::exists()){
 					if (!Token::check(Input::get('token'))) {

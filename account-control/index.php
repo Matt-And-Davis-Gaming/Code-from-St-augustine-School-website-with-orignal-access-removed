@@ -1,8 +1,11 @@
-        <?php
+<?php
+  require('../init.php');
+  head("Account Control");
+
           //echo PHP_VERSION;
           ini_set('display_errors', '1');
           error_reporting(-1);
-          require '/var/www/func/login/core/init.php';
+          #require '/var/www/func/login/core/init.php';
           # die(Config::get('mysql/table/session'));
           /*$user = DB::getInstance()->update('users', 3, array(
             'username'  => 'Dale',
@@ -16,10 +19,7 @@
           $user = new User();
         ?>
 
-<?php
-	require('../init.php');
-	head("Account Control");
-?>
+
 	     <div class="jumbotron" style="padding-top:100px;">
       <div class="container">
         <h1>Hello <a href="profile.php?user=<?php echo escape($user->data()->username); ?>"><?php echo escape($user->data()->name); ?></a>!</h1>
