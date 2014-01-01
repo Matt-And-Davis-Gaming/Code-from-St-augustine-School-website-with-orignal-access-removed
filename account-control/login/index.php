@@ -1,6 +1,6 @@
 <?php
 	require('../../init.php');
-	head("Account Control");
+	head("Log in");
 ?>
 	     <div class="jumbotron" style="padding-top:100px;">
       <div class="container">
@@ -62,7 +62,6 @@
 				echo "Please enter the info below";
 			}
 		?>
-
 		<form method="post" action="" >
 			<table>
 				<thead>
