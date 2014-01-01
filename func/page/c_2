@@ -1,4 +1,6 @@
-<form style="float: right;" class="navbar-form nav-center" method="post" action="/prossing.php">
+<?php
+  require_once('/var/www/init.php');
+?><form style="float: right;" class="navbar-form nav-center" method="post" action="/prossing.php">
 	    <div class="form-group">
               <input type="text" placeholder="Username" class="form-control" name = "username">
 		          <input type="hidden" name="action" value="signIn" />
