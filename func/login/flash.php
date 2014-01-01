@@ -8,7 +8,7 @@ if(Session::exists('home')){
 }
 if(Session::exists('in')){
 	echo Session::flash('in');
-	header('Refresh: 3; inden.php');
+	header('Refresh: 3; ./');
 }
 ?>
 </h1>
