@@ -99,6 +99,16 @@
 				}
 				?>
 
+				<style type="text/css">
+					table{
+						text-align: center;
+					}
+					tr{
+						margin-bottom: 10px;
+						border: #5497ab 1px dashed;
+					}
+				</style>
+
 				<form action="" method="post">
 					<table>
 						<thead>
