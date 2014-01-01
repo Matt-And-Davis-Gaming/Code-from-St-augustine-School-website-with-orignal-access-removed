@@ -92,7 +92,7 @@ class User{
 						'date'			=> date('Y-m-d H:i:s')
 			));
 
-			Redirect::to('/account-control');
+			# Redirect::to('/account-control');
 
 		}else{
 			#die('login method has been called with all peramiters');
