@@ -44,7 +44,7 @@
 						if ($login) {
 							
 						Session::flash('in', "You, " . $user->data()->name . ", have been successfully logged in. Have fun!");
-						Redirect::to("flash.php");
+						Redirect::to("../flash.php");
 						}else{
 							  echo "sorry, we could not log you in";
 						}
@@ -57,7 +57,7 @@
 					<br>If you still have any questions, visit our help guidelines at <a href=\"/help/policies#csrf\"> CSRF F.A.Q.</a>";
 				}
 			}elseif(Session::exists(Config::get('session/session_name'))){
-				Redirect::to('inden.php');
+				Redirect::to('../');
 			}else{
 				echo "Please enter the info below";
 			}
