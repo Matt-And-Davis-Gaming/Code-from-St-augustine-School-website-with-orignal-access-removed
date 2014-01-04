@@ -2,20 +2,25 @@
 class DB{
 
 	# set varibles
+	
+	# set self instance for copying
 	private static $_instance = null;
 
+	# setting private variables for use in returning results
 	private $_pdo,
 		$_query,
 		$_error = false,
 		$_results,
 		$_count = 0;
 
-	# connect to db when class is enstanciated (spelling) and stored in $this->_pdo
+	# connect to db when class is enstanciated (spelling) and store in $this->_pdo
 	private function __construct()
 	{
 		#try loop to start the pdo that catches PDOEXexption
 		try
 		{
+			
+			# creats a new pdo object
 			$this->_pdo = new PDO('mysql:host=' . Config::get('mysql/host') . ';dbname=' . Config::get('mysql/db'),
 						Config::get('mysql/username'),
 						Config::get('mysql/password')
@@ -32,6 +37,8 @@ class DB{
 	# init instance for the database and store the __construct here
 	public static function getInstance()
 	{
+		
+		# test if the self instance exists and if not, create its self and return itsself
 		if(!isset(self::$_instance))
 		{
 			self::$_instance = new DB();
@@ -40,7 +47,8 @@ class DB{
 		return self::$_instance;
 	}
 
-	# standerd query
+
+	
 	public function query($sql, $params = array())
 	{
 		#reset error variable
