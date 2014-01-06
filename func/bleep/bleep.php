@@ -1,8 +1,10 @@
 <?php
 
 function bleep($p){
-	$swearo = [];
+	$swearo = array();
 
 	
-	$swearr = [];
+	$swearr = array();
+
+	
 }
