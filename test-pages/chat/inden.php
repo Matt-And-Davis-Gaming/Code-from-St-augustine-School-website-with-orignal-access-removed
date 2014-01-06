@@ -41,6 +41,6 @@
 		<div id="messages">
 
 		</div>
-		<textarea id="input" x-webkit-speech></textarea>
+		<textarea id="input"></textarea>
 	</body>
 </html>
