@@ -36,6 +36,14 @@
 						event.preventDefault();
 						//alert($('#input').val());
 						console.log($('#input').val());
+						$.post("/chat_post.php",
+							{
+								message: $('#input').val()
+							},
+							function(data,status){
+						  		alert("Data: " + data + "\nStatus: " + status);
+							}
+						);
 						$('#input').val('');
 					}
 					//console.log(event.keyCode);
