@@ -34,7 +34,8 @@
 				$('#input').keydown(function(event){
 					if ( event.which == 13 && event.shiftKey == false) {
 						event.preventDefault();
-						alert($('#input').val());
+						//alert($('#input').val());
+						console.log($('#input').val());
 						$('#input').val('');
 					}
 					//console.log(event.keyCode);
