@@ -17,7 +17,7 @@
 			}
 			#input{
 				margin-top: 9px;
-				height: 50px;
+				height: 100px;
 				width: 89%;
 			}
 		</style>
