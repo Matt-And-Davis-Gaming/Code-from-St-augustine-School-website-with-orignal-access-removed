@@ -11,13 +11,14 @@
 			chat.fetchMessages = function(){
 
 			};
-
-			$('#input').keydown(function(event){
-				/*if ( event.which == 13 && event.shiftKey == false) {
-					event.preventDefault();
-					alert($('#input').val());
-				}*/
-				console.log(event.keyCode);
+			$(document).ready(function(){
+				$('#input').keydown(function(event){
+					/*if ( event.which == 13 && event.shiftKey == false) {
+						event.preventDefault();
+						alert($('#input').val());
+					}*/
+					console.log(event.keyCode);
+				});
 			});
 		</script>
 	</head>
