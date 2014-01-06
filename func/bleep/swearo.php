@@ -1,1 +1,3 @@
-swearo.php
+<?php
+
+?>
