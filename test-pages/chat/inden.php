@@ -26,8 +26,6 @@
 		<div id="messages">
 
 		</div>
-		<textarea id="input">
-
-		</textarea>
+		<textarea id="input"></textarea>
 	</body>
 </html>
