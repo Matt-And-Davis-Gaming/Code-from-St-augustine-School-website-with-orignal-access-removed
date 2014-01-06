@@ -16,7 +16,9 @@
 				box-shadow: 5px 7px 9px;
 			}
 			#input{
-
+				margin-top: 9px;
+				height: 50px;
+				width: 89%;
 			}
 		</style>
 
@@ -44,6 +46,6 @@
 		<div id="messages">
 
 		</div>
-		<textarea id="input"></textarea>
+		<textarea id="input" placeholder="Please type your message here! Press enter to send. Use Shift + enter for a new line"></textarea>
 	</body>
 </html>
