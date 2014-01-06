@@ -16,6 +16,7 @@
 					if ( event.which == 13 && event.shiftKey == false) {
 						event.preventDefault();
 						alert($('#input').val());
+						$('#input').val('');
 					}
 					//console.log(event.keyCode);
 				});
