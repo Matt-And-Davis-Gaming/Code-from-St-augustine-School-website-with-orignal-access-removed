@@ -13,10 +13,11 @@
 			};
 
 			$('#input').keydown(function(event){
-				if ( event.which == 13 && event.shiftKey == false) {
+				/*if ( event.which == 13 && event.shiftKey == false) {
 					event.preventDefault();
 					alert($('#input').val());
-				}
+				}*/
+				console.log(event.keyCode);
 			});
 		</script>
 	</head>
