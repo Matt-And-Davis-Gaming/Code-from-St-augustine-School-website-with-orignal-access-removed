@@ -3,6 +3,20 @@
 	<head>
 		<title>Chat</title>
 
+		<style type="text/css">
+			#messages{
+				width:90%;
+				text-align: left;
+				overflow-y: scroll;
+				overflow-x: hidden;
+				height:290px;
+				box-shadow: 
+			}
+			#input{
+
+			}
+		</style>
+
 		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" async></script>
@@ -27,6 +41,6 @@
 		<div id="messages">
 
 		</div>
-		<textarea id="input"></textarea>
+		<textarea id="input" x-webkit-speech></textarea>
 	</body>
 </html>
