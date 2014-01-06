@@ -6,5 +6,5 @@ function bleep($p){
 	
 	$swearr = array();
 
-	
+	return $p;
 }
