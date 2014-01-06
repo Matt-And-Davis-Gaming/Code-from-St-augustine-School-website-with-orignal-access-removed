@@ -5,7 +5,7 @@
 
 		<style type="text/css">
 			#messages{
-				width: 90%;
+				width: 100%;
 				left: 0;
 				right: 0;
 				text-align: left;
@@ -18,7 +18,7 @@
 			#input{
 				margin-top: 9px;
 				height: 100px;
-				width: 89%;
+				width: 98%;
 			}
 		</style>
 
