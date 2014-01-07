@@ -17,6 +17,22 @@ function bleep($p){
 	$swearr[] = '****';
 	$swearo[] = 'sh1t';
 	$swearr[] = '****';
+	$swearo[] = 'ass';
+	$swearr[] = '***';
+	$swearo[] = 'butt';
+	$swearr[] = '****';
+	$swearo[] = 'anus';
+	$swearr[] = '****';
+	$swearo[] = 'damn';
+	$swearr[] = '****';
+	$swearo[] = 'fick';
+	$swearr[] = '****';
+	$swearo[] = 'penis';
+	$swearr[] = '*****';
+	$swearo[] = 'vagina';
+	$swearr[] = '******';
+	$swearo[] = 'fuck';
+	$swearr[] = '****';
 
 	$p = str_ireplace($swearo, $swearr, $p);
 
