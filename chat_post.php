@@ -5,6 +5,6 @@
 	# echo Input::get('message');
 
 	# the only reason why I swear here is to test it
-	die(bleep("FUck YOu you mom ass"));
+	die(bleep(Input::get('message')));
 
 ?>
