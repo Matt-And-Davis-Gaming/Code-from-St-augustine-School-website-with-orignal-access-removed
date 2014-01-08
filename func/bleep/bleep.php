@@ -39,8 +39,6 @@ function bleep($p){
 	$swearr[] = '****';
 	$swearo[] = 'cunt';
 	$swearr[] = '****';
-	$swearo[] = 'hell';
-	$swearr[] = '****';
 	$swearo[] = 'bloody';
 	$swearr[] = '******';
 	$swearo[] = 'sex';
