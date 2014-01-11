@@ -26,7 +26,7 @@ error_reporting(-1);
 	if($blee[1] == true){
 		DB::getInstance()->insert(Config::get('mysql/table/chat1'), array(
                 	'user_id' => $user->data()->id,
-                	'message' => $blee[1];
+                	'message' => $blee[1]
                 ));
 	}
 	
