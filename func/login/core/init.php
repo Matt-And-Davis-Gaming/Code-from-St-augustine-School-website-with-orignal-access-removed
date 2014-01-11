@@ -11,6 +11,7 @@ $GLOBALS['config'] = array(
 					'users'		=> 'users',
 					'session'	=> 'users_session',
 					'groups'	=> 'groups',
+					'chat1'		=> 'chat',
 					'logs'		=> array(
 						'log'		=> 'rec'
 					)
