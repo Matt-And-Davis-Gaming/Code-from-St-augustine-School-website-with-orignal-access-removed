@@ -4,12 +4,14 @@ error_reporting(-1);
 	require '/var/www/func/login/core/init.php';
 	require '/var/www/func/bleep/bleep.php';
 	# echo Input::get('message');
-	
-	# bleep message
-	$blee = bleep(Input::get('message'));
-	
-	die(print_r($blee));
-
+	if(Input::exists()){
+		# bleep message
+		$blee = bleep(Input::get('message'));
+		
+		die(print_r($blee));
+	}else{
+		die('no input');
+	}
 	# the only reason why I swear here is to test it
 	$mess = trim($blee[0]);
 	
