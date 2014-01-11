@@ -6,7 +6,7 @@ error_reporting(-1);
 	# echo Input::get('message');
 	if(Input::exists()){
 			# bleep message
-			#$blee = bleep(Input::get('message'));
+		$blee = bleep(Input::get('message'));
 			
 			#die(print_r($blee));
 			# die('THere is input');
