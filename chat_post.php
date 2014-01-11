@@ -7,6 +7,8 @@ error_reporting(-1);
 	
 	# bleep message
 	$blee = bleep(Input::get('message'));
+	
+	die(print_r($blee));
 
 	# the only reason why I swear here is to test it
 	$mess = trim($blee[0]);
