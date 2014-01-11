@@ -5,6 +5,8 @@
 	# echo Input::get('message');
 
 	# the only reason why I swear here is to test it
-	die(bleep(Input::get('message')));
+	$mess = trim(bleep(Input::get('message')));
+	
+	
 
 ?>
