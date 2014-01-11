@@ -7,6 +7,12 @@
 	# the only reason why I swear here is to test it
 	$mess = trim(bleep(Input::get('message')));
 	
+	# create database instance
+	DB::getInstance();
+	
+	# insert if bleep passed
+	
+	
 	
 
 ?>
