@@ -6,7 +6,7 @@ error_reporting(-1);
 	# echo Input::get('message');
 	
 	# bleep message
-	$blee = bleep(Input::get('message'))
+	$blee = bleep(Input::get('message'));
 
 	# the only reason why I swear here is to test it
 	$mess = trim($blee[0]);
