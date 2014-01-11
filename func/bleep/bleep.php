@@ -48,7 +48,11 @@ function bleep($p){
 	$swearo[] = 'cum';
 	$swearr[] = '***';
 
-	$p = str_ireplace($swearo, $swearr, $p);
+	$pass = str_ireplace($swearo, $swearr, $p);
 
-	return $p;
+	if($pass == $p){
+		return array($p, true);
+	}else{
+		return array($p. false);
+	}
 }
