@@ -44,8 +44,12 @@
 							function(data,status){
 						  		// alert("Data: " + data + "\nStatus: " + status);
 						  		if(data != ''){
-						  			alert(data);
 						  			console.log('data sent back');
+						  			console.log('asking user');
+						  			var go = confirm(data);
+						  			if(go == true){
+						  				window.location = '/help/policies#chat';
+						  			}
 						  		}else{
 						  			console.log('no data sent back');
 						  		}
