@@ -36,6 +36,7 @@
 						event.preventDefault();
 						//alert($('#input').val());
 						console.log($('#input').val());
+						console.log('sending data');
 						$.post("/chat_post.php",
 							{
 								message: $('#input').val()
@@ -48,7 +49,7 @@
 						  		}else{
 						  			console.log('no data sent back');
 						  		}
-						  		console.log(data);
+						  		console.log(data + '\n\n');
 							}
 						);
 						$('#input').val('');
