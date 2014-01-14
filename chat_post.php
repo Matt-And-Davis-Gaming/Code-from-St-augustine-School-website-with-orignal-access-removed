@@ -32,6 +32,8 @@ error_reporting(-1);
 				}else{
 					die("I'm sorry, but you cannot say that word in chat!");
 				}
+			}else{
+				die("I'm sorry, but you cannot say that word in chat!");
 			}
 		}
 	}
