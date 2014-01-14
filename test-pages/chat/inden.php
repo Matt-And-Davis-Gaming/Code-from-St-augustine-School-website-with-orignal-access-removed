@@ -48,6 +48,7 @@
 						  		}else{
 						  			console.log('no data sent back');
 						  		}
+						  		console.log(data);
 							}
 						);
 						$('#input').val('');
