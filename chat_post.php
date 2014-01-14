@@ -29,6 +29,8 @@ error_reporting(-1);
 			                	'user_id' => $user->data()->id,
 			                	'message' => $blee[0]
 			                ));
+				}else{
+					die("I'm sorry, but you cannot say that word in chat!");
 				}
 			}
 		}
