@@ -44,6 +44,9 @@
 						  		// alert("Data: " + data + "\nStatus: " + status);
 						  		if(data != ''){
 						  			alert(data);
+						  			console.log('data sent back');
+						  		}else{
+						  			console.log('no data sent back');
 						  		}
 							}
 						);
