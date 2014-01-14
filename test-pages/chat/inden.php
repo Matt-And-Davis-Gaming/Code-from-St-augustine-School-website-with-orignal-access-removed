@@ -47,7 +47,7 @@
 						  			console.log('data sent back');
 						  			console.log('asking user');
 						  			var go = confirm(data);
-						  			if(go == true){
+						  			if(go == false){
 						  				window.location = '/help/policies#chat';
 						  			}
 						  		}else{
