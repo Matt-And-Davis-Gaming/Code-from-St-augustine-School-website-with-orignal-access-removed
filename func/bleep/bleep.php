@@ -10,7 +10,7 @@ function bleep($p){
 	require '/var/www/func/bleep/swearr.php';
 
 	# the words listed here are only for filtering purposes and are never showen to the visitors
-	# if you are conserned about the contents of this file, please go put a sock in it. This is to
+	# if you are conserned about the contents of this file. This is to
 	# protect the children.
 	
 	$swearo[] = 'fuck';
