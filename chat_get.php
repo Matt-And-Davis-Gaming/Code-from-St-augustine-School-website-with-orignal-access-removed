@@ -28,8 +28,6 @@ error_reporting(-1);
 	$results = DB::getInstance()->query($sql);
 
 	foreach($results->results() as $result){
-		if($result->chat > 10){
-			echo 'Truncating';
-			DB::getInstance()->query("TRUNCATE TABLE `{$chatd}`");
-		}
+		echo "<p><a href=\"/user/{$result->username}\">{$result->username}</a> said:</p>";
+		echo "<p>" . nl2br(escape($result->message)) . "</p>";
 	}
