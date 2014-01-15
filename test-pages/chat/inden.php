@@ -20,6 +20,10 @@
 				height: 100px;
 				width: 98%;
 			}
+			#messages p > a{
+				text-decoration: none;
+				color: #708c98;
+			}
 		</style>
 
 		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
