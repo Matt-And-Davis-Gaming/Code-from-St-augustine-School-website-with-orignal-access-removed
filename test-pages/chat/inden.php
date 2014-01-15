@@ -61,6 +61,7 @@
 						  			console.log('no data sent back');
 						  		}
 						  		console.log(data + '\n\n');
+						  		chat.getMessages();
 							}
 						);
 						$('#input').val('');
@@ -68,6 +69,8 @@
 					//console.log(event.keyCode);
 				});
 			});
+
+			setTimeout(chat.fetchMessages, 3000);
 		</script>
 	</head>
 	<body>
