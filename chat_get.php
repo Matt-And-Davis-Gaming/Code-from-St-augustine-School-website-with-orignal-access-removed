@@ -29,6 +29,7 @@ error_reporting(-1);
 
 	foreach($results->results() as $result){
 		if($result->chat > 10){
+			echo 'Truncating';
 			DB::getInstance()->query('TRUNCATE TABLE `{$chatd}`');
 		}
 	}
