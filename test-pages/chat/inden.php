@@ -15,6 +15,7 @@
 				-webkit-box-shadow: rgba(0, 0, 128, 0.247059) 5px 7px 9px;
 				box-shadow: 5px 7px 9px;
 				border: 2px dashed #ffffff;
+				padding-left: 5px;
 			}
 			#input{
 				margin-top: 9px;
