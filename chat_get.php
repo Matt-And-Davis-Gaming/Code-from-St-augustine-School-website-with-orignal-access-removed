@@ -23,7 +23,7 @@ error_reporting(-1);
 		ON `{$chatd}`.`user_id`=`{$userd}`.`id`;
 		";
 
-		die($sql);
+		# die($sql);
 
 	$results = DB::getInstance()->query($sql);
 
