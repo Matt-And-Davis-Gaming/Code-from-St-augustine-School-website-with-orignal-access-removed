@@ -83,7 +83,7 @@
 										'date'			=> date('Y-m-d H:i:s')
 									));
 								Session::flash('home', "You, " . Input::get('name') . ", have been successfully registered and can now log in. Have fun!");
-								Redirect::to("flash.php");
+								Redirect::to("../flash.php");
 							}catch(Exception $e){
 								die($e->getMessage());
 							}
