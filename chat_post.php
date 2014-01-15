@@ -33,7 +33,7 @@ error_reporting(-1);
 					die("I'm sorry, but you cannot say that word in chat!");
 				}
 			}else{
-				die("I'm sorry, but you cannot say that word in chat! Press ok to adknowledge, press cancel to see our guidelines.");
+				die("I'm sorry, but you cannot say that word in chat! Press ok to acknowledge, press cancel to see our guidelines.");
 			}
 		}
 	}
