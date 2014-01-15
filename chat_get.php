@@ -26,8 +26,13 @@ error_reporting(-1);
 		# die($sql);
 
 	$results = DB::getInstance()->query($sql);
-
+	?>
+<div id='message'>
+	<?
 	foreach($results->results() as $result){
 		echo "<p><a href=\"/user/{$result->username}\">{$result->username}</a> said:</p>";
 		echo "<p>" . nl2br(escape($result->message)) . "</p>";
 	}
+	?>
+</div>
+	<?

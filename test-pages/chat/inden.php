@@ -28,7 +28,14 @@
 		<script type="text/javascript">
 			var chat = {}
 			chat.fetchMessages = function(){
-
+				$.get("/chat_get.php",
+				function(data,status){
+					if(data != ''){
+						$('#messages').html(data);
+					}else{
+						$('#messages').html("No messages available.");
+					}
+				});
 			};
 			$(document).ready(function(){
 				$('#input').keydown(function(event){
