@@ -70,7 +70,8 @@
 				});
 			});
 
-			setTimeout(chat.fetchMessages, 3000);
+			setInterval(chat.fetchMessages, 3000);
+			chat.setMessages();
 		</script>
 	</head>
 	<body>
