@@ -13,6 +13,7 @@ error_reporting(-1);
 		`{$chatd}`.`timestamp`,
 		`{$chatd}`.`message`,
 		`{$chatd}`.`user_id`,
+		`{$chatd}`.`id` AS `chat`,
 		`{$userd}`.`id`,
 		`{$userd}`.`username`,
 		`{$userd}`.`name`,
@@ -25,5 +26,7 @@ error_reporting(-1);
 	$results = DB::getInstance()->query($sql);
 
 	foreach($results->results() as $result){
-		echo "Message: {$result->message}";
+		if($result->chat > 10){
+			DB::getInstance('TRUNCATE TABLE `{$chatd}`');
+		}
 	}
