@@ -22,8 +22,8 @@ error_reporting(-1);
 		ON `{$chatd}`.`user_id`=`{$userd}`.`id`;
 		";
 
-		die($sql);
+	$results = DB::getInstance()->query($sql);
 
-	DB::getInstance()->query("
-
-	");
+	foreach($results->results() as $result){
+		echo "Message: {$result->message}";
+	}
