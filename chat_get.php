@@ -10,13 +10,13 @@ error_reporting(-1);
 	$userd = Config::get('mysql/table/users');
 
 	$sql = "SELECT
-		`{$chatd}`.`timestamp` AS `mt`,
-		`{$chatd}`.`message` AS `m`,
-		`{$chatd}`.`user_id` AS `uid`,
+		`{$chatd}`.`timestamp`,
+		`{$chatd}`.`message`,
+		`{$chatd}`.`user_id`,
 		`{$userd}`.`id`,
-		`{$userd}`.`username` AS `n`,
-		`{$userd}`.`name` AS `fn`,
-		`{$userd}`.`joined` AS `d`
+		`{$userd}`.`username`,
+		`{$userd}`.`name`,
+		`{$userd}`.`joined`
 		FROM {$chatd}
 		INNER JOIN `{$userd}`
 		ON `{$chatd}`.`user_id`=`{$userd}`.`id`;
