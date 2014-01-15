@@ -61,7 +61,7 @@
 						  			console.log('no data sent back');
 						  		}
 						  		console.log(data + '\n\n');
-						  		chat.getMessages();
+						  		chat.fetchMessages();
 							}
 						);
 						$('#input').val('');
