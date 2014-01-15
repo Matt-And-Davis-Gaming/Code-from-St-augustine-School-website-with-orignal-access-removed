@@ -32,7 +32,7 @@ error_reporting(-1);
 	<?
 	foreach($r as $result){
 		echo "<p><a href=\"/user/{$result->username}\">{$result->username}</a> said:</p>";
-		echo "<p>" . nl2br(escape($result->message)) . "</p>";
+		echo "<p>&nbsp;&nbsp;" . nl2br(escape($result->message)) . "</p>";
 	}
 	?>
 </div>
