@@ -71,7 +71,7 @@
 			});
 
 			setInterval(chat.fetchMessages, 3000);
-			chat.getMessages();
+			chat.fetchMessages();
 		</script>
 	</head>
 	<body>
