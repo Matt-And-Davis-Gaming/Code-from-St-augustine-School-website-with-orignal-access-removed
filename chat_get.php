@@ -20,7 +20,7 @@ error_reporting(-1);
 		`{$userd}`.`joined`
 		FROM {$chatd}
 		INNER JOIN `{$userd}`
-		ON `{$chatd}`.`user_id`=`{$userd}`.`id`,
+		ON `{$chatd}`.`user_id`=`{$userd}`.`id`
 		ORDER BY `{$chatd}`.`id` DESC;
 		";
 
