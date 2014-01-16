@@ -24,11 +24,13 @@ error_reporting(-1);
 		if($user->isLoggedIn()){
 			if(isset($blee[1])){
 				if($blee[1] == true){
-					DB::getInstance()->insert(Config::get('mysql/table/chat1'), array(
-						'timestamp' => time(),
-			                	'user_id' => $user->data()->id,
-			                	'message' => $blee[0]
-			                ));
+					if($blee[0] != ''){
+						DB::getInstance()->insert(Config::get('mysql/table/chat1'), array(
+							'timestamp' => time(),
+				                	'user_id' => $user->data()->id,
+				                	'message' => $blee[0]
+				                ));
+					}
 				}else{
 					die("I'm sorry, but you cannot say that word in chat!");
 				}
