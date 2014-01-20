@@ -1,3 +1,2 @@
 RewriteEngine On    # Turn on the rewriting engine
-# RewriteRule ^products/([0-9]+)/?$ show_a_product.php?product_id=$1 [NC,L] # Handle product requests
-RewriteRule ^([A-Za-z0-9-]+)/?$ ../profile.php?user=$1 [NC,L]    # Process parrots
+RewriteRule ^(.*)$ /users/process.php?path=$1      # make the rule
