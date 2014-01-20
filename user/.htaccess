@@ -1,2 +1,2 @@
 RewriteEngine On    # Turn on the rewriting engine
-RewriteRule ^(.*)$ /users/process\.php?path=$1      # make the rule
+RewriteRule ^(.+)$ /users/process\.php?path=$1      # make the rule
