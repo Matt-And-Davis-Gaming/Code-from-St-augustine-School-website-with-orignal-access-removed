@@ -12,6 +12,9 @@ if($_GET['path']){
 
 	# return $config;
 }
+
+require ('/var/www/init.php');
+$user = new User($path[0]);
 echo "<pre>";
-	print_r($path);
+	print_r($user);
 echo "</pre>";
