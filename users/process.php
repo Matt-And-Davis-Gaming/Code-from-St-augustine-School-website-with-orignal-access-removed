@@ -12,9 +12,14 @@ if($_GET['path']){
 
 	# return $config;
 }
-
+class Get{
+	public static function willitwork($data)
+	{
+		print_r($data);
+	}
+}
 require ('/var/www/init.php');
 $user = new User($path[0]);
 echo "<pre>";
-	print_r($user->data());
+	Get::willitwork($user->data());
 echo "</pre>";
