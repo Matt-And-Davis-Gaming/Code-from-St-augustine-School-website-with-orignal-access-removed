@@ -13,13 +13,21 @@ if($_GET['path']){
 	# return $config;
 }
 class Get{
-	public static function willitwork($data)
-	{
-		print_r($data);
+	private $_user
+
+	function __construct($userObject = null){
+		$this->_user = $userObject;
+	}
+
+	public function pr($substr = null){
+		print_r(($substr != null) ? $this->user[$substr] : $this->_user);
 	}
 }
+
+
 require ('/var/www/init.php');
 $user = new User($path[0]);
 echo "<pre>";
-	Get::willitwork($user->data());
+	$get = new Get($user->data());
+	$get->pr();
 echo "</pre>";
