@@ -50,7 +50,7 @@ class Validate{
 							}
 							break;
 						case 'alnum':
-							if(strpos($value,'/') === false or is_numeric($value)){
+							if(!strpos($value,'/') === false or is_numeric($value)){
 								$this->addError($items[$item]['name'] . " needs to be not compleatly numeric as well as not contain the \"/\" character.");
 							}
 							break;
