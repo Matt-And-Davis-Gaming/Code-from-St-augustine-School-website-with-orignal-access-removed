@@ -16,5 +16,5 @@ if($_GET['path']){
 require ('/var/www/init.php');
 $user = new User($path[0]);
 echo "<pre>";
-	print_r($user);
+	print_r($user->data());
 echo "</pre>";
