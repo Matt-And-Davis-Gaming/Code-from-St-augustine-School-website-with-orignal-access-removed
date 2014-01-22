@@ -1,5 +1,6 @@
 <?php
-
+ini_set('display_errors', '1');
+error_reporting(-1);
 if($_GET['path']){
 	$config = $_GET['path'];
 	$path = explode('/', $_GET['path']);
