@@ -28,6 +28,13 @@ class Get{
 		endif;
 		print_r($prin);
 	}
+
+	public function pharseJSONObjectDataForPHP($json){
+		return json_decode($jason, 1);
+	}
+	public function encodeJSONObjectDataForPHP($json){
+		return json_encode($jason, 1);
+	}
 }
 
 
@@ -36,4 +43,5 @@ $user = new User($path[0]);
 echo "<pre>";
 	$get = new Get($user->data());
 	$get->pr();
+	print_r($get->pharseJSONObjectDataForPHP($user->data()->data));
 echo "</pre>";
