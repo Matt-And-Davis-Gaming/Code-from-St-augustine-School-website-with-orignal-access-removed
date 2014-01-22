@@ -35,5 +35,5 @@ require ('/var/www/init.php');
 $user = new User($path[0]);
 echo "<pre>";
 	$get = new Get($user->data());
-	$get->pr();
+	$get->pr('salt');
 echo "</pre>";
