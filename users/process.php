@@ -22,7 +22,7 @@ class Get{
 
 	public function pr($substr = null){
 		if($substr != null):
-			$prin = $this->_user[$substr];
+			$prin = $this->_user->$substr;
 		else:
 			$prin = $this->_user;
 		endif;
