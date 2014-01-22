@@ -14,14 +14,19 @@ if($_GET['path']){
 	# return $config;
 }
 class Get{
-	private $_user
+	private $_user;
 
 	function __construct($userObject = null){
 		$this->_user = $userObject;
 	}
 
 	public function pr($substr = null){
-		print_r(($substr != null) ? $this->user[$substr] : $this->_user);
+		if($substr != null):
+			$prin = $this->_user[$substr];
+		else:
+			$prin = $this->_user;
+		endif;
+		print_r($prin);
 	}
 }
 
