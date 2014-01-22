@@ -33,7 +33,7 @@ class Get{
 		return json_decode($jason, 1);
 	}
 	public function encodeJSONObjectDataForPHP($json){
-		return json_encode($jason, 1);
+		return json_encode($json, 1);
 	}
 }
 
