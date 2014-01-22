@@ -30,7 +30,7 @@ class Get{
 	}
 
 	public function pharseJSONObjectDataForPHP($json){
-		return json_decode($jason, 1);
+		return json_decode($json, 1);
 	}
 	public function encodeJSONObjectDataForPHP($json){
 		return json_encode($json, 1);
