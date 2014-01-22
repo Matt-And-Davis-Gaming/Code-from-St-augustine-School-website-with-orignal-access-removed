@@ -49,4 +49,25 @@ echo "<pre>";
 	$get = new Get($user->data());
 	$get->pr();
 	print_r($get->pharseJSONObjectDataForPHP($user->data()->data));
+	DB::getInstance()->update('users', 3, array(
+		'data' => '{
+    "blog": {
+        "posts": {
+            "year": {
+                "y2014": {
+                    "january": {
+                        "27": {
+                            "count": 1,
+                            "posts": {
+                                "a": {
+                                    "timestamp": 3.134697698761973e+31
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}'));
 echo "</pre>";
