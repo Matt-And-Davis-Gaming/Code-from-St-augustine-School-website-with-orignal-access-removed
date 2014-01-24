@@ -70,4 +70,6 @@ echo "<pre>";
         }
     }
 }'));
+$save = $get->pharseJSONObjectDataForPHP($user->data()->data);
 echo "</pre>";
+echo $save["blog"]["posts"]["year"]["y2014"]["january"]["27"]["posts"]["a"]["timestamp"];
