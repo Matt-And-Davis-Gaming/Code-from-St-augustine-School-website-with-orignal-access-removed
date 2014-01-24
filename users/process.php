@@ -60,7 +60,7 @@ echo "<pre>";
                             "count": 1,
                             "posts": {
                                 "a": {
-                                    "timestamp": 3.134697698761973e+31
+                                    "timestamp": 1234567897
                                 }
                             }
                         }
