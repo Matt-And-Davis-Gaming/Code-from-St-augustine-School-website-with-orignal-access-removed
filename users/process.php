@@ -47,9 +47,9 @@ require ('/var/www/init.php');
 $user = new User($path[0]);
 echo "<pre>";
 	$get = new Get($user->data());
-	$get->pr();
+	$get->pr();d
 	print_r($get->pharseJSONObjectDataForPHP($user->data()->data));
-	DB::getInstance()->update('users', 3, array(
+	/*DB::getInstance()->update('users', 3, array(
 		'data' => '{
     "blog": {
         "posts": {
@@ -69,7 +69,7 @@ echo "<pre>";
             }
         }
     }
-}'));
+}'));*/
 $save = $get->pharseJSONObjectDataForPHP($user->data()->data);
 echo "</pre>";
 echo $save["blog"]["posts"]["year"]["y2014"]["january"]["27"]["posts"]["a"]["timestamp"];
