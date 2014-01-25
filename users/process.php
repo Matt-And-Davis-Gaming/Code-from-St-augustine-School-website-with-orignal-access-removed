@@ -51,22 +51,22 @@ echo "<pre>";
 	print_r($get->pharseJSONObjectDataForPHP($user->data()->data));
 	DB::getInstance()->update('users', 3, array(
 		'data' => '{
-    "blog": {
-        "posts": {
-            "2014": {
-                "january": {
-                    "27": {
-                        "count": 1,
-                        "posts": {
-                            "a": {
-                                "timestamp": 1234567897
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+	"blog": {
+		"posts": {
+			"2014": {
+				"january": {
+					"27": {
+						"count": 1,
+						"posts": {
+							"a": {
+								"timestamp": 1234567897
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }'));
 $save = $get->pharseJSONObjectDataForPHP($user->data()->data);
 echo "</pre>";
