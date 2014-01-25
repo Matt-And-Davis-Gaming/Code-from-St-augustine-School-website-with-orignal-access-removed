@@ -47,7 +47,7 @@ require ('/var/www/init.php');
 $user = new User($path[0]);
 echo "<pre>";
 	$get = new Get($user->data());
-	$get->pr();d
+	$get->pr();
 	print_r($get->pharseJSONObjectDataForPHP($user->data()->data));
 	/*DB::getInstance()->update('users', 3, array(
 		'data' => '{
