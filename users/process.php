@@ -29,10 +29,10 @@ class Get{
 		print_r($prin);
 	}
 
-	public function pharseJSONObjectDataForPHP($json){
+	public function pharse($json){
 		return json_decode($json, true);
 	}
-	public function encodeJSONObjectDataForPHP($json){
+	public function encode($json){
 		return json_encode($json);
 	}
 
@@ -48,7 +48,7 @@ $user = new User($path[0]);
 echo "<pre>";
 	$get = new Get($user->data());
 	$get->pr();
-	print_r($get->pharseJSONObjectDataForPHP($user->data()->data));
+	print_r($get->pharse($user->data()->data));
 	DB::getInstance()->update('users', 3, array(
 		'data' => '{
 	"blog": {
@@ -68,6 +68,6 @@ echo "<pre>";
 		}
 	}
 }'));
-$save = $get->pharseJSONObjectDataForPHP($user->data()->data);
+$save = $get->pharse($user->data()->data);
 echo "</pre>";
 echo $save["blog"]["posts"]["2014"]["january"]["27"]["posts"]["a"]["timestamp"];
