@@ -1,7 +1,8 @@
 <?php
+require '/pass.php';
 $dbhost='localhost'; // Host name
 $dbuser='root'; // Mysql username
-$dbpass=''; // Mysql password
+$dbpass=PASS; // Mysql password
 $dbname='survivalgames'; // Database name
 $dbprefix = 'sg_'; //Table Prefix
 
