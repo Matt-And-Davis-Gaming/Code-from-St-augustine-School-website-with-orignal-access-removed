@@ -135,10 +135,10 @@ class User{
 
 	public function hasPermission($key)
 	{
-		# $group = $this->_db->get(Config::get('mysql/table/groups'), array('id', '=', $this->data()->group));
+		$group = $this->_db->get(Config::get('mysql/table/groups'), array('id', '=', $this->data()->group));
 
 		if ($group->count()) {
-			$permissions = $this->permissions_get();
+			$permissions = $this->permissions_get($group);
 
 			if(isset($permissions[$key])){
 				if($permissions[$key] == true){
@@ -149,8 +149,8 @@ class User{
 		return false;
 	}
 
-	public function permissions_get(){
-		$group = $this->_db->get(Config::get('mysql/table/groups'), array('id', '=', $this->data()->group));
+	public function permissions_get($group=null){
+		$group = (isset($group)) ? $group : $this->_db->get(Config::get('mysql/table/groups'), array('id', '=', $this->data()->group));
 		return json_decode($group->first()->permissions, true);
 	}
 
