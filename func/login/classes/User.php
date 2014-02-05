@@ -138,7 +138,7 @@ class User{
 		$group = $this->_db->get(Config::get('mysql/table/groups'), array('id', '=', $this->data()->group));
 
 		if ($group->count()) {
-			$permissions = json_decode($group->first()->permissions, true);
+			$permissions = $this->permissions_get();
 
 			if(isset($permissions[$key])){
 				if($permissions[$key] == true){
@@ -147,6 +147,17 @@ class User{
 			}
 		}
 		return false;
+	}
+
+	public function permissions_get(){
+		return json_decode($group->first()->permissions, true);
+	}
+
+	public function permissions_edit($id, $nePermissions = Array()){
+		$json = json_encode($newPermissions);
+		$this->_db->update(Config::get('mysql/table/groups'), $id, array(
+			'permissions' => $json
+		));
 	}
 
 	public function exists()
