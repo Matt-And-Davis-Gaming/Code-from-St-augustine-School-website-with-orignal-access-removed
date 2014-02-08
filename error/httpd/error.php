@@ -42,7 +42,7 @@ $num = rand(2,6);
 	case 5:
 		echo "/error/httpd/darn.jpg";
 	break;
-	case 5:
+	case 6:
 		echo "/error/httpd/panda.jpg";
 	break;
 	endswitch;
