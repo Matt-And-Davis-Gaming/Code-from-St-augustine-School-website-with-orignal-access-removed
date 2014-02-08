@@ -140,6 +140,7 @@
 							<input type="hidden" name="token" value="<?php echo Token::generate(); ?>" />
 
 							<tr><td colspan="2" style="text-align:center;float:center;"><input type="submit" value="Register" /></td></tr>
+							<tr><td colspan="2">Already have an account? <a href="..">Log In here.</a></td></tr>
 						</tbody>
 					</table>
 					<?php
