@@ -13,7 +13,7 @@
 
 
 	//mysql_query($query) or die(mysql_error());
-$num = rand(2,6); 
+$num = rand(2,7); 
 #panda.jpg
 ?>
 <!DOCTYPE html>
@@ -44,6 +44,9 @@ $num = rand(2,6);
 	break;
 	case 6:
 		echo "/error/httpd/panda.jpg";
+	break;
+	case 7:
+		echo "/error/httpd/oh_crumbs.jpg";
 	break;
 	endswitch;
 
