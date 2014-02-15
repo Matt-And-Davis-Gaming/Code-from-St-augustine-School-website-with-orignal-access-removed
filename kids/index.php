@@ -16,7 +16,7 @@
 		<div class="row">
         		<div class="col-md-4">
           			<h2>Supporting Evidence</h2>
-          				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          				<p>Unfortunately, that's fine, but not to me the gate of the designers need more. How to Choose protein, development and of course advantages, to create a macro to improve the budget, in order to warm-up the mass of the option might be a bit tight. Even a lot of the gate-scale magna mollis euismod. Chinese cultural beliefs.</p>
           				<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         		</div>
         		<div class="col-md-4">
