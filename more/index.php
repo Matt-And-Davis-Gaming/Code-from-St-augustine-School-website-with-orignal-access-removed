@@ -6,7 +6,7 @@
       <div class="container">
         <h1>More from St. Augustine!</h1>
         <p></p>
-        <p><-- <a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a> --></p>
+        <p><!-- <a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a> --></p>
       </div>
     </div>
 	<div class="container">
