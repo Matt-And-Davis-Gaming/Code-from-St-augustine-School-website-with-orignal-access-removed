@@ -32,7 +32,7 @@ error_reporting(-1);
 	foreach($r as $result){
 		if($result->timestamp > (time()-3600)){
 			echo "<div id='message'>";
-			echo "<p><a href=\"/user/{$result->username}/pt\">{$result->username}</a> said:</p>";
+			echo "<p><a href=\"/user/{$result->username}/pt\" class=\"person\">{$result->username}</a> said:</p>";
 			echo "<p>&nbsp;&nbsp;" . nl2br(escape($result->message)) . "</p>";
 			echo "</div>";
 		}

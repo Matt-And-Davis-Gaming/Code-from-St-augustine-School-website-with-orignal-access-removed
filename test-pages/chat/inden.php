@@ -75,6 +75,9 @@
 					}
 					//console.log(event.keyCode);
 				});
+				$('.person').hover(function(){
+					console.log('Hovered');
+				});
 			});
 
 			inter = setInterval(chat.fetchMessages, 3000);
