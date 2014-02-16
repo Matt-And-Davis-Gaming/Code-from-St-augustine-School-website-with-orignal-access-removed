@@ -75,12 +75,12 @@
 					}
 					//console.log(event.keyCode);
 				});
-				$('.message A.person').hover(
-					function(){
-						console.log('Hovered');
-					}, function () {
-						console.log("exited");
-				});
+				$(document).find('.message A.person').hover(
+						function(){
+							console.log('Hovered');
+						}, function () {
+							console.log("exited");
+					});
 			});
 
 			inter = setInterval(chat.fetchMessages, 3000);
