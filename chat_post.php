@@ -5,8 +5,12 @@ error_reporting(-1);
 	require '/var/www/func/bleep/bleep.php';
 	# echo Input::get('message');
 	if(Input::exists()){
+		$trimmed = trim(Input::get('message'));
 			# bleep message
-		$blee = bleep(trim(Input::get('message')));
+		if ($trimmed == '') {
+			die('you cannot send empty messages');
+		}
+		$blee = bleep($trimmed);
 			
 			#die(print_r($blee));
 			# die('THere is input');
