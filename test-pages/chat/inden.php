@@ -77,6 +77,8 @@
 				});
 				$('.person').mouseenter(function(){
 					console.log('Hovered');
+				},function () {
+					console.log("exited");
 				});
 			});
 
