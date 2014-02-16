@@ -80,7 +80,7 @@
 							console.log('Hovered');
 						}, function () {
 							console.log("exited");
-					});
+					}));
 			});
 
 			inter = setInterval(chat.fetchMessages, 3000);
