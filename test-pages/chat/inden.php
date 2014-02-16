@@ -75,7 +75,7 @@
 					}
 					//console.log(event.keyCode);
 				});
-				$('.person').hover(function(){
+				$('.person').mouseenter(function(){
 					console.log('Hovered');
 				});
 			});
