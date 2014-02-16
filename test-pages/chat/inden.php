@@ -75,7 +75,7 @@
 					}
 					//console.log(event.keyCode);
 				});
-				$('.person').hover(
+				$('.message A.person').hover(
 					function(){
 						console.log('Hovered');
 					}, function () {
