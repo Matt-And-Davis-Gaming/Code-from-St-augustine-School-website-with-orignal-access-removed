@@ -23,7 +23,7 @@
 				height: 100px;
 				width: 98%;
 			}
-			.messages p > a{
+			#messages p > a{
 				text-decoration: none;
 				color: #708c98;
 			}
