@@ -9,6 +9,19 @@
 		<!--[if lt IE 7]>
 			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://chrome.google.com/">upgrade your browser</a> to get the bes$
 	        <![endif]-->
+          <p><form action="prossing.php" method="post">
+            <input type="hidden" name="action" value="bully">
+            <input type="text" name="bully_name">
+            <select name="type" required>
+              <option value="physical">Physical bullying</option>
+              <option value="verbal">Verbal bullying</option>
+              <option value="convert">Covert bullying</option>
+              <option value="cyber">Cyberbullying</option>
+            </select>
+            <textarea name="story" placeholder="Please enter the story to the best of your ability.">
+
+            </textarea>
+          </form></p>
 		<div class="row">
         		<div class="col-md-4">
           		<h2>Secure</h2>
