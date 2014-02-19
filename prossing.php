@@ -50,6 +50,9 @@ switch($_POST['action']){
 				Redirect::to('/account-control');
 			}
 	break;
+	case "bully":
+		# throw bully into db
+	break;
 	default:
 		echo "Sorry! We could not find the action given. Site Specific error code: 1";
 	break;
