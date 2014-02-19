@@ -39,6 +39,13 @@
 				function(data,status){
 					if(data != ''){
 						$('#messages').html(data);
+						$('.person').hover(function(){ //Open on hover 
+					        //$('#pull_down_content').animate({'top':'-0px'},1000);
+					        console.log('hi');
+					    },    
+					    function(){ //Close when not hovered
+					        //$('#pull_down_content').animate({'top':'-340px'},1000);    
+					    });
 					}else{
 						$('#messages').html("No messages available.");
 					}
@@ -75,14 +82,6 @@
 					}
 					//console.log(event.keyCode);
 				});
-				       
-			    $('.person').hover(function(){ //Open on hover 
-			        //$('#pull_down_content').animate({'top':'-0px'},1000);
-			        console.log('hi');
-			    },    
-			    function(){ //Close when not hovered
-			        //$('#pull_down_content').animate({'top':'-340px'},1000);    
-			    });
 			});
 
 			inter = setInterval(chat.fetchMessages, 3000);
