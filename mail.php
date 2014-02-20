@@ -2,7 +2,7 @@
 require("/pass.php");
 function SendCookieToTheMail()
 {
-    require_once 'swift-mailer/lib/swift_required.php';
+    require_once '/var/www/func/swift-mailer/lib/swift_required.php';
     //Create the Transport
     $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com')
       ->setPort(465)
@@ -30,3 +30,5 @@ function SendCookieToTheMail()
     $result = $mailer->batchSend($message);
     */ 
 }
+
+SendCookieToTheMail();
