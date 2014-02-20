@@ -16,9 +16,9 @@ function SendCookieToTheMail()
 
     //Create a message
     $message = Swift_Message::newInstance('Test')
-      ->setFrom(array('no_reply@staugustineschool.org' => 'From mr. 007'))
+      ->setFrom(array('no_reply@staugustineschool.org' => 'New Bully report recieved'))
       ->setTo(array('mcolekrueger@gmail.com'))
-      ->setBody('Body')
+      ->setBody('Bully report...')
       ;
 
     //Send the message
