@@ -15,18 +15,25 @@ class User{
 		$this->_cookieName = Config::get("remember/cookie_name");
 		# $this->_log = new Log();
 
-		if (!$user) {
-			if(Session::exists($this->_sessionName)){
+		if (!$user)
+		{
+			if(Session::exists($this->_sessionName))
+			{
 				$user = Session::get($this->_sessionName);
 				# user ID is now stored in $user
 
-				if($this->find($user)){
+				if($this->find($user))
+				{
 					$this->_isLoggedIn = true;
-				}else{
+				}
+				else
+				{
 					# prosses logout
 				}
 			}
-		}else {
+		}
+		else
+		{
 			$this->find($user);
 		}
 
@@ -35,12 +42,14 @@ class User{
 	public function update($fields = array(), $id=null)
 	{
 
-		if (!$id and $this->isLoggedIn()) {
+		if (!$id and $this->isLoggedIn())
+		{
 			$id = $this->data()->id;
 		}
 		# die($id);
 
-		if(!$this->_db->update(Config::get('mysql/table/users'), $id, $fields)){
+		if(!$this->_db->update(Config::get('mysql/table/users'), $id, $fields))
+		{
 			throw new Exception("There was an error. Please read our <a href=\"/help/policies#up\">F.A.Q. on Updating Problems</a><br>");
 			DB::getInstance()->insert(Config::get('mysql/table/logs/log'), array(
 						'type'			=> 'update error',
@@ -54,7 +63,8 @@ class User{
 
 	public function create($fields = array())
 	{
-		if (!$this->_db->insert('users', $fields)) {
+		if (!$this->_db->insert('users', $fields))
+		{
 			throw new Exception("There was an error. Please read our <a href=\"/help/policies#regp\">F.A.Q. on Registration Problems</a><br>");
 			
 		}
@@ -68,11 +78,14 @@ class User{
 			# die();
 			$data = $this->_db->get(Config::get('mysql/table/users'), array($field, '=', $user));
 
-			if ($data->count()) { 
+			if ($data->count())
+			{ 
 				$this->_data = $data->first();
 
 				return true;
-			}else{
+			}
+			else
+			{
 				//die("Deadly run time error");
 			}
 		}
@@ -81,7 +94,8 @@ class User{
 	public function login($username = null, $password = null, $remember = false)
 	{
 		
-		if(!$username && !$password && $this->exists()){
+		if(!$username && !$password && $this->exists())
+		{
 			echo 'You already logged in, however your session has expired. Logging you in now.';
 
 			Session::put($this->_sessionName, $this->data()->id);
@@ -94,26 +108,34 @@ class User{
 
 			#Redirect::to('/account-control');
 
-		}else{
+		}
+		else
+		{
 			#die('login method has been called with all peramiters');
 			$user = $this->find($username);
-			if ($user) {
-				if ($this->data()->password === Hash::make($password, $this->data()->salt)) {
+			if ($user)
+			{
+				if ($this->data()->password === Hash::make($password, $this->data()->salt))
+				{
 					Session::put($this->_sessionName, $this->data()->id);
 					
-					if($remember){
+					if($remember)
+					{
 						# die(Config::get('mysql/table/session'));
 						$hash = Hash::unique();
 						$hashCheck = $this->_db->get(Config::get('mysql/table/session'), array('user_id', '=', $this->data()->id));
 
 						# insert data into the stuff
-						if(!$hashCheck->count()){
+						if(!$hashCheck->count())
+						{
 							$this->_db->insert(Config::get('mysql/table/session'), array(
 								'user_id'		=> $this->data()->id,
 								'hash'			=> $hash
 							));
 							#$this->_log->log('logged in', $this->data()->name, 'login');
-						}else{
+						}
+						else
+						{
 							$hash = $hashCheck->first()->hash;
 						}
 
@@ -137,11 +159,14 @@ class User{
 	{
 		$group = $this->_db->get(Config::get('mysql/table/groups'), array('id', '=', $this->data()->group));
 
-		if ($group->count()) {
+		if ($group->count())
+		{
 			$permissions = $this->permissions_get($group);
 
-			if(isset($permissions[$key])){
-				if($permissions[$key] == true){
+			if(isset($permissions[$key]))
+			{
+				if($permissions[$key] == true)
+				{
 					return true;
 				}
 			}
@@ -149,12 +174,14 @@ class User{
 		return false;
 	}
 
-	public function permissions_get($group=null){
+	public function permissions_get($group=null)
+	{
 		$group = (isset($group)) ? $group : $this->_db->get(Config::get('mysql/table/groups'), array('id', '=', $this->data()->group));
 		return json_decode($group->first()->permissions, true);
 	}
 
-	public function permissions_edit($id, $nePermissions = Array()){
+	public function permissions_edit($id, $nePermissions = Array())
+	{
 		$json = json_encode($newPermissions);
 		$this->_db->update(Config::get('mysql/table/groups'), $id, array(
 			'permissions' => $json
@@ -180,7 +207,8 @@ class User{
 		Cookie::delete($this->_cookieName);
 	}
 
-	public function data(){
+	public function data()
+	{
 		return $this->_data;
 	}
 	public function isLoggedIn()
