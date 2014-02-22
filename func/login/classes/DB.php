@@ -57,7 +57,7 @@ class DB{
 		#prepare sql for pdo
 		if($this->_query = $this->_pdo->prepare($sql))
 		{
-			//echo 1;
+			
 
 			# build sql additions
 			if(count($params))
@@ -79,16 +79,18 @@ class DB{
 				$this->_results	= $this->_query->fetchAll(PDO::FETCH_OBJ);
 				$this->_count	= $this->_query->rowCount();
 					//echo 'query success. Count: ' . $this->_count;
-			}else{
+			}
+			else
+			{
 				$this->_error = true;
-				//echo 'query fail code 1. Not proper SQL';
+				echo 'query fail code 1. Not proper SQL';
 			}
 
 		}
-		//echo '2';
+		
 		return $this;
 
-		//http://www.youtube.com/watch?feature=player_detailpage&v=PaBWDOBFxDc#t=571
+		
 
 	}
 	
@@ -172,7 +174,8 @@ class DB{
 		$set = '';
 		$x=1;
 
-		foreach ($fields as $name => $value) {
+		foreach ($fields as $name => $value)
+		{
 			$set .= "{$name} = ?";
 
 			if ($x < count($fields)) 
