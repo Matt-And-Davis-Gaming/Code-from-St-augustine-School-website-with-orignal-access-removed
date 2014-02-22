@@ -20,7 +20,7 @@ $GLOBALS['config'] = array(
 			),
 	'remember'	=> array(
 				'cookie_name'	=> 'cookie_name_for_controlled_session_storage',
-				'cookie_expiry'	=>  604800
+				'cookie_expiry'	=>  60*60*24*31*3
 			),
 	'session'	=> array(
 				'session_name'	=> 'user',
