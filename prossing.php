@@ -85,7 +85,7 @@ switch($_POST['action']){
 		Story (un-censored):
 			" . Input::get('story') . "
 		Story (censored):
-			" . censor(Input::get('story')) . "
+			" . bleep(Input::get('story')) . "
 		Additional Infromation:
 			" . (Input::get('add') != "") ? Input::get('add') : "none");
 			}else{
