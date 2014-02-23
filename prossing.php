@@ -81,17 +81,15 @@ switch($_POST['action']){
 			      ->setFrom(array('no_reply@staugustineschool.org' => 'New Bully report recieved'))
 			      ->setTo($add)
 			      ->setBody(
-			$this->renderView(
-                "Bully report is as follows:
+                escape("Bully report is as follows:
 		Bully name: " . Input::get('bully_name') . "
 		Story (un-censored):
 			" . Input::get('story') . "
 		Story (censored):
 			" . bleep(Input::get('story')) . "
 		Additional Infromation:
-			" . Input::get('add'),
-                array('name' => 'hi')
-            ));
+			" . Input::get('add')), 'text/html'
+            );
 			}else{
 				$run = true;
 			}
