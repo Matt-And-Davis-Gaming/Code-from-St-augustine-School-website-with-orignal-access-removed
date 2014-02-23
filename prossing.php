@@ -77,6 +77,7 @@ switch($_POST['action']){
 			    $mailer = Swift_Mailer::newInstance($transport);
 			    require '/var/www/func/bleep/bleep.php';
 			    //Create a message
+			    $cen = bleep(escape(Input::get('story')));
 			    $message = Swift_Message::newInstance('New Bully Report')
 			      ->setFrom(array('no_reply@staugustineschool.org' => 'New Bully report recieved'))
 			      ->setTo($add)
@@ -86,7 +87,7 @@ switch($_POST['action']){
 		Story (un-censored):
 			" . escape(Input::get('story')) . "
 		Story (censored):
-			" . bleep(escape(Input::get('story'))) . "
+			" . $cen[0] . "
 		Additional Infromation:
 			" . escape(Input::get('add')), 'text/html'
             ));
