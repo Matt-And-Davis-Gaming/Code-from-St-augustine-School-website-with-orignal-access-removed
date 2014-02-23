@@ -77,7 +77,7 @@ switch($_POST['action']){
 			    //Create a message
 			    $message = Swift_Message::newInstance('Test')
 			      ->setFrom(array('no_reply@staugustineschool.org' => 'New Bully report recieved'))
-			      ->setTo(array($add))
+			      ->setTo($add)
 			      ->setBody("Bully report is as follows:
 		Bully name: " . Input::get('bully_name') . "
 		Story (un-censored):
