@@ -77,19 +77,19 @@ switch($_POST['action']){
 			    $mailer = Swift_Mailer::newInstance($transport);
 			    require '/var/www/func/bleep/bleep.php';
 			    //Create a message
-			    $cen = bleep(escape(Input::get('story')));
+			    $cen = bleep(mysql_real_escape_string(Input::get('story')));
 			    $message = Swift_Message::newInstance('New Bully Report')
 			      ->setFrom(array('no_reply@staugustineschool.org' => 'New Bully report recieved'))
 			      ->setTo($add)
 			      ->setBody(
                 "Bully report is as follows:
-		Bully name: " . escape(Input::get('bully_name')) . "
+		Bully name: " . mysql_real_escape_string(Input::get('bully_name')) . "
 		Story (un-censored):
-			" . escape(Input::get('story')) . "
+			" . mysql_real_escape_string(Input::get('story')) . "
 		Story (censored):
 			" . $cen[0] . "
 		Additional Infromation:
-			" . escape(Input::get('add')), 'text/html'
+			" . mysql_real_escape_string(Input::get('add')), 'text/html'
             );
 			}else{
 				$run = true;
