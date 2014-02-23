@@ -78,17 +78,16 @@ switch($_POST['action']){
 			    require '/var/www/func/bleep/bleep.php';
 			    //Create a message
 			    $cen = bleep(mysql_real_escape_string(Input::get('story')));
+			    if($cen == mysql_real_escape_string(Input::get('story'))){}
 			    $message = Swift_Message::newInstance('New Bully Report')
 			      ->setFrom(array('no_reply@staugustineschool.org' => 'New Bully report recieved'))
 			      ->setTo($add)
 			      ->setBody(
-                "Bully report is as follows:
-		Bully name: " . mysql_real_escape_string(Input::get('bully_name')) . "
-		Story (un-censored):
-			" . mysql_real_escape_string(Input::get('story')) . "
-		Story (censored):
-			" . $cen[0] . "
-		Additional Infromation:
+                "Bully report is as follows:<br />
+	Bully name: " . mysql_real_escape_string(Input::get('bully_name')) . "<br />
+	Story (un-censored):<br />
+			" . mysql_real_escape_string(Input::get('story')) . "<br />
+	Additional Infromation:<br />
 			" . mysql_real_escape_string(Input::get('add')), 'text/html'
             );
 			}else{
