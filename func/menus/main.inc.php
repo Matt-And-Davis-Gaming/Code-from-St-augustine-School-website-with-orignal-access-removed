@@ -17,7 +17,7 @@ float: left;
 			$ar[2] = '
 				<li class="active"><a href="/">' . $name . '</a></li>
         		<li><a href="/parents">Parents</a></li>
-				<li><a target="_blank" href="//staugie.net">Church Website</a></li>
+				<li><a target="_blank" href="//staugie.net">Church</a></li>
         		<li><a href="/kids">Kids Area</a></li>
         		<li><a href="/more">More</a></li>';
 		break;
@@ -26,7 +26,7 @@ float: left;
 			$ar[2] = '
 				<li><a href="/">Home</a></li>
         		<li><a href="/parents">Parents</a></li>
-				<li><a target="_blank" href="//staugie.net">Church Website</a></li>
+				<li><a target="_blank" href="//staugie.net">Church</a></li>
         		<li class="active"><a href="/kids">Kids Area</a></li>
         		<li><a href="/more">More</a></li>';
 		break;
@@ -35,7 +35,7 @@ float: left;
 			$ar[2] = '
 				<li><a href="/">Home</a></li>
         		<li class="active"><a href="/parents">Parents</a></li>
-				<li><a target="_blank" href="//staugie.net">Church Website</a></li>
+				<li><a target="_blank" href="//staugie.net">Church</a></li>
         		<li><a href="/kids">Kids Area</a></li>
         		<li><a href="/more">More</a></li>';
 		break;
@@ -43,7 +43,7 @@ float: left;
 			$ar[2] = '
 				<li><a href="/">Home</a></li>
         		<li><a href="/parents">Parents</a></li>
-				<li><a target="_blank" href="//staugie.net">Church Website</a></li>
+				<li><a target="_blank" href="//staugie.net">Church</a></li>
         		<li><a href="/kids">Kids Area</a></li>
         		<li class="active"><a href="/more">More</a></li>';
 		break;
