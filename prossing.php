@@ -1,6 +1,7 @@
 <?php
 require '/var/www/init.php';
-
+ini_set('display_errors', '1');
+			error_reporting(-1);
 switch($_POST['action']){
 	case "signIn":
 		#echo "This action has not yet been created and is intended for future refrence. Please try again later";
