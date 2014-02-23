@@ -86,9 +86,9 @@ switch($_POST['action']){
                 "Bully report is as follows:<br />
 	Bully name: " . mysql_real_escape_string(Input::get('bully_name')) . "<br />
 	Story (un-censored):<br />
-			" . mysql_real_escape_string(Input::get('story')) . "<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . mysql_real_escape_string(Input::get('story')) . "<br />
 	Additional Infromation:<br />
-			" . mysql_real_escape_string(Input::get('add')), 'text/html'
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . mysql_real_escape_string(Input::get('add')), 'text/html'
             );
 			}else{
 				$run = true;
