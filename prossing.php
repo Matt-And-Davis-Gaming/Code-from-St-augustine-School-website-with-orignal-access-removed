@@ -80,14 +80,18 @@ switch($_POST['action']){
 			    $message = Swift_Message::newInstance('Test')
 			      ->setFrom(array('no_reply@staugustineschool.org' => 'New Bully report recieved'))
 			      ->setTo($add)
-			      ->setBody("Bully report is as follows:
+			      ->setBody(
+			$this->renderView(
+                "Bully report is as follows:
 		Bully name: " . Input::get('bully_name') . "
 		Story (un-censored):
 			" . Input::get('story') . "
 		Story (censored):
 			" . bleep(Input::get('story')) . "
 		Additional Infromation:
-			" . (Input::get('add') != "") ? Input::get('add') : "none");
+			" . Input::get('add'),
+                array('name' => 'hi')
+            ));
 			}else{
 				$run = true;
 			}
