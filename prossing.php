@@ -107,7 +107,7 @@ switch($_POST['action']){
 }
 
 					#php
-						if (isset($run)) {
+						if (isset($run) or isset($go)) {
 							?>
 							<h2>Errors:</h2><ol>
 							<?php
