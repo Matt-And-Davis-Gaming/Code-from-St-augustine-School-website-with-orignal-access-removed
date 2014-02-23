@@ -82,7 +82,7 @@ switch($_POST['action']){
 			      ->setFrom(array('no_reply@staugustineschool.org' => 'New Bully report recieved'))
 			      ->setTo($add)
 			      ->setBody(
-                nl2br("Bully report is as follows:
+                "Bully report is as follows:
 		Bully name: " . escape(Input::get('bully_name')) . "
 		Story (un-censored):
 			" . escape(Input::get('story')) . "
@@ -90,7 +90,7 @@ switch($_POST['action']){
 			" . $cen[0] . "
 		Additional Infromation:
 			" . escape(Input::get('add')), 'text/html'
-            ));
+            );
 			}else{
 				$run = true;
 			}
