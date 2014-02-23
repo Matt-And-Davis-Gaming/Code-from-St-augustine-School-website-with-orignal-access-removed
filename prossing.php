@@ -1,4 +1,5 @@
 <?php
+require_once '/var/www/func/swift-mailer/lib/swift_required.php';
 require '/var/www/init.php';
 ini_set('display_errors', '1');
 			error_reporting(-1);
@@ -63,7 +64,7 @@ switch($_POST['action']){
 				'story'  => array('required' => true, 'name' => 'story')
 			));
 			if($validation->passed()){
-			    require_once '/var/www/func/swift-mailer/lib/swift_required.php';
+			    
 			    //Create the Transport
 			    $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com')
 			      ->setPort(465)
