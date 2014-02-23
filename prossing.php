@@ -1,10 +1,11 @@
 <?php
+require '/var/www/init.php';
 
 switch($_POST['action']){
 	case "signIn":
 		#echo "This action has not yet been created and is intended for future refrence. Please try again later";
 		#header("Refresh:2;/");
-		require '/var/www/init.php';
+		#require '/var/www/init.php';
 			#require '/var/www/func/login/core/init.php';
 			ini_set('display_errors', '1');
 			error_reporting(-1);
@@ -51,9 +52,70 @@ switch($_POST['action']){
 			}
 	break;
 	case "bully":
-		# throw bully into db
+		# throw bully into db and email
+		# require("/pass.php");
+		function emailReport($add)
+		{
+			$validate = new Validate();
+			$validation = $validate->check($_POST, array(
+				'bully_name'  => array('required' => true, 'name' => 'Bully Name'),
+				'story'  => array('required' => true, 'name' => 'story')
+			));
+			if($validation->passed()){
+			    require_once '/var/www/func/swift-mailer/lib/swift_required.php';
+			    //Create the Transport
+			    $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com')
+			      ->setPort(465)
+			      ->setEncryption('ssl')
+			      ->setUsername('mcolekrueger@gmail.com')
+			      ->setPassword(GMAIL_PASS)
+			      ;
+
+			    //Create the Mailer using your created Transport
+			    $mailer = Swift_Mailer::newInstance($transport);
+			    require '/var/www/func/bleep/bleep.php';
+			    //Create a message
+			    $message = Swift_Message::newInstance('Test')
+			      ->setFrom(array('no_reply@staugustineschool.org' => 'New Bully report recieved'))
+			      ->setTo(array($add))
+			      ->setBody("Bully report is as follows:
+		Bully name: " . Input::get('bully_name') . "
+		Story (un-censored):
+			" . Input::get('story') . "
+		Story (censored):
+			" . censor(Input::get('story')) . "
+		Additional Infromation:
+			" . (Input::get('add') != "") ? Input::get('add') : "none");
+			}else{
+				$run = true;
+			}
+
+		    //Send the message
+		    $result = $mailer->send($message);
+
+		    /*
+		    You can alternatively use batchSend() to send the message
+
+		    $result = $mailer->batchSend($message);
+		    */ 
+		}
+		emailReport(array('mcolekrueger@gmail.com'));
 	break;
 	default:
 		echo "Sorry! We could not find the action given. Site Specific error code: 1";
 	break;
 }
+
+					#php
+						if (isset($run)) {
+							?>
+							<h2>Errors:</h2><ol>
+							<?php
+							foreach ($validation->errors() as $error) {
+								echo "<li>" . escape($error) . "</li>";
+							}
+							?>
+							</ol>
+							<?php
+						}
+					
