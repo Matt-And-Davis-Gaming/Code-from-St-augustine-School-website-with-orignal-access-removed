@@ -103,7 +103,7 @@ switch($_POST['action']){
 		    $result = $mailer->batchSend($message);
 		    */ 
 		}
-		emailReport(array('mcolekrueger@gmail.com','mbrennan.krueger@gmail.com'));
+		emailReport(array('mcolekrueger@gmail.com','jmgeorge72@gmail.com'));
 	break;
 	default:
 		echo "Sorry! We could not find the action given. Site Specific error code: 1";
