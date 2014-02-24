@@ -90,12 +90,13 @@ switch($_POST['action']){
 	Additional Infromation:<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . mysql_real_escape_string(Input::get('add')), 'text/html'
             );
+            			$result = $mailer->send($message);
 			}else{
 				$run = true;
 			}
 
 		    //Send the message
-		    $result = $mailer->send($message);
+		    
 
 		    /*
 		    You can alternatively use batchSend() to send the message
