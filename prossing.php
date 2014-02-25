@@ -88,7 +88,8 @@ switch($_POST['action']){
 	&nbsp;&nbsp;&nbsp;Story (un-censored):<br />
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . nl2br(mysql_real_escape_string(escape(Input::get('story')))) . "<br />
 	&nbsp;&nbsp;&nbsp;Additional Infromation:<br />
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . mysql_real_escape_string(escape(Input::get('add'))), 'text/html'
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . mysql_real_escape_string(escape(Input::get('add'))) . "
+			&nbsp;&nbsp;&nbsp;The type submitted was:" . Input::get('type'), 'text/html'
             );
             			$result = $mailer->send($message);
 			}else{
