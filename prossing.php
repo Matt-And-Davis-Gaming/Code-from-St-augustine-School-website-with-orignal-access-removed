@@ -63,6 +63,7 @@ switch($_POST['action']){
 				'bully_name'  => array('required' => true, 'name' => 'Bully Name'),
 				'story'  => array('required' => true, 'name' => 'story')
 			));
+			die(print_r($_POST));
 			if($validation->passed()){
 			    
 			    //Create the Transport
