@@ -63,8 +63,8 @@ switch($_POST['action']){
 				'bully_name'  => array('required' => true, 'name' => 'Bully Name'),
 				'story'  => array('required' => true, 'name' => 'story')
 			));
-			# echo "<pre>",print_r($_POST);
-			# die("</pre>");
+			echo "<pre>",print_r($_POST);
+			die("</pre>");
 			if($validation->passed()){
 				$phrase="bullying";
 				switch($_POST['type']){
