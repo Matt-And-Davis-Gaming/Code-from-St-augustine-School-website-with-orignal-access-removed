@@ -35,7 +35,7 @@ switch($_POST['action']){
 
 						# check if login is successful
 						if ($login) {
-							
+
 						Session::flash('in', "You, " . $user->data()->name . ", have been successfully logged in. Have fun!");
 						Redirect::to("/account-control/flash.php");
 						}else{
@@ -63,25 +63,8 @@ switch($_POST['action']){
 				'bully_name'  => array('required' => true, 'name' => 'Bully Name'),
 				'story'  => array('required' => true, 'name' => 'story')
 			));
-			echo "<pre>",print_r($_POST);
-			die("</pre>");
 			if($validation->passed()){
-				$phrase="bullying";
-				switch($_POST['type']){
-					case "physical":
-						$t = "Physical " . $phrase;
-						break;
-					case "verbal":
-						$t = "Verbal ". $phrase;
-						break;
-					case "convert":
-						$t = "Convert " . $phrase;
-						break;
-					case "cyber":
-						$t = "Cyber" . $phrase;
-						break;
-				}
-			    
+
 			    //Create the Transport
 			    $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com')
 			      ->setPort(465)
@@ -92,19 +75,20 @@ switch($_POST['action']){
 
 			    //Create the Mailer using your created Transport
 			    $mailer = Swift_Mailer::newInstance($transport);
+			    require '/var/www/func/bleep/bleep.php';
 			    //Create a message
+			    $cen = bleep(mysql_real_escape_string(Input::get('story')));
+			    if($cen == mysql_real_escape_string(Input::get('story'))){}
 			    $message = Swift_Message::newInstance('New Bully Report')
 			      ->setFrom(array('no_reply@staugustineschool.org' => 'New Bully report recieved'))
 			      ->setTo($add)
 			      ->setBody(
                 "Bully report is as follows:<br />
-	&nbsp;&nbsp;&nbsp;Bully name: " . mysql_real_escape_string(Input::get('bully_name')) . "<br />
+	&nbsp;&nbsp;&nbsp;Bully name: " . mysql_real_escape_string(escape(Input::get('bully_name'))) . "<br />
 	&nbsp;&nbsp;&nbsp;Story (un-censored):<br />
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . nl2br(mysql_real_escape_string(Input::get('story'))) . "<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . nl2br(mysql_real_escape_string(escape(Input::get('story')))) . "<br />
 	&nbsp;&nbsp;&nbsp;Additional Infromation:<br />
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . mysql_real_escape_string(Input::get('add')) . "
-			&nbsp;&nbsp;&nbsp;The type reported is: {$t}
-			", 'text/html'
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . mysql_real_escape_string(escape(Input::get('add'))), 'text/html'
             );
             			$result = $mailer->send($message);
 			}else{
@@ -112,7 +96,7 @@ switch($_POST['action']){
 			}
 
 		    //Send the message
-		    
+
 
 		    /*
 		    You can alternatively use batchSend() to send the message
@@ -120,7 +104,7 @@ switch($_POST['action']){
 		    $result = $mailer->batchSend($message);
 		    */ 
 		}
-		emailReport(array('mcolekrueger@gmail.com'/*,'jmgeorge72@gmail.com')*/);
+		emailReport(array('mcolekrueger@gmail.com'/*,'jmgeorge72@gmail.com'*/));
 	break;
 	default:
 		echo "Sorry! We could not find the action given. Site Specific error code: 1";
@@ -139,4 +123,3 @@ switch($_POST['action']){
 							</ol>
 							<?php
 						}
-					
