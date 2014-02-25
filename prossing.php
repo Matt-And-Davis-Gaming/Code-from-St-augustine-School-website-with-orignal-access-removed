@@ -63,9 +63,24 @@ switch($_POST['action']){
 				'bully_name'  => array('required' => true, 'name' => 'Bully Name'),
 				'story'  => array('required' => true, 'name' => 'story')
 			));
-			echo "<pre>",print_r($_POST);
-			die("</pre>");
+			# echo "<pre>",print_r($_POST);
+			# die("</pre>");
 			if($validation->passed()){
+				$phrase="bullying";
+				switch($_POST){
+					case "physical":
+						$t = "Physical " . $phrase;
+						break;
+					case "verbal":
+						$t = "Verbal ". $phrase;
+						break;
+					case "convert":
+						$t = "Convert " . $phrase;
+						break;
+					case "cyber":
+						$t = "Cyber" . $phrase;
+						break;
+				}
 			    
 			    //Create the Transport
 			    $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com')
@@ -90,7 +105,9 @@ switch($_POST['action']){
 	&nbsp;&nbsp;&nbsp;Story (un-censored):<br />
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . nl2br(mysql_real_escape_string(Input::get('story'))) . "<br />
 	&nbsp;&nbsp;&nbsp;Additional Infromation:<br />
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . mysql_real_escape_string(Input::get('add')), 'text/html'
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . mysql_real_escape_string(Input::get('add')) . "
+			&nbsp;&nbsp;&nbsp;The type reported is: {$t}
+			", 'text/html'
             );
             			$result = $mailer->send($message);
 			}else{
@@ -106,7 +123,7 @@ switch($_POST['action']){
 		    $result = $mailer->batchSend($message);
 		    */ 
 		}
-		emailReport(array('mcolekrueger@gmail.com','jmgeorge72@gmail.com'));
+		emailReport(array('mcolekrueger@gmail.com'/*,'jmgeorge72@gmail.com')*/);
 	break;
 	default:
 		echo "Sorry! We could not find the action given. Site Specific error code: 1";
