@@ -67,7 +67,7 @@ switch($_POST['action']){
 			# die("</pre>");
 			if($validation->passed()){
 				$phrase="bullying";
-				switch($_POST){
+				switch($_POST['type']){
 					case "physical":
 						$t = "Physical " . $phrase;
 						break;
@@ -92,10 +92,7 @@ switch($_POST['action']){
 
 			    //Create the Mailer using your created Transport
 			    $mailer = Swift_Mailer::newInstance($transport);
-			    require '/var/www/func/bleep/bleep.php';
 			    //Create a message
-			    $cen = bleep(mysql_real_escape_string(Input::get('story')));
-			    if($cen == mysql_real_escape_string(Input::get('story'))){}
 			    $message = Swift_Message::newInstance('New Bully Report')
 			      ->setFrom(array('no_reply@staugustineschool.org' => 'New Bully report recieved'))
 			      ->setTo($add)
