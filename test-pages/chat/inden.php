@@ -5,8 +5,8 @@
 
 		<style type="text/css">
 			.background{
-				background: rgb((240, 234, 214); /* Fall-back for browsers that don't support rgba */
-                                background: rgba((240, 234, 214, .5);
+				background: #F0EAD6;
+				border-radius:20px;
 			}
 			#messages{
 				width: 100%;
