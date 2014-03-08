@@ -7,6 +7,7 @@
 			.background{
 				opacity:0.5;
 				filter:alpha(opacity=50); /* For IE8 and earlier */
+				backbround-color:#E6DEDC;
 			}
 			#messages{
 				width: 100%;
