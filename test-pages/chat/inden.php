@@ -11,6 +11,7 @@
 				width:100%;
 			}
 			#messages{
+				border-radius:8px;
 				width: 100%;
 				left: 10;
 				right: 10;
