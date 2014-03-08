@@ -7,6 +7,8 @@
 			.background{
 				background: #F0EAD6;
 				border-radius:20px;
+				height:115%;
+				width:110%;
 			}
 			#messages{
 				width: 100%;
