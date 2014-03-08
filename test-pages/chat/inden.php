@@ -6,9 +6,9 @@
 		<style type="text/css">
 			.background{
 				background: #F0EAD6;
-				border-radius:20px;
-				height:115%;
-				width:110%;
+				border-radius:5px;
+				height:100%;
+				width:100%;
 			}
 			#messages{
 				width: 80%;
