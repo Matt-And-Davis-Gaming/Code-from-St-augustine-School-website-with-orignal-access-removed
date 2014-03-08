@@ -11,7 +11,7 @@
 				width:100%;
 			}
 			#messages{
-				width: 80%;
+				width: 100%;
 				left: 10;
 				right: 10;
 				text-align: left;
