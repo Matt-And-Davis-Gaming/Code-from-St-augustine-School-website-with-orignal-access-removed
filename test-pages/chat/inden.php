@@ -11,9 +11,9 @@
 				width:110%;
 			}
 			#messages{
-				width: 100%;
-				left: 0;
-				right: 0;
+				width: 80%;
+				left: 10;
+				right: 10;
 				text-align: left;
 				overflow-y: scroll;
 				overflow-x: hidden;
