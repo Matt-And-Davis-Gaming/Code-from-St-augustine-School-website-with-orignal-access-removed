@@ -5,9 +5,8 @@
 
 		<style type="text/css">
 			.background{
-				background: rgb(54, 25, 25); /* Fall-back for browsers that don't support rgba */
-                                background: rgba(54, 25, 25, .5);
-				backbround-color:#E6DEDC;
+				background: rgb((240, 234, 214); /* Fall-back for browsers that don't support rgba */
+                                background: rgba((240, 234, 214, .5);
 			}
 			#messages{
 				width: 100%;
