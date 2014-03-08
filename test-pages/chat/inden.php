@@ -5,8 +5,8 @@
 
 		<style type="text/css">
 			.background{
-				opacity:0.5;
-				filter:alpha(opacity=50); /* For IE8 and earlier */
+				background: rgb(54, 25, 25); /* Fall-back for browsers that don't support rgba */
+                                background: rgba(54, 25, 25, .5);
 				backbround-color:#E6DEDC;
 			}
 			#messages{
