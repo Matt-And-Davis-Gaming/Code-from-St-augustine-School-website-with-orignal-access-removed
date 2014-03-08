@@ -4,6 +4,10 @@
 		<title>Chat</title>
 
 		<style type="text/css">
+			.background{
+				opacity:0.5;
+				filter:alpha(opacity=50); /* For IE8 and earlier */
+			}
 			#messages{
 				width: 100%;
 				left: 0;
@@ -89,9 +93,11 @@
 		</script>
 	</head>
 	<body>
-		<div id="messages">
+		<div class="background">
+			<div id="messages">
 
+			</div>
+			<textarea id="input" placeholder="Please type your message here! Press enter to send. Use Shift + enter for a new line"></textarea>
 		</div>
-		<textarea id="input" placeholder="Please type your message here! Press enter to send. Use Shift + enter for a new line"></textarea>
 	</body>
 </html>
