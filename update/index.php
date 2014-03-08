@@ -1,4 +1,4 @@
 
-<?php shell_exec ("pull");
+<?php echo(shell_exec ("pull"));
 
 echo "Pulled latest data";
