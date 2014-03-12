@@ -19,10 +19,6 @@ require 'resources/init.php';
 			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://chrome.google.com/">upgrade your browser</a> to get the bes$
 	        <![endif]-->
             <?php
-
-            if ($user->hasPermission('admin')) {
-              echo "<p>You are an administrator</p>";
-            }
           ?>
 
 
