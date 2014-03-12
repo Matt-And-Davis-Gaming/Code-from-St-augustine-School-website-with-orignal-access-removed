@@ -3,7 +3,13 @@ require 'resources/init.php';
   head("Blog");?>
   	     <div class="jumbotron" style="padding-top:100px;">
       <div class="container">
-        <h1>Hello <a href="/user/<?php echo escape($user->data()->username); ?>"><?php echo escape($user->data()->name); ?></a>!</h1>
+      	<?php
+      	if($user->isLoggedIn()){
+        	echo "<h1>Hello <a href=\"/user/" . escape($user->data()->username) . "\">" . escape($user->data()->name) . "</a>!</h1>";
+    	}else{
+    		echo "<h1>Hello!</h1>";
+    	}
+        ?>
         <p>Welcome to the blog of St. Augustine!</p>
       </div>
     </div>
