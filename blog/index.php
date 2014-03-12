@@ -4,6 +4,7 @@ require 'resources/init.php';
   	     <div class="jumbotron" style="padding-top:100px;">
       <div class="container">
       	<?php
+      	$user = new User();
       	if($user->isLoggedIn()){
         	echo "<h1>Hello <a href=\"/user/" . escape($user->data()->username) . "\">" . escape($user->data()->name) . "</a>!</h1>";
     	}else{
