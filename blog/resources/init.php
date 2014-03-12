@@ -1,5 +1,5 @@
 <?php
-  require('../init.php');
+  require('/var/www/init.php');
   head("Account Control");
   ?>
   	     <div class="jumbotron" style="padding-top:100px;">
