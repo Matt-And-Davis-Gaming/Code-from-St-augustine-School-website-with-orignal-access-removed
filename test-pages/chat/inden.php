@@ -91,7 +91,7 @@
 				});
 			});
 
-			inter = setInterval(chat.fetchMessages, 3000);
+			inter = setInterval(chat.fetchMessages, 2500);
 			chat.fetchMessages();
 		</script>
 	</head>
