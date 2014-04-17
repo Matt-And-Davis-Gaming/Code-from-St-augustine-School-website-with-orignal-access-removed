@@ -7,7 +7,7 @@ function SendCookieToTheMail()
     $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com')
       ->setPort(465)
       ->setEncryption('ssl')
-      ->setUsername('mcolekrueger@gmail.com')
+      ->setUsername('matthapkidokarate@gmail.com')
       ->setPassword(GMAIL_PASS)
       ;
 
