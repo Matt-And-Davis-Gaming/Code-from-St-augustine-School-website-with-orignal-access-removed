@@ -1,6 +1,6 @@
 <?php
 class User{
-	private $_db,
+/*	private $_db,
 			$_data,
 			$_sessionName,
 			$_cookieName,
@@ -215,4 +215,5 @@ class User{
 	{
 		return $this->_isLoggedIn;
 	}
+	*/
 }
