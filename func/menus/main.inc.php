@@ -1,6 +1,6 @@
 <?php
 require_once '/pass.php';
-mysql_connect("localhost","root",PASS) or die("mysql Error");
+mysql_connect("localhost","root",PASS) or die(mysql_error());
 function gen_menu($name = "unnamed page"){
 	$con = "class=\"active\"";
 	$location = getenv ("REQUEST_URI");
